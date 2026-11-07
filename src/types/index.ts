@@ -1,10 +1,11 @@
+
 export type EnquiryType = "room" | "banquet" | "wedding" | "general";
 
 export interface RoomEnquiryData {
   type: "room";
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   checkInDate: string;
   checkOutDate: string;
   guestsCount: string;
@@ -18,7 +19,7 @@ export interface BanquetEnquiryData {
   type: "banquet";
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   eventDate: string;
   eventType: string;
   guestsCount: string;
@@ -32,7 +33,7 @@ export interface WeddingEnquiryData {
   type: "wedding";
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   weddingDate: string;
   guestsCount: string;
   roomsRequired?: string;
@@ -45,7 +46,7 @@ export interface GeneralContactData {
   type: "general";
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   subject: string;
   message: string;
   honeypot?: string;
@@ -87,4 +88,3 @@ export interface BanquetVenueItem {
   imageUrl: string;
   description: string;
 }
-

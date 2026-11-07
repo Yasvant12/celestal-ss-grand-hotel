@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -9,7 +10,6 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-noir-charcoal text-surface-ivory">
-      {/* Hero Background Image with Subtle Reveal */}
       <motion.div
         initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.08 }}
         animate={{ opacity: 0.4, scale: 1 }}
@@ -18,10 +18,12 @@ export function HeroSection() {
         style={{ backgroundImage: `url('${heroImageUrl}')` }}
         aria-hidden="true"
       />
+
       <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal via-noir-charcoal/60 to-transparent" />
       <div className="absolute inset-0 bg-radial from-transparent via-noir-charcoal/40 to-noir-charcoal/90" />
 
       <div className="relative site-container pt-space-3xl pb-space-3xl flex flex-col justify-between min-h-[640px]">
+
         {/* Top Eyebrow Badges Row */}
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
@@ -59,6 +61,7 @@ export function HeroSection() {
           >
             {HOTEL_INFO.tagline}
           </motion.span>
+
           <motion.h1
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,6 +70,7 @@ export function HeroSection() {
           >
             Elevate Your Celebrations with Luxury &amp; Elegance
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,6 +94,7 @@ export function HeroSection() {
               <span>Explore Venues &amp; Rooms</span>
               <span className="material-symbols-outlined text-[18px]">south_east</span>
             </a>
+
             <a
               className="inline-flex items-center justify-center gap-space-xs px-6 py-4 rounded-xl bg-surface-ivory/15 backdrop-blur-md text-surface-ivory hover:bg-surface-ivory/25 font-label-button text-label-button uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.99]"
               href={`tel:${HOTEL_INFO.phones.primary}`}
@@ -111,43 +116,46 @@ export function HeroSection() {
             <span className="material-symbols-outlined text-primary-fixed text-[28px]">domain</span>
             <div className="flex flex-col">
               <span className="font-headline-sm text-headline-sm text-surface-ivory font-semibold">
-                {HOTEL_INFO.stats.lawns}
+                {HOTEL_INFO.stats.lawnCapacity}
               </span>
               <span className="font-label-compact text-label-compact text-surface-container-highest uppercase">
-                Celebration Lawn
+                Celebration Lawn Capacity
               </span>
             </div>
           </div>
+
           <div className="flex items-center gap-space-sm py-2">
             <span className="material-symbols-outlined text-primary-fixed text-[28px]">celebration</span>
             <div className="flex flex-col">
               <span className="font-headline-sm text-headline-sm text-surface-ivory font-semibold">
-                {HOTEL_INFO.stats.banquetHalls}
+                {HOTEL_INFO.stats.acBanquetCapacity}
               </span>
               <span className="font-label-compact text-label-compact text-surface-container-highest uppercase">
-                Banquet Halls
+                AC Banquet Capacity
               </span>
             </div>
           </div>
+
           <div className="flex items-center gap-space-sm py-2">
             <span className="material-symbols-outlined text-primary-fixed text-[28px]">bed</span>
             <div className="flex flex-col">
               <span className="font-headline-sm text-headline-sm text-surface-ivory font-semibold">
-                {HOTEL_INFO.stats.guestRooms}
+                {HOTEL_INFO.stats.luxuryRooms}
               </span>
               <span className="font-label-compact text-label-compact text-surface-container-highest uppercase">
-                Guest Rooms
+                Luxury Rooms
               </span>
             </div>
           </div>
+
           <div className="flex items-center gap-space-sm py-2">
-            <span className="material-symbols-outlined text-primary-fixed text-[28px]">local_police</span>
+            <span className="material-symbols-outlined text-primary-fixed text-[28px]">star</span>
             <div className="flex flex-col">
               <span className="font-headline-sm text-headline-sm text-surface-ivory font-semibold">
-                {HOTEL_INFO.stats.largestHall}
+                {HOTEL_INFO.stats.rating}
               </span>
               <span className="font-label-compact text-label-compact text-surface-container-highest uppercase">
-                Largest Hall Capacity
+                Guest Rating
               </span>
             </div>
           </div>

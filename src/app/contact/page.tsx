@@ -42,8 +42,6 @@ export default function ContactPage() {
           <ContactCTASection />
         </div>
       </main>
-
-      {/* Luxury Footer */}
       <Footer />
 
     </>
