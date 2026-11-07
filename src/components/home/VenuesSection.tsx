@@ -1,0 +1,286 @@
+"use client";
+
+import Link from "next/link";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+
+export function VenuesSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const banquetHallImg =
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuBypgAUs0uKDB4oBQsoVvGqxcIssSQq7PCwmj3Iid3ICy2E1Sk_1gAGhSwGIs2OntnOJTYeM8XP0C5EPNhylKwwW1G5_ZKk_T1NYjj3aylZK1e9c_dGX1-xjuhM-mBjB62p4gjG7mKuYzTh76EmwHJgEeOvLA6QoGD5cc5uFu5VFBu93KgHp-EULvJWlVgQT5iUDyoa4qSjHIhLbR4VMQR6_NUBY7ozDDfE4Y_HpQw";
+  const lawnImg =
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuDTh9C3fvtmu_sjxWdxmUjgqXMkt7hipvP2EGpMc4KtSCFb_gY0jwVJO8eNyOJjoOEPjaVkxZFzRAwoi1hx5PiQizoU2Uq_2Rv5Qa-Twx6oADdb5szrtdi4BavMCpJCW5_yJ-MNgTiOEkn-xiyTnz4O07liWuzNOvwpwwTKZb49ufoukUx8carJzagQFAGkTDQcjsObBwx6Sn6Tub8jY6e_JSae81kfyowknqFhhDI";
+  const roomsImg =
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuCSULtwVW-q4v0myiHg93Av76QsdUdbEaN2x0XdbJy2ztASqWWeQ6fd0V7hhYU1h3jHTVMxOURjGEMQnLXz1qI5CAWrsuyrUCftiDd6Q983HZRHsUWUsJUA428FcOBF6FlRdsNZLx07a-CzA09-rp6imquTt927N2_hb_hyxal1WkLfGuj0yR90THeZqpjFQs-nG0hRoW3KmYHvMhcjgbUIls4lOkOf-PRYRNaGyO4";
+  const diningImg =
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuA8E2HUVtG4xpZDiZHHC3j-u7KgJw3ug7k2dkHIGuDzwkzDJF0Qo2VkOHQX3xeY9-VO09Wdhs0CzVJmpbkSxEJysbtV-tghCUheFIjYuM3YRdWacKVjaI4hzY20MemeubgBz4YaiMlxM8zVooCIKjvPil2cy9XmBEyKUz9JY-_oordZ-i2nsOovYsm21IjDWJnvNIYnnGEoN2vW8wPD3XYihqsbagmWfHfypwe07rI";
+
+  const cardsContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+      },
+    },
+  };
+
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 28 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="w-full py-space-3xl bg-surface-container-low" id="venues-section">
+      <div className="site-container flex flex-col gap-space-2xl">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-space-md"
+        >
+          <div className="flex flex-col gap-space-xs max-w-2xl">
+            <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-primary">
+              Palatial Spaces &amp; Suites
+            </span>
+            <h2 className="font-headline-lg text-headline-lg text-on-surface">
+              Curated Venues for Unforgettable Occasions
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface-variant">
+              From climate-controlled ballroom banquets and starlit open-air lawns to bespoke bridal suites, every space is architected to inspire joy.
+            </p>
+          </div>
+          <div className="flex items-center gap-space-xs">
+            <span className="font-label-compact text-label-compact uppercase text-on-surface-variant">
+              All Venues Include Full Power Backup &amp; Dedicated Event Team
+            </span>
+          </div>
+        </motion.div>
+
+        {/* 3-Column Luxury Cards with Staggered Entrance */}
+        <motion.div
+          variants={cardsContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg"
+        >
+          {/* Card 1: Grand Banquet Hall */}
+          <motion.div
+            variants={cardVariants}
+            whileHover={shouldReduceMotion ? undefined : { y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between border border-surface-container-highest/40"
+          >
+            <div>
+              <div className="relative overflow-hidden h-64">
+                <div
+                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  style={{ backgroundImage: `url('${banquetHallImg}')` }}
+                  aria-label="Grand Banquet Hall"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-primary text-on-primary font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
+                  Up to 400 Guests
+                </div>
+              </div>
+              <div className="p-space-lg flex flex-col gap-space-sm">
+                <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                  Grand Banquet Hall
+                </h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  Our elegant banquet space is architected for both grand celebrations and intimate gatherings, making it the perfect venue for weddings, corporate summits, and milestone receptions.
+                </p>
+                {/* Amenities List */}
+                <div className="grid grid-cols-2 gap-2 pt-space-xs text-on-surface-variant font-label-compact text-label-compact">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">ac_unit</span> Central Air-Conditioning
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">surround_sound</span> Acoustic Pro Sound
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">theater_comedy</span> Customizable Stage
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">light_mode</span> Mood Ambient Lighting
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="p-space-lg pt-0 flex items-center justify-between">
+              <Link
+                className="font-label-button text-label-button uppercase text-primary hover:text-gold-deep flex items-center gap-1 transition-colors group-hover:translate-x-0.5 font-semibold"
+                href="/banquet"
+                prefetch={true}
+              >
+                <span>Explore Banquets</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </Link>
+              <span className="font-label-compact text-label-compact text-on-surface-variant">
+                Sector-M, Ashiyana
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Card 2: Open Celebration Lawn */}
+          <motion.div
+            variants={cardVariants}
+            whileHover={shouldReduceMotion ? undefined : { y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between border border-surface-container-highest/40"
+          >
+            <div>
+              <div className="relative overflow-hidden h-64">
+                <div
+                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  style={{ backgroundImage: `url('${lawnImg}')` }}
+                  aria-label="Open Celebration Lawn"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-noir-charcoal text-surface-ivory font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
+                  Up to 800 Guests
+                </div>
+              </div>
+              <div className="p-space-lg flex flex-col gap-space-sm">
+                <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                  Open Celebration Lawn
+                </h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  Our beautifully manicured lawn offers a serene environment where guests can unwind amidst lush greenery, vibrant floral arrangements, and open-air grand festive stages.
+                </p>
+                {/* Amenities List */}
+                <div className="grid grid-cols-2 gap-2 pt-space-xs text-on-surface-variant font-label-compact text-label-compact">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">nature</span> Manicured Velvet Turf
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">deck</span> Open-Air Sky Deck
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">wb_twilight</span> Evening Lantern Lighting
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">restaurant</span> Multi-Station Food Courts
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="p-space-lg pt-0 flex items-center justify-between">
+              <a
+                className="font-label-button text-label-button uppercase text-primary hover:text-gold-deep flex items-center gap-1 transition-colors group-hover:translate-x-0.5"
+                href="#inquiry-form-section"
+              >
+                <span>Reserve Lawn</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+              <span className="font-label-compact text-label-compact text-on-surface-variant">
+                Grand Weddings
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Card 3: Luxury Rooms & Suites */}
+          <motion.div
+            variants={cardVariants}
+            whileHover={shouldReduceMotion ? undefined : { y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between border border-surface-container-highest/40"
+          >
+            <div>
+              <div className="relative overflow-hidden h-64">
+                <div
+                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  style={{ backgroundImage: `url('${roomsImg}')` }}
+                  aria-label="Luxury Rooms &amp; Suites"
+                />
+                <div className="absolute top-4 left-4 px-3 py-1 rounded bg-primary text-on-primary font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
+                  50+ Luxury Rooms
+                </div>
+              </div>
+              <div className="p-space-lg flex flex-col gap-space-sm">
+                <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                  Luxury Rooms &amp; Suites
+                </h3>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  At Celestal SS Grand Hotel, our rooms are designed to be your personal sanctuary, blending boutique luxury with the comforts of home for wedding families, guests, and corporate travelers.
+                </p>
+                {/* Amenities List */}
+                <div className="grid grid-cols-2 gap-2 pt-space-xs text-on-surface-variant font-label-compact text-label-compact">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">king_bed</span> King Size Plush Beds
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">wifi</span> High-Speed Wi-Fi
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">room_service</span> 24/7 Room Service
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[16px] text-primary">shower</span> En-suite Modern Baths
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="p-space-lg pt-0 flex items-center justify-between">
+              <a
+                className="font-label-button text-label-button uppercase text-primary hover:text-gold-deep flex items-center gap-1 transition-colors group-hover:translate-x-0.5"
+                href="/rooms"
+              >
+                <span>Explore Rooms</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+              <span className="font-label-compact text-label-compact text-on-surface-variant">
+                Bridal Suites Available
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Banner Card: Gourmet Multi-Cuisine Dining & Catering */}
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full bg-noir-charcoal text-surface-ivory rounded-xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center group"
+        >
+          <div className="lg:col-span-7 p-space-xl flex flex-col gap-space-md">
+            <div className="inline-flex items-center gap-2">
+              <span className="w-6 h-[2px] bg-primary-fixed-dim" />
+              <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-gold-light">
+                Artisanal Gastronomy &amp; World Flavors
+              </span>
+            </div>
+            <h3 className="font-headline-md text-headline-md text-surface-ivory">
+              Gourmet Dining &amp; Bespoke Event Catering
+            </h3>
+            <p className="font-body-md text-body-md text-surface-container-highest max-w-xl">
+              Treat your guests to an elevated culinary experience. Our master chefs curate signature specialties, artisanal live stations, and exquisite multi-cuisine banquets crafted with culinary passion.
+            </p>
+            <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-gold-light">soup_kitchen</span>
+                <span className="font-label-compact text-label-compact">Live Tandoor &amp; Buffet Desks</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-gold-light">dinner_dining</span>
+                <span className="font-label-compact text-label-compact">Pure Veg &amp; Non-Veg Segregated Kitchens</span>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-5 h-72 lg:h-full relative min-h-[260px] overflow-hidden">
+            <div
+              className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+              style={{ backgroundImage: `url('${diningImg}')` }}
+              aria-label="Gourmet Multi-Cuisine Catering"
+            />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

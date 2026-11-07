@@ -1,0 +1,311 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Confine Leaflet tiles, panes & controls strictly within map containers */
+.leaflet-container {
+  position: relative !important;
+  z-index: 1 !important;
+  isolation: isolate;
+  contain: paint;
+}
+.leaflet-tile-pane {
+  z-index: 2 !important;
+}
+.leaflet-overlay-pane {
+  z-index: 4 !important;
+}
+.leaflet-shadow-pane {
+  z-index: 5 !important;
+}
+.leaflet-marker-pane {
+  z-index: 6 !important;
+}
+.leaflet-tooltip-pane {
+  z-index: 7 !important;
+}
+.leaflet-popup-pane {
+  z-index: 10 !important;
+}
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-control {
+  z-index: 12 !important;
+}
+
+/* Ensure fixed header stays permanently on top GPU compositing plane */
+header {
+  transform: translateZ(0);
+}
+
+/* Ensure Next.js development indicator elements are hidden */
+nextjs-portal,
+#nextjs-dev-indicator,
+[data-nextjs-dev-indicator] {
+  display: none !important;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ========================================================================== */
+/* Centered Main Content Container (Max width ~1680px, 120px margin at 1920px) */
+/* ========================================================================== */
+.site-container {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 1.25rem; /* ~16-20px on Mobile */
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    padding-inline: 2rem; /* ~32px on Tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-inline: 6.25vw; /* ~6-7% side spacing on Desktop */
+  }
+}
+
+@media (min-width: 1680px) {
+  .site-container {
+    padding-inline: max(0px, calc((1920px - 100vw) * 0.5));
+  }
+}
+
+@media (min-width: 1920px) {
+  .site-container {
+    padding-inline: 0px; /* At 1920px, margin-inline: auto creates exactly 120px margins */
+  }
+}
+
+/* ========================================================================== */
+/* Luxury Header Navigation & Dropdown Styling                                */
+/* ========================================================================== */
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+.service-hover-card:hover .service-icon-box {
+  transform: scale(1.08) translateY(-2px);
+  background: linear-gradient(135deg, #B8860B, #9B6E09);
+  color: #FFFFFF;
+  box-shadow: 0 10px 20px -5px rgba(184, 134, 11, 0.35);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #CF9E38 0%, #E8CD82 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #CFA854 0%, #B8860B 100%);
+}
+
+@theme {
+  --color-primary-fixed-dim: #f0be6c;
+  --color-outline: #817566;
+  --color-primary-container: #966d23;
+  --color-tertiary-fixed: #ffdea5;
+  --color-secondary-fixed: #e5e2e1;
+  --color-surface-tint: #7d570b;
+  --color-overlay-scrim: rgba(17, 24, 39, 0.65);
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary: #755717;
+  --color-primary-fixed: #ffdeac;
+  --color-error: #ba1a1a;
+  --color-on-secondary: #ffffff;
+  --color-primary: #7a5508;
+  --color-on-tertiary-container: #fffbff;
+  --color-surface: #fcf9f4;
+  --color-on-tertiary: #ffffff;
+  --color-border-hairline-gold: rgba(179, 135, 40, 0.28);
+  --color-on-secondary-container: #636262;
+  --color-surface-container-high: #ebe8e3;
+  --color-surface-bright: #fcf9f4;
+  --color-surface-ivory: #FAF7F2;
+  --color-on-error-container: #93000a;
+  --color-inverse-on-surface: #f3f0eb;
+  --color-tertiary-fixed-dim: #e9c176;
+  --color-surface-container-highest: #e5e2dd;
+  --color-surface-container: #f0ede9;
+  --color-inverse-primary: #f0be6c;
+  --color-on-primary: #ffffff;
+  --color-gold-light: #E8D3A2;
+  --color-on-surface-variant: #4f4538;
+  --color-noir-charcoal: #111827;
+  --color-inverse-surface: #31302d;
+  --color-secondary: #5f5e5e;
+  --color-gold-deep: #7B5719;
+  --color-whatsapp-brand: #25D366;
+  --color-on-secondary-fixed: #1c1b1b;
+  --color-on-error: #ffffff;
+  --color-tertiary-container: #90702e;
+  --color-on-tertiary-fixed: #261900;
+  --color-secondary-container: #e2dfde;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-gold-metallic: #B38728;
+  --color-background: #fcf9f4;
+  --color-on-tertiary-fixed-variant: #5d4201;
+  --color-surface-variant: #e5e2dd;
+  --color-on-primary-fixed-variant: #604100;
+  --color-on-background: #1c1c19;
+  --color-error-container: #ffdad6;
+  --color-surface-champagne: #F5EFEB;
+  --color-surface-dim: #dcdad5;
+  --color-on-primary-fixed: #281900;
+  --color-surface-container-low: #f6f3ee;
+  --color-on-surface: #1c1c19;
+  --color-outline-variant: #d3c4b3;
+  --color-on-primary-container: #fffbff;
+  --color-on-secondary-fixed-variant: #474746;
+
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-space-2xl: 4rem;
+  --spacing-space-3xl: 6rem;
+  --spacing-margin: 3rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-sm: 0.5rem;
+
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom Typography Utilities from Stitch Design Spec */
+@utility font-display-hero {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-headline-lg {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-headline-md {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-headline-sm {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-title-editorial {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-display-hero-mobile {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+@utility font-headline-lg-mobile {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+@utility font-body-lg {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+@utility font-body-md {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+@utility font-body-sm {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+@utility font-label-button {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+@utility font-label-compact {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+@utility font-eyebrow-luxury {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+
+/* Font Size & Typographic Scales */
+@utility text-display-hero {
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+@utility text-display-hero-mobile {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+@utility text-headline-lg {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+@utility text-headline-lg-mobile {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+}
+@utility text-headline-md {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+}
+@utility text-headline-sm {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+}
+@utility text-title-editorial {
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+@utility text-eyebrow-luxury {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+@utility text-label-button {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+@utility text-label-compact {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+@utility text-body-md {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+@utility text-body-sm {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
