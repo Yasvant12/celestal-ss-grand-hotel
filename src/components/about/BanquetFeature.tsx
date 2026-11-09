@@ -6,9 +6,9 @@ import { HOTEL_INFO } from "@/lib/constants";
 
 export function BanquetFeature() {
   const ballroomImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDjbPT6CKOfDqmEOzGsrMreHPtWP0pn-tVOleyaLkQL8CDbLtKyzpCSuqUHthIkjxdfPcEkQB3BjV3zRo5nCLxYLf1OLj0qp2sEQSe8JG1TtF9CAGue3-xJIkjb3zfoSuttoEZFK70en_woNMnuV3cODbIYTHLOeP0XupwvU7u4esvX_GzhkwdmnnL4t92R3QpYkEKxrGQ4lLJLCR0QDFLQiDzlNitHgIpA_vIR_iM";
+    "/images/hotel-banquet-ballroom-01.jpg";
   const lawnImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDs02vQ01KoJpHHh8qQz6_NldbPu_jIY3DQ1XicJj0iRGkbj5iNBjdei780I4jvSf1ontIjsnUyMDm-F8uxSKNHYb3tEgV9NCE0K2xz1lULJ0y6gNmGg-EpAfdJaGNxQPmTzgeKrN3y8n66O8DL0CpXhc07uaSRaWqVK3wh15dzDEfQiURXBA2_1Rkt44Gbfkz32yA7ZxgvXD6Xd4zhldNaKIygVWOMVh9EZ7vDWi0";
+    "/images/hotel-banquet-wedding-stage.jpg";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-noir-charcoal text-surface-ivory relative overflow-hidden" id="banquet-section">

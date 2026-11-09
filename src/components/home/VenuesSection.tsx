@@ -5,14 +5,10 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 export function VenuesSection() {
   const shouldReduceMotion = useReducedMotion();
-  const banquetHallImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBypgAUs0uKDB4oBQsoVvGqxcIssSQq7PCwmj3Iid3ICy2E1Sk_1gAGhSwGIs2OntnOJTYeM8XP0C5EPNhylKwwW1G5_ZKk_T1NYjj3aylZK1e9c_dGX1-xjuhM-mBjB62p4gjG7mKuYzTh76EmwHJgEeOvLA6QoGD5cc5uFu5VFBu93KgHp-EULvJWlVgQT5iUDyoa4qSjHIhLbR4VMQR6_NUBY7ozDDfE4Y_HpQw";
-  const lawnImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDTh9C3fvtmu_sjxWdxmUjgqXMkt7hipvP2EGpMc4KtSCFb_gY0jwVJO8eNyOJjoOEPjaVkxZFzRAwoi1hx5PiQizoU2Uq_2Rv5Qa-Twx6oADdb5szrtdi4BavMCpJCW5_yJ-MNgTiOEkn-xiyTnz4O07liWuzNOvwpwwTKZb49ufoukUx8carJzagQFAGkTDQcjsObBwx6Sn6Tub8jY6e_JSae81kfyowknqFhhDI";
-  const roomsImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCSULtwVW-q4v0myiHg93Av76QsdUdbEaN2x0XdbJy2ztASqWWeQ6fd0V7hhYU1h3jHTVMxOURjGEMQnLXz1qI5CAWrsuyrUCftiDd6Q983HZRHsUWUsJUA428FcOBF6FlRdsNZLx07a-CzA09-rp6imquTt927N2_hb_hyxal1WkLfGuj0yR90THeZqpjFQs-nG0hRoW3KmYHvMhcjgbUIls4lOkOf-PRYRNaGyO4";
-  const diningImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuA8E2HUVtG4xpZDiZHHC3j-u7KgJw3ug7k2dkHIGuDzwkzDJF0Qo2VkOHQX3xeY9-VO09Wdhs0CzVJmpbkSxEJysbtV-tghCUheFIjYuM3YRdWacKVjaI4hzY20MemeubgBz4YaiMlxM8zVooCIKjvPil2cy9XmBEyKUz9JY-_oordZ-i2nsOovYsm21IjDWJnvNIYnnGEoN2vW8wPD3XYihqsbagmWfHfypwe07rI";
+  const banquetHallImg = "/images/hotel-banquet-ballroom-03.jpg";
+  const lawnImg = "/images/hotel-banquet-wedding-stage.jpg";
+  const roomsImg = "/images/hotel-front-entrance-stairs.jpg";
+  const diningImg = "/images/hotel-front-entrance-foyer.jpg";
 
   const cardsContainerVariants: Variants = {
     hidden: { opacity: 0 },

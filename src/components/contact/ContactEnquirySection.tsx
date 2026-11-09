@@ -193,7 +193,7 @@ export function ContactEnquirySection() {
             <div className="grid grid-cols-2 gap-4 pt-1">
               <div className="relative rounded-xl overflow-hidden group shadow-md aspect-video sm:aspect-4/3">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMaU27wJyx_VeKlSeidKJyUI61BHCJPWnQQSKlJfR49zTKqpXTgwje9_a9nwz3XQC863gk7OAIqZbfd1w4KJnvvYbzEPL06fJHuXWG2HztQdJOSRUH9gGbfbh2UFU6UTdj1paPWCmcvmikbinvbjRS6vXyF9XKID7cDcZqDvYA-UU3rB0lUDMnsE6v7n2fIS-ba78GG35SMFlh4gbYedk5kAajGsOCdgn_fuCU5_c"
+                  src="/images/hotel-front-entrance-foyer.jpg"
                   alt="Celestal SS Grand Hotel Grand Lobby Arrival"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -208,7 +208,7 @@ export function ContactEnquirySection() {
 
               <div className="relative rounded-xl overflow-hidden group shadow-md aspect-video sm:aspect-4/3">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_NTK02112-N3dOFfOmF5oDmaFHwmZ0QShXUL64L_7R6EUokOf4pIV2kLF_dMkUPU1J56NNB36rO7nXCPXvENQ0XP-la61RmWqTCEruFQG89nUNWatjXShk2WTzBEo8hj3uoBJFD-BsTyqbWo-bFJoH1jIDhDkkk8MiXmLPCwqNJB_FDfoxb_Kq93kHr5jvt74_N1vjuT9HuK6ac8IrhDlsuD2_vM1erg8b4E62wI"
+                  src="/images/hotel-banquet-ballroom-02.jpg"
                   alt="Celestal SS Grand Hotel Executive Grand Suite"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

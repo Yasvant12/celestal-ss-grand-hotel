@@ -40,7 +40,7 @@ export function BanquetVisualGallery() {
             className="md:col-span-7 h-[380px] sm:h-[440px] md:h-[500px] relative rounded-2xl overflow-hidden shadow-sm group"
           >
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQ7e4X6RB6c09Gk-U1E8RBUzqECaagltKeEKMybatS_s3wz9hY5ZjcooexfxS5CXEWo4KA4_b1vePPJPDZN-7QQaYpOi_eR_zCXzChnJpVNSH9UIGW3ELgXq3nS6LEZ4d1dDctPTHGlWrgSJi2FaglhVKq1InJ7Dd48KT3C5HLaMU62-KixTE1gAbONLCQDqv8ivqIbPpXWogrwwJjhH2u2XbmZTAY1eaZG48epo"
+              src="/images/hotel-banquet-ballroom-01.jpg"
               alt="Main Ballroom Staging at Celestal SS Grand Hotel"
               fill
               sizes="(max-width: 768px) 100vw, 60vw"
@@ -67,7 +67,7 @@ export function BanquetVisualGallery() {
               className="h-[235px] relative rounded-2xl overflow-hidden shadow-sm group"
             >
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Il-xh-4h8ybSmW_Ittf14bSvXD5uDjctbypJzmjv0oKK1OovR3tXV--MfST8L1Q96wH7oYwoUjIb6wmSc0qrEJf-bPtOI7RxnYbsMOa5eYZYgRYw_qhD6O8Crw_jjJuYbe6ko0OP7qSZAxAK892TKTWovH4RkT56GfR6hsV4xp6m2BmUnub4gRgiC-wGTQjZYPCVLC4gJknup5_p88PCVDvMvgCvLRKbv4K84_8"
+                src="/images/hotel-banquet-ballroom-02.jpg"
                 alt="Bespoke Tableware & Crystal"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -92,7 +92,7 @@ export function BanquetVisualGallery() {
               className="h-[240px] relative rounded-2xl overflow-hidden shadow-sm group"
             >
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUHLudlpvfY5po0lx6fMCs5vOs5zYp0LlpP2rIPNIht_cwoCKhPZoNEPFfT5gRSCvASBQSSblDHbeWIHGClCja0wZe37J0mHGpazfV4_7A_7Mr9u3z5lIjBC7fQPAeXHtmsAG1snYXn3YQJ2oLJ1JQJeiFgdatsqS4VSE8KK-bdOFOlcN_XB2ousRavpSc63h3KR9b-lLAkT-KQIEHgzA2AGaDO9qSDx3JERL7IgY"
+                src="/images/hotel-banquet-ballroom-03.jpg"
                 alt="Master Gourmet Curation"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
@@ -119,7 +119,7 @@ export function BanquetVisualGallery() {
             className="md:col-span-4 h-64 relative rounded-2xl overflow-hidden shadow-sm group"
           >
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxU38gbh0-hOuvenod7-GRwC63JTFC5pzyxTWQV7QQ393mLHURMJL53_33-vDGNfdWVMviU0OqCH8MgYIecky8pc8RCZMikrsDkfUHADwC90bXffMOzZrw8Dse9BkY9s2JV9kyGEzOF1HnWfi5AnahUhX43_achdFgJIrTwW1a5CjWX_pwfb17vyhQY6JbtSwCIK6n-3wQwHhf6FnRR2lY7ChMww_dnbamsdfQzMI"
+              src="/images/hotel-banquet-ballroom-04.jpg"
               alt="Bespoke Floral Scenography"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -139,7 +139,7 @@ export function BanquetVisualGallery() {
             className="md:col-span-4 h-64 relative rounded-2xl overflow-hidden shadow-sm group"
           >
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu1784MzJS6fMY7AwJJHclabHqWtYFFO3cGWvA43OX2mWKT0zciX1wm90vlATH8aOzCKi0Fpl7Z7DhSlGu1XP57FJY_xXeaysAtav-WR0Z9y3IT8lgz9oJhWRE2Upq1X8LTq6cLoGNDOU_K591w96majbAav-AMKMBf9bQXchlggXGm9N9zDpk9xeLAfgCINnVPSd9OKyqCrTGeCMvsdety-SsgaW7Fc1GadiusVE"
+              src="/images/hotel-banquet-ballroom-05.jpg"
               alt="Unforgettable Milestones"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -159,7 +159,7 @@ export function BanquetVisualGallery() {
             className="md:col-span-4 h-64 relative rounded-2xl overflow-hidden shadow-sm group"
           >
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOUAdPSl6PxORZQcD3R_ysbSTjpLtQI0b2Cz82AXZ7Xts6agrBFTcQ7XpEbd9MD9CwKmbp4aing8vvWSCtVPJ2-cwm96Eyq38DvXvbMHsKt_DEus5asuXM6OfsCn8EYKRgrzKO_VAIrcyb5UAScKTdjGyC3h6v4GS1-nJKamv04TvJpJTTFzJs7P6KPyjIpCsbDe3matQwxmJPAmJZe43dgmQm-Tj3b0DrDdTQbXQ"
+              src="/images/hotel-banquet-ballroom-06.jpg"
               alt="Pre-Function Foyer Spaces"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"

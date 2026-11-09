@@ -6,9 +6,9 @@ import { BedDouble, Sparkles, PartyPopper, ArrowRight } from "lucide-react";
 
 export function AboutIntroduction() {
   const mainImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBu5joXE-rbrrzSHQLmDJfHmK-e5SYQ7VLligjJ4bS0KtKa1A6GjmEk2z6cBFPy5EXchBvaaDk0YrAArZ51mW2paNRW7VLf53gqy2XcSH_lbm0wxkHA8OOv3ggEA9_80x88164y_j2CoxR3l4NQFg1O0yTM9RtzHeP1Xmh5CoWjXqfoTJykQoYMxwexK7kfYNQ5mJ2v7OklWOyJVEV8lsH92vIkw5HR1ickfJPjRMo";
+    "/images/hotel-banquet-ballroom-01.jpg";
   const secondaryImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBBUBNp5yW5SWDd3HeAga0HEq8dpTOT5lpyicir8B-xDyS8B3GKGoKoq1z24RzyNX_b-XIbM4AwBaCgLXyCDDpbijtf5BdDTZZNhBT97aBK50sFf3s_P5TdXTDUPdwZx-6HmrYUzTPNjf7v-794fdFY3Wa0FFkrhHZxyhf7m4UE1Hpa9T1g0wNKLBlofY4rCmK4MylgRJoKCqYR0IZN9pMYhZC206zDurdHI4z1prM";
+    "/images/hotel-front-entrance-foyer.jpg";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-surface" id="intro-section">

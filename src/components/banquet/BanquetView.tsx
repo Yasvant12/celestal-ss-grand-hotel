@@ -42,6 +42,7 @@ export function BanquetView() {
     <>
       {/* Standardized Common PageHero with Quick Floor Navigator Pills */}
       <PageHero
+        pageKey="banquet"
         title={
           <>
             Your Celebrations Deserve a{" "}

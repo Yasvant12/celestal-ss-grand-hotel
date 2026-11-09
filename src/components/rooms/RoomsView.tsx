@@ -43,6 +43,7 @@ export function RoomsView() {
         <div className="flex flex-col w-full">
           {/* Section 1: Standardized PageHero with Filter Bar Slot */}
           <PageHero
+            pageKey="rooms"
             eyebrow="Accommodation &amp; Residences"
             title={
               <>

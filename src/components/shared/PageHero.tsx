@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 
 export interface BreadcrumbItem {
   label: string;
@@ -12,12 +13,13 @@ export interface BreadcrumbItem {
 export interface PageHeroProps {
   title: React.ReactNode;
   subtitle: string;
-  backgroundImage: string;
+  backgroundImage?: string;
   eyebrow?: string;
   breadcrumb?: BreadcrumbItem[];
   conciergeBadge?: boolean;
   badgeText?: string;
   children?: React.ReactNode;
+  pageKey?: string;
 }
 
 export function PageHero({
@@ -29,49 +31,47 @@ export function PageHero({
   conciergeBadge = true,
   badgeText = "Reservations Desk",
   children,
+  pageKey = "page",
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
+  const resolvedBackgroundImage = backgroundImage || getHeroBackgroundImageForPage(pageKey);
 
   return (
-    <section className="relative w-full bg-noir-charcoal text-surface-container-lowest overflow-hidden">
-      {/* Background Architectural Image & Gradient Scrim */}
+    <section className="relative w-full overflow-hidden bg-noir-charcoal text-surface-container-lowest">
       <div className="absolute inset-0 z-0">
         <Image
-          src={backgroundImage}
+          src={resolvedBackgroundImage}
           alt="Celestal SS Grand Hotel"
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-40 scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover scale-105 transition-transform duration-1000 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal via-noir-charcoal/80 to-noir-charcoal/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[#0d1115]/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1115]/75 via-[#0d1115]/30 to-[#0d1115]/75" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(198,165,92,0.16),transparent_55%)]" />
       </div>
 
-      <div className="relative z-10 site-container pt-8 sm:pt-12 md:pt-14 pb-12 sm:pb-16 lg:pb-20">
-        {/* Breadcrumb Navigation */}
+      <div className="relative z-10 site-container flex min-h-[420px] flex-col justify-end pb-12 pt-8 sm:min-h-[460px] sm:pb-16 sm:pt-12 md:min-h-[500px] md:pb-20 lg:min-h-[560px] lg:pt-14">
         {breadcrumb && breadcrumb.length > 0 && (
           <motion.nav
             aria-label="Breadcrumb"
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
-            className="flex items-center gap-2 font-eyebrow-luxury text-eyebrow-luxury text-gold-light uppercase tracking-widest pb-4 sm:pb-6"
+            className="flex items-center gap-2 pb-4 font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-gold-light sm:pb-6"
           >
             {breadcrumb.map((item, idx) => {
               const isLast = idx === breadcrumb.length - 1;
               return (
-                <div key={item.label} className="flex items-center gap-2">
+                <div key={`${item.label}-${idx}`} className="flex items-center gap-2">
                   {idx > 0 && <span className="text-stone-400">/</span>}
                   {item.href && !isLast ? (
-                    <Link
-                      href={item.href}
-                      className="hover:text-surface-container-lowest transition-colors"
-                    >
+                    <Link href={item.href} className="transition-colors hover:text-surface-container-lowest">
                       {item.label}
                     </Link>
                   ) : (
-                    <span className="text-surface-container-lowest font-bold">{item.label}</span>
+                    <span className="font-bold text-surface-container-lowest">{item.label}</span>
                   )}
                 </div>
               );
@@ -79,28 +79,27 @@ export function PageHero({
           </motion.nav>
         )}
 
-        {/* Main Hero Header Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+        <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-12 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-8 flex flex-col gap-3"
+            className="flex flex-col gap-3 lg:col-span-8"
           >
             {eyebrow && (
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 backdrop-blur-md w-fit rounded-full shadow-sm border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold-metallic inline-block animate-pulse" />
-                <span className="font-eyebrow-luxury text-eyebrow-luxury text-gold-light uppercase tracking-widest">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3.5 py-1 shadow-sm backdrop-blur-md">
+                <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-gold-metallic" />
+                <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-gold-light">
                   {eyebrow}
                 </span>
               </div>
             )}
 
-            <h1 className="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-display-hero text-surface-container-lowest tracking-tight mt-1 leading-[1.15]">
+            <h1 className="mt-1 text-3xl font-medium tracking-tight text-surface-container-lowest sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.08]">
               {title}
             </h1>
 
-            <p className="font-body-lg text-sm sm:text-base md:text-lg text-stone-300 max-w-2xl leading-relaxed">
+            <p className="max-w-2xl text-sm leading-relaxed text-stone-300 sm:text-base md:text-lg">
               {subtitle}
             </p>
           </motion.div>
@@ -110,17 +109,18 @@ export function PageHero({
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-4 pb-1 flex lg:justify-end"
+              className="flex lg:col-span-4 lg:justify-end"
             >
-              <div className="flex items-center gap-2.5 bg-noir-charcoal/90 backdrop-blur-md px-4 py-2.5 rounded-full text-surface-container-lowest font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest shadow-lg border border-gold-metallic/30">
-                <span className="w-2 h-2 rounded-full bg-whatsapp-brand animate-pulse" />
-                <span>{badgeText}</span>
+              <div className="flex items-center gap-2.5 rounded-full border border-gold-metallic/30 bg-noir-charcoal/80 px-4 py-2.5 text-surface-container-lowest shadow-lg backdrop-blur-md">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-whatsapp-brand" />
+                <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest">
+                  {badgeText}
+                </span>
               </div>
             </motion.div>
           )}
         </div>
 
-        {/* Optional Inner Page Bottom Bar (e.g. Filters, Tabs, Search) */}
         {children && (
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}

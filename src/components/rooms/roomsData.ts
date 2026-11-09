@@ -65,7 +65,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     description:
       "Tailored specifically for discerning corporate professionals and weekend guests seeking seamless efficiency without sacrificing residential warmth. Features an ergonomic solid-walnut work desk, high-speed fiber data ports, a 55\" Smart UHD display, and tailored evening turndown service.",
     heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBN-EJDuQfyPBpI-ynWfPJfH-T7LN5U10PL2bRo7keThyMjK4diJEBHNi4Ru4jdAfzJvBl5wT6Ps1h8BWXQfd-bzdDpcwVOFIXfWSkW2-MLYm1eU1PNd3pXJdM1TEaZTH_DeEXDGvOY9R0h3YYjfuiC_-pgJZzJggfmBiBPqajJPbqK5PmbN63KFaj04GG1WoXciikPeehNcHQBLuSnY_hu60MY8Yl4YdKoMSoDBhM",
+      "/images/hotel-banquet-ballroom-01.jpg",
     quickFeatures: ["Fiber Wi-Fi", "55\" Smart UHD TV", "24/7 Dining", "Express Pressing"],
     amenities: [
       { icon: "desk", title: "Ergonomic Executive Desk", desc: "Crafted solid walnut with integrated USB/HDMI" },
@@ -77,17 +77,17 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     ],
     images: [
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBN-EJDuQfyPBpI-ynWfPJfH-T7LN5U10PL2bRo7keThyMjK4diJEBHNi4Ru4jdAfzJvBl5wT6Ps1h8BWXQfd-bzdDpcwVOFIXfWSkW2-MLYm1eU1PNd3pXJdM1TEaZTH_DeEXDGvOY9R0h3YYjfuiC_-pgJZzJggfmBiBPqajJPbqK5PmbN63KFaj04GG1WoXciikPeehNcHQBLuSnY_hu60MY8Yl4YdKoMSoDBhM",
+        src: "/images/hotel-front-entrance-foyer.jpg",
         label: "King Bed & Executive Workspace",
         caption: "Ergonomic walnut desk, tailored upholstered headboard, and warm ambient task lighting.",
       },
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAMsgP_WcWoyb3jz3mRODJ6J41_ZqUFUDUYi4vgXKOIiWqRSx4VBLGxwDtIsMUn4Ii5Cvsig5IUE7OHj9DteJy1Nu1tkot3Gjf6HC0Ip0KMI67X4Em9yzxauVpWAGJYeyh62rSlarpP2LuK1717UuMZtV9YZyiwGswIPpffOd4FJIHy4cbwbI1WTO6FlfIbEuJ6sNqcwq9RX07M97Sq58glHEDaD1odpG5LSSeL-oo",
+        src: "/images/hotel-banquet-ballroom-02.jpg",
         label: "Panoramic Window & Lounge",
         caption: "Double acoustic glazed viewing window with motorized privacy sheers and daybed seating.",
       },
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCYxskE6cNQW90gc4geWxFpa_Y55yUkfw2dWo2jdEHlck81uU_DQfGo_G_KTBCAFpMzrgrJHME-W-qj69YqallK-IPl-I3h1Y6qpyu3IGp7aci5rISIBj28JhK96dH-tnoh2WNxdsovvmgYKuF2vALT9eunpe4hucReh26aSQs_OfQqrFtcnnUt5kW_ZCvchcpXS_weXA87MCAmQ8kd4hQcuk4657r8NzzEufny_w8",
+        src: "/images/hotel-banquet-ballroom-03.jpg",
         label: "En-Suite Stone Bathroom",
         caption: "Clean geometric lines with backlit vanity mirror and high-pressure rainfall shower.",
       },
@@ -123,7 +123,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     description:
       "Overlooking manicured botanical courtyards with sunlit glass apertures, this tranquil sanctuary embraces natural daylight, warm Scandinavian-inspired neutral timbers, and soothing linen finishes. Designed for restful getaways and quiet morning contemplation.",
     heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCYxskE6cNQW90gc4geWxFpa_Y55yUkfw2dWo2jdEHlck81uU_DQfGo_G_KTBCAFpMzrgrJHME-W-qj69YqallK-IPl-I3h1Y6qpyu3IGp7aci5rISIBj28JhK96dH-tnoh2WNxdsovvmgYKuF2vALT9eunpe4hucReh26aSQs_OfQqrFtcnnUt5kW_ZCvchcpXS_weXA87MCAmQ8kd4hQcuk4657r8NzzEufny_w8",
+      "/images/hotel-banquet-ballroom-04.jpg",
     quickFeatures: ["Patio Vista", "Rain Shower", "Artisanal Tea Bar", "Climate Control"],
     amenities: [
       { icon: "deck", title: "Garden Patio Aperture", desc: "Direct view to private landscaped greenery" },
@@ -135,17 +135,17 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     ],
     images: [
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCYxskE6cNQW90gc4geWxFpa_Y55yUkfw2dWo2jdEHlck81uU_DQfGo_G_KTBCAFpMzrgrJHME-W-qj69YqallK-IPl-I3h1Y6qpyu3IGp7aci5rISIBj28JhK96dH-tnoh2WNxdsovvmgYKuF2vALT9eunpe4hucReh26aSQs_OfQqrFtcnnUt5kW_ZCvchcpXS_weXA87MCAmQ8kd4hQcuk4657r8NzzEufny_w8",
+        src: "/images/hotel-front-entrance-stairs.jpg",
         label: "Garden Courtyard Bedroom",
         caption: "Crisp linen bedding bathed in morning daylight filtering from the courtyard patio.",
       },
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAMsgP_WcWoyb3jz3mRODJ6J41_ZqUFUDUYi4vgXKOIiWqRSx4VBLGxwDtIsMUn4Ii5Cvsig5IUE7OHj9DteJy1Nu1tkot3Gjf6HC0Ip0KMI67X4Em9yzxauVpWAGJYeyh62rSlarpP2LuK1717UuMZtV9YZyiwGswIPpffOd4FJIHy4cbwbI1WTO6FlfIbEuJ6sNqcwq9RX07M97Sq58glHEDaD1odpG5LSSeL-oo",
+        src: "/images/hotel-banquet-ballroom-01.jpg",
         label: "Private Greenery Outlook",
         caption: "Acoustic glass panels framing lush foliage and landscaped outdoor water feature.",
       },
       {
-        src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBN-EJDuQfyPBpI-ynWfPJfH-T7LN5U10PL2bRo7keThyMjK4diJEBHNi4Ru4jdAfzJvBl5wT6Ps1h8BWXQfd-bzdDpcwVOFIXfWSkW2-MLYm1eU1PNd3pXJdM1TEaZTH_DeEXDGvOY9R0h3YYjfuiC_-pgJZzJggfmBiBPqajJPbqK5PmbN63KFaj04GG1WoXciikPeehNcHQBLuSnY_hu60MY8Yl4YdKoMSoDBhM",
+        src: "/images/hotel-front-entrance-foyer.jpg",
         label: "Timber Vanity & Bathroom",
         caption: "Minimalist natural timber shelving and pressurized rainforest shower column.",
       },

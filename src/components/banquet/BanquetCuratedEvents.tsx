@@ -20,7 +20,7 @@ const EVENTS: EventCategory[] = [
     title: "Majestic Vows",
     description: "Comprehensive staging for ceremony themes, royal dining banquets, and grand celebratory receptions up to 900 guests.",
     capacity: "Up to 900 Guests",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCkhCvvVo1CsW6L2Zp4Xg2lR0Qmu8OjAZvz0UpNywmZF3DyjGPqZyxvWUXrMcdrXXHYX-UUHfx6-DcRBZmCAWc8j8zL94T4c92f2YM3uYdiZJVMwvqQo7g9XpJPVYDDuyzhGT2vNR8g-2hInWxvMp1ZyZgF9g79GyMzEv_jZNITnOPb_jacih-sIpTwxNraFpKT11yi2ROyMR6dO1UQAh-WO-PkeFpjcT3a0bL8Rrk",
+    image: "/images/hotel-banquet-wedding-stage.jpg",
   },
   {
     id: "engagements",
@@ -28,7 +28,7 @@ const EVENTS: EventCategory[] = [
     title: "Engagements & Roka",
     description: "Intimate gatherings enveloped in warm champagne ambiance, acoustic melodies, and artisanal cocktail hors d'oeuvres.",
     capacity: "150 - 350 Guests",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuANJ6TzqbKmt6XPu3Yg1sAtyBOx4extjT915SWDcia3U5xmbRD63ErzLEDeIHkhO0H0pEfLTfL9QXvAWzBn77ezst0j7xeF9WLxk9FrZG9S32m_7pAQTpmIMes_reYjrMGmTZxQ5VsrIfmWu2N8bI83J8AAsypgFvMoJbz2EzQYRC5i_jSxNFFLMkKOrFtyIDY-ZaSn5PAAcBBX6iKc5lxpHbvUNHjZxRAmlRcmeas",
+    image: "/images/hotel-banquet-ballroom-02.jpg",
   },
   {
     id: "birthdays",
@@ -36,7 +36,7 @@ const EVENTS: EventCategory[] = [
     title: "Milestone Birthdays",
     description: "Contemporary audio setups, DJ console staging, gourmet live stations, and thematic photo installations.",
     capacity: "100 - 300 Guests",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBMcIHMgferFWA8AHNMuvtrMVc6HtQesn2HK_HXmFjzTIH0gRm4FKIHYAQi8H7BqEkXCNB3j8qSvgVbQ2g99XOheGXyEFWrqRc54-b17WhqfeESq-ws28d4pVRkrfYTCna-J3b9lA8WWfecB84zQ5YOOSjtpSVHvBIyb9_87y-JpRcS79cpXMWGXKxdMoYEFwNFKQl-HfcsX3Bj9WdcmSuf0wHGZhletQ815BVJKS8",
+    image: "/images/hotel-banquet-ballroom-03.jpg",
   },
   {
     id: "sangeet",
@@ -44,7 +44,7 @@ const EVENTS: EventCategory[] = [
     title: "Sangeet & Mehendi",
     description: "Spacious open dance floors with high-clarity sound engineering and lounge-style cocktail service.",
     capacity: "200 - 450 Guests",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuClgWjIRXzwS2iQrGr9Ef4UffOXpu8reAI3vLpD3vekOEnAuQHGfveJ5bbscHlK8d2RYhDCgHtzuNPSMoV2gsLvqlEimAuoS55C80QBSsdYPxUNW_ccof2hIke5PjrFv61Ygp5wgAeDyxv-GvUz6OTaor6aGmMbUkBB-urQG18yWXfSUOcP6pZUfK_XPMeW88pEazh-n6ASfDkEc7UPo75EESKlA0i9bXoo3rmDVfA",
+    image: "/images/hotel-banquet-ballroom-04.jpg",
   },
   {
     id: "corporate",
@@ -52,7 +52,7 @@ const EVENTS: EventCategory[] = [
     title: "Corporate Summits",
     description: "Dual-screen projection, digital lecterns, high-speed Wi-Fi, breakout zones, and prompt executive luncheon catering.",
     capacity: "80 - 400 Delegates",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBaHrA6CDtPsBlAppWwrzbYTo7UC1eNxPQVxUuUa_0ozErY5ZUa4EyhkgH5jF2rav9eHO0FnqRZ3NH4kpUGpLHtfI3iS6LMtOCE6TcxRCD7cPzt4BS5_CG6ORn0VU5dBHxD1B0VBYrbxGi_kqNrXDKvFK9fUeWYqIkZnBDJEf-yd5Q886HUVkL7A4P6QGf2dlEbfm9t_ksfla60vaGeThDGa5B-91CgsFAQgL7comA",
+    image: "/images/hotel-banquet-ballroom-05.jpg",
   },
   {
     id: "social",
@@ -60,7 +60,7 @@ const EVENTS: EventCategory[] = [
     title: "Social Celebrations",
     description: "Unrushed family reunions, retirement soirees, and sacred anniversaries hosted with attentive warmth.",
     capacity: "100 - 300 Guests",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbjINCQgy4h-PaJq9Po_6YzrqFlKt7UtSELqTraKt-6kXXaNgV4suLZEjkhMqT56Hh2hwlW0t8US0I9qmcmiM4NqbZ1HQVKbCKdwty2rJrhYZkydoTP509Zw1hg2dc_W1eVtmB3IPTGO6ri34Jt4Z_B0g0eEcjnBFS_iihL8Y-joF-YBenNvwePLHAUsHJOomQvYDLWvgWEVHgjhdhCRXAsj7iBKPojR3BbXlk5TA",
+    image: "/images/hotel-banquet-ballroom-06.jpg",
   },
 ];
 

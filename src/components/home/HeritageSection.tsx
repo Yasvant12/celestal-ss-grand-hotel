@@ -4,10 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 
 export function HeritageSection() {
   const shouldReduceMotion = useReducedMotion();
-  const ballroomImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDZjKzg9C6iYmQ-kepw9lzGGtMp6JXHhMXr1mphAZa3j8Lu68U-iSd6cy33P_Duo_nXb7wbJG7vpcLlSdwHnjyd6cGhfNvMQkReVkU--d2qM072illczkYJ2LgEWWYq3w8-UlNEIxL3r2SOz-HTJwqCuliONMqgN1NUdvzpm3BDvEKxMTOG20HlGreVgmq3VGH-Tj3wwmbf4MQVKofl5rHB5JkfJOvayHDgmCC0BUo";
-  const lawnImg =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuAlvzaplgRDPD8LjZKUbn4npjt4LijDd4XXmxNCjx6CiCmSm4Gk7DtbiVQocOhX0BEBQZa5QQN1A0hOfZiauCYHocjtl0RcsxPVYZrIIeNU6eiMXAUZaIKCu0T3qJ2FSVg-CfIdYuw8YKvrrXfLTnBvKRXFhHvfOo29QBBIdcJY51RgZzYUl5_45k-fYvprlnhTY-dMJdqM3LJ1UJJRsSYbyZalhHvzFozj8AblTpE";
+  const ballroomImg = "/images/hotel-banquet-ballroom-01.jpg";
+  const lawnImg = "/images/hotel-banquet-ballroom-05.jpg";
 
   return (
     <section className="w-full py-space-3xl bg-surface overflow-hidden">
@@ -69,7 +67,7 @@ export function HeritageSection() {
               {/* Large Image Top Left */}
               <div className="col-span-2 overflow-hidden rounded-xl shadow-lg relative group">
                 <div
-                  className="w-full h-80 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-80 bg-cover bg-center transition-transform 7-700 ease-out group-hover:scale-105"
                   style={{ backgroundImage: `url('${ballroomImg}')` }}
                   aria-label="The Grand Darbar Ballroom"
                 />

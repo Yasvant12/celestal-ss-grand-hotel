@@ -6,6 +6,7 @@ import { HERO_BACKGROUND_IMAGE } from "@/lib/constants";
 export function ContactHero() {
   return (
     <PageHero
+      pageKey="contact"
       eyebrow="Get In Touch"
       title={
         <>

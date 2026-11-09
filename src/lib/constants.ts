@@ -1,6 +1,16 @@
-/** Homepage hero background. Inner-page heroes must reuse this exact asset. */
-export const HERO_BACKGROUND_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAtnYwqJLSeyAaXHAbVbegusZlAim1J-v_MPZvPYgdc8gTptNayUVkUG16hDC_1Ou7vSGACyJUIPj-3PIpinFmGctwjCKqKjH0qHsAeh1WUqWKEE1xcxd_sDT0OVRr12C62nCKxJ0zqbvmL8Z9uIUW4Lp3IwGmp5Aho5WwJRM3RAaFZs4HYLROMB8yv4b1em3sT1WVPENHt2AfYPihA6hd5ehSHDYtQXGy0lQlaWgM";
+/** Homepage hero background. Inner-page heroes should still use this as the default fallback asset. */
+export const HERO_BACKGROUND_IMAGES = [
+  "/images/hotel-exterior-front-elevation.jpg",
+  "/images/hotel-banquet-night-hero.png",
+] as const;
+
+export const HERO_BACKGROUND_IMAGE = HERO_BACKGROUND_IMAGES[0];
+
+export function getHeroBackgroundImageForPage(pageKey: string = "home") {
+  const normalized = (pageKey || "home").toLowerCase();
+  const hash = [...normalized].reduce((total, char) => total + char.charCodeAt(0), 0);
+  return HERO_BACKGROUND_IMAGES[Math.abs(hash) % HERO_BACKGROUND_IMAGES.length];
+}
 
 export const HOTEL_INFO = {
   name: "Celestal SS Grand Hotel",
@@ -16,10 +26,10 @@ export const HOTEL_INFO = {
     lng: 80.9028,
   },
   phones: {
-    primary: "+91 7054250911",
-    primaryRaw: "917054250911",
-    weddingDesk: "+91 7054250912",
-    lawnsCatering: "+91 7054250913",
+    primary: "+91 7054447423", //banquet booking
+    primaryRaw: "91 9151888637",
+    weddingDesk: "+91 9151888637",
+    lawnsCatering: "+91 9151888637",
   },
   whatsapp: "+91 7054250911",
   whatsappUrl: "https://wa.me/917054250911",

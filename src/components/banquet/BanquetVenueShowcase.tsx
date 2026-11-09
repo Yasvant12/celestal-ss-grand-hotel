@@ -54,7 +54,7 @@ export function BanquetVenueShowcase({
             {/* Visual Column */}
             <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[420px] lg:min-h-full overflow-hidden group">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOXiPh94OSDDPW4NTdRwb7XuZltf5kUaKH8MdSfE07LtR2ASTC3jyRVWHtBxUa4mKS10ofECp4xkht3CHayddbywpJ3vTJF0hXCllpIM_o9AGupnk966sSE0X8qiFGM5dypaB1HvzlFOsFL7wfkkXMUnoQPbn0f777Wm4IlsmOYe-zLHn7fr7R-7x9UhhwoGRbdS62jqpMsDqfmsOT5PM2Ax85SD65C8C4fgjefhw"
+                src="/images/hotel-banquet-ballroom-01.jpg"
                 alt="The Grand Astor Ballroom at Celestal SS Grand Hotel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -275,7 +275,7 @@ export function BanquetVenueShowcase({
             {/* Visual Column (Right on desktop) */}
             <div className="lg:col-span-6 relative min-h-[360px] sm:min-h-[420px] lg:min-h-full overflow-hidden group order-1 lg:order-2">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtA4GOoSs7xXxxZVphPH6zR5XigCsuomZHY016biJHebDBWlQJXp6i0k74XsF5MdaQFzIjoW26DSh74jTzJXeH9lGxVRq_cdP4lndzwvRXMnRfn6h4BF37B3rkYV4jDRoaZyR6sqRnNqxitNURUTzxJOpR9ib9v_bbxBF7bXvVo-y0i4kHecQVlnLccko55VlJa6jmbjBU_9nFR4VThOUPQ9T7V_KQUcaglZzCnHQ"
+                src="/images/hotel-banquet-ballroom-02.jpg"
                 alt="The Celestial Crystal Hall at Celestal SS Grand Hotel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

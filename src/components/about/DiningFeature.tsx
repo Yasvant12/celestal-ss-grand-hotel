@@ -6,7 +6,7 @@ import { HOTEL_INFO } from "@/lib/constants";
 
 export function DiningFeature() {
   const diningImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuD9pjGs2zVzKbIczF-K2prsT6147H0N_Oz74dH7CQibmiv896LwLfYa0dT0CZSud8433AG6x6gC12N8EDqQMjpIwfwDPpb0C89OjnMyzn0iwXL-b_Ihp6x6GuGUptz-ggAPYTl2yVO2pvTEZ9Sl57o20-WQ741uDKG_B_N76BdpaEPe-iCI6Y1PFdb68qZQ0eTeQDxRSw5Q1daxtXBMIWawaF9Qv04HI1MCtxJUdTo";
+    "/images/hotel-banquet-ballroom-04.jpg";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-surface" id="dining-section">

@@ -6,7 +6,7 @@ import { HOTEL_INFO } from "@/lib/constants";
 
 export function AccommodationFeature() {
   const roomImage =
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuDU7ijx_pJTL4NAyh13cVdD4UlLQam5uKdODTal8aYiVqV9mcFuzF2gbu1cwygqUwdScBk0Uzu-T0GFRUTTcC8dNdLahjhF6HsVm8TuhGUv0yMr4IkCZpOPfYZInhTF0ZeYJwQyLNF8xDS0id2mEc_3eEGD20ClimmZ2rQGha0A8xRp8ypJT1Z7eBPUqdrlHez-836I9F6ZKGvkMTP75btilNSwrZ9p-F5rRinPgfI";
+    "/images/hotel-banquet-ballroom-02.jpg";
 
   const roomHighlights = [
     "Bespoke Climate Control",

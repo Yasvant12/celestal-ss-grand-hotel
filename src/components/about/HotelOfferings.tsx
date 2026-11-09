@@ -11,7 +11,7 @@ export function HotelOfferings() {
       description:
         "Comfortable spaces designed for a relaxing stay with personalized room amenities.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuD6ZTXn95kjGdKXNyZgXvCe2Ifyz8QVvczyM1Rg1ebDH-LsSmlISXGWrU56VzFqWorboOZ71j6kgp2yoEjM_teK2po2YPCH20kPDnVNH3JOI16kaS6pFVy4O_RNd7rCAmD0hlTptlBw7bcRaMUUydg_3_p5Td6KjELY3birThhh9NmOzG-JSU-ytSDEFweJddraAxaCXEwIcOVTbqJRWuXUuiXe0gB4PYrCJBVamQg",
+        "/images/hotel-front-entrance-stairs.jpg",
       link: "#rooms-section",
       cta: "Explore Rooms",
     },
@@ -21,7 +21,7 @@ export function HotelOfferings() {
       description:
         "Enjoy delicious dining in a welcoming atmosphere with bespoke gourmet and world menus.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBltlRBJhKLhy-AivAculdkLiCam78vXpZmkKtpInFuXMpnjAUQJR110Oq-VlrrfQQPMN2CAddiUGd4wVkouLjTbS9n3db_JbHWXQNJccgMLQKede-AyLL4tG-zPgcbrNEnVyjk7XlxjPt7qHvUQLt2LRzUzUlkZ2wXRYu8HXgtj9Fvzhk9TS-wV-eTr7BtAsYwa4ItpNUcF0y-9VT4tzNg7T7frSMzYuQDwbJY88w",
+        "/images/hotel-banquet-ballroom-04.jpg",
       link: "#dining-section",
       cta: "Explore Restaurant",
     },
@@ -31,7 +31,7 @@ export function HotelOfferings() {
       description:
         "Beautiful spaces for weddings, parties and special occasions with 400+ guest capacity.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuA87fG2-ujkmpzUB0-MGWWOUkySHDTS4WxmaEL7m2vBxOEu9tEnbrge6btcZvEByl04ypiObDM6nUwF-PgtM265RR8toBWgFogeKmHhcSKnf6XcpTMeuhY10Tdlwp0QEHY4Ddrb1d8hGhaNBziKldVmmxYYKAKiJp7Q69xhWBuFUhXZWtrzVhyjwBS2cnsw3C5gAl8Qpux3HenizfW56cLrvZaYWETmM7X8eFKd9GE",
+        "/images/hotel-banquet-wedding-stage.jpg",
       link: "#banquet-section",
       cta: "Explore Banquets",
     },
@@ -41,7 +41,7 @@ export function HotelOfferings() {
       description:
         "Spacious open lawn and hospitality for memorable gatherings of 800+ distinguished guests.",
       image:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDD_W-YBdS0DRRCoF61flrcEtWBn4Tmy6cfpWFsAHsYag-OeP_SFxa9SiU8Y1ChNBntkD1sAVsDn6cdHlaJNV0Cjwbm0BW2_wxb3XXyezmPLL1148wGh676wQtHnXCTSbG6xUQK8CkBX6Fog65SBbapf0s6JFrQRk-6tSFeEykx0NgDC4xnagm3avtjOHlnUXl00fNwyd2wqVxN68eTJQHcowtUK1k4A4c4xvHgIqI",
+        "/images/hotel-banquet-ballroom-05.jpg",
       link: "#banquet-section",
       cta: "Discover Events",
     },
