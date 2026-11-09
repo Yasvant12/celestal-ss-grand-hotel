@@ -45,14 +45,13 @@ export function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#0d1115]/25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1115]/75 via-[#0d1115]/30 to-[#0d1115]/75" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(198,165,92,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1115]/70 via-[#0d1115]/25 to-[#0d1115]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1115]/45 via-transparent to-[#0d1115]/15" />
       </div>
 
-      <div className="relative z-10 site-container flex min-h-[420px] flex-col justify-end pb-12 pt-8 sm:min-h-[460px] sm:pb-16 sm:pt-12 md:min-h-[500px] md:pb-20 lg:min-h-[560px] lg:pt-14">
+      <div className="relative z-10 site-container flex min-h-[820px] flex-col justify-end pb-12 pt-8 sm:min-h-[760px] sm:pb-16 sm:pt-12 md:min-h-[700px] md:pb-20 lg:min-h-[640px] lg:pt-14">
         {breadcrumb && breadcrumb.length > 0 && (
           <motion.nav
             aria-label="Breadcrumb"
@@ -135,4 +134,3 @@ export function PageHero({
     </section>
   );
 }
-

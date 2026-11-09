@@ -1,15 +1,8 @@
-/** Homepage hero background. Inner-page heroes should still use this as the default fallback asset. */
-export const HERO_BACKGROUND_IMAGES = [
-  "/images/hotel-exterior-front-elevation.jpg",
-  "/images/hotel-banquet-night-hero.png",
-] as const;
+/** Official Celestal SS Grand Hotel hero image shared by every page. */
+export const HERO_BACKGROUND_IMAGE = "/images/celestal-ss-grand-hero.webp";
 
-export const HERO_BACKGROUND_IMAGE = HERO_BACKGROUND_IMAGES[0];
-
-export function getHeroBackgroundImageForPage(pageKey: string = "home") {
-  const normalized = (pageKey || "home").toLowerCase();
-  const hash = [...normalized].reduce((total, char) => total + char.charCodeAt(0), 0);
-  return HERO_BACKGROUND_IMAGES[Math.abs(hash) % HERO_BACKGROUND_IMAGES.length];
+export function getHeroBackgroundImageForPage(_pageKey: string = "home") {
+  return HERO_BACKGROUND_IMAGE;
 }
 
 export const HOTEL_INFO = {

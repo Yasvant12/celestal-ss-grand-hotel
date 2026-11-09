@@ -80,36 +80,7 @@ export function HeritageSection() {
               </div>
 
               {/* Bottom Left Image */}
-              <div className="overflow-hidden rounded-xl shadow-md relative group">
-                <div
-                  className="w-full h-56 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url('${lawnImg}')` }}
-                  aria-label="Celebration Lawn"
-                />
-                <div className="absolute bottom-3 left-3 px-3 py-1 rounded bg-noir-charcoal/80 text-surface-ivory font-label-compact text-label-compact backdrop-blur-sm">
-                  Celebration Lawn (800+)
-                </div>
-              </div>
-
-              {/* Bottom Right Stats Card */}
-              <div className="rounded-xl bg-surface-champagne p-space-lg flex flex-col justify-center gap-space-sm shadow-md border border-surface-container-highest/40 hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
-                  <span className="material-symbols-outlined text-[26px]">stars</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface">
-                  Royal Standard of Ashiyana
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Dedicated in-house event planning, customized multi-cuisine chef banquets, state-of-the-art climate control, and complete guest safety.
-                </p>
-                <a
-                  href="#inquiry-form-section"
-                  className="pt-2 flex items-center gap-2 text-primary font-label-button text-label-button uppercase hover:text-gold-deep transition-colors"
-                >
-                  <span>View Full Brochure</span>
-                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                </a>
-              </div>
+             
             </div>
           </motion.div>
         </div>
