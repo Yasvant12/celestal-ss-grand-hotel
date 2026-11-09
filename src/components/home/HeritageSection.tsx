@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 export function HeritageSection() {
   const shouldReduceMotion = useReducedMotion();
   const ballroomImg = "/images/hotel-banquet-ballroom-01.jpg";
-  const lawnImg = "/images/hotel-banquet-ballroom-05.jpg";
 
   return (
     <section className="w-full py-space-3xl bg-surface overflow-hidden">

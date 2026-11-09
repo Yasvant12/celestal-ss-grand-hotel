@@ -1,8 +1,9 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
-import { FloatingAvailabilityBar } from "@/components/home/FloatingAvailabilityBar";
+import { HomeHighlightsSection } from "@/components/home/HomeHighlightsSection";
 import { HeritageSection } from "@/components/home/HeritageSection";
+import { ReceptionSection } from "@/components/home/ReceptionSection";
 import { VenuesSection } from "@/components/home/VenuesSection";
 import { FacilitiesSection } from "@/components/home/FacilitiesSection";
 import { InquirySection } from "@/components/home/InquirySection";
@@ -19,11 +20,13 @@ export default function HomePage() {
           {/* 1. Full-Width Cinematic Hero Section */}
           <HeroSection />
 
-          {/* 2. Floating Availability Bar (Overlapping Hero) */}
-          {/* <FloatingAvailabilityBar /> */}
+          <HomeHighlightsSection />
 
           {/* 3. Welcome & Heritage Section */}
           <HeritageSection />
+
+          {/* Reception image placeholder until the official photo is provided */}
+          <ReceptionSection />
 
           {/* 4. Signature Venues & Accommodations Showcase Grid */}
           <VenuesSection />

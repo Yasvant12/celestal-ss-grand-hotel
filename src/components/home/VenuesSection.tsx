@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 export function VenuesSection() {
   const shouldReduceMotion = useReducedMotion();
   const banquetHallImg = "/images/hotel-banquet-ballroom-03.jpg";
-  const lawnImg = "/images/hotel-banquet-wedding-stage.jpg";
+  const lawnImg = "/images/hotel-open-lawn.webp";
   const roomsImg = "/images/hotel-front-entrance-stairs.jpg";
   const diningImg = "/images/hotel-front-entrance-foyer.jpg";
 

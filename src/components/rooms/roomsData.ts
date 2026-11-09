@@ -64,8 +64,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       "Tailored for discerning business travellers and weekend getaways, offering seamless connectivity, expansive dressing wardrobe, and tailored turndown amenities.",
     description:
       "Tailored specifically for discerning corporate professionals and weekend guests seeking seamless efficiency without sacrificing residential warmth. Features an ergonomic solid-walnut work desk, high-speed fiber data ports, a 55\" Smart UHD display, and tailored evening turndown service.",
-    heroImage:
-      "/images/hotel-banquet-ballroom-01.jpg",
+    heroImage: "",
     quickFeatures: ["Fiber Wi-Fi", "55\" Smart UHD TV", "24/7 Dining", "Express Pressing"],
     amenities: [
       { icon: "desk", title: "Ergonomic Executive Desk", desc: "Crafted solid walnut with integrated USB/HDMI" },
@@ -77,19 +76,9 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     ],
     images: [
       {
-        src: "/images/hotel-front-entrance-foyer.jpg",
-        label: "King Bed & Executive Workspace",
-        caption: "Ergonomic walnut desk, tailored upholstered headboard, and warm ambient task lighting.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-02.jpg",
-        label: "Panoramic Window & Lounge",
-        caption: "Double acoustic glazed viewing window with motorized privacy sheers and daybed seating.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-03.jpg",
-        label: "En-Suite Stone Bathroom",
-        caption: "Clean geometric lines with backlit vanity mirror and high-pressure rainfall shower.",
+        src: "",
+        label: "Verified room photograph pending",
+        caption: "An actual room photograph has not been provided yet.",
       },
     ],
     floorplan: {
@@ -122,8 +111,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       "Tranquil room overlooking landscaped courtyards, flooded with natural daylight and crafted with soothing neutral tones and acoustic glazing.",
     description:
       "Overlooking manicured botanical courtyards with sunlit glass apertures, this tranquil sanctuary embraces natural daylight, warm Scandinavian-inspired neutral timbers, and soothing linen finishes. Designed for restful getaways and quiet morning contemplation.",
-    heroImage:
-      "/images/hotel-banquet-ballroom-04.jpg",
+    heroImage: "",
     quickFeatures: ["Patio Vista", "Rain Shower", "Artisanal Tea Bar", "Climate Control"],
     amenities: [
       { icon: "deck", title: "Garden Patio Aperture", desc: "Direct view to private landscaped greenery" },
@@ -135,19 +123,9 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     ],
     images: [
       {
-        src: "/images/hotel-front-entrance-stairs.jpg",
-        label: "Garden Courtyard Bedroom",
-        caption: "Crisp linen bedding bathed in morning daylight filtering from the courtyard patio.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-01.jpg",
-        label: "Private Greenery Outlook",
-        caption: "Acoustic glass panels framing lush foliage and landscaped outdoor water feature.",
-      },
-      {
-        src: "/images/hotel-front-entrance-foyer.jpg",
-        label: "Timber Vanity & Bathroom",
-        caption: "Minimalist natural timber shelving and pressurized rainforest shower column.",
+        src: "",
+        label: "Verified room photograph pending",
+        caption: "An actual room photograph has not been provided yet.",
       },
     ],
     floorplan: {
@@ -163,4 +141,3 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     },
   },
 };
-

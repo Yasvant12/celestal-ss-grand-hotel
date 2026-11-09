@@ -39,14 +39,12 @@ export function ServicesGalleryModal({
   );
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, handleKeyDown]);
@@ -63,7 +61,7 @@ export function ServicesGalleryModal({
       role="dialog"
       aria-modal="true"
       aria-label={`Photo gallery for ${currentService.title}`}
-      className="fixed inset-0 z-[10000] bg-[#111827]/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 md:p-8 overflow-y-auto animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100000] flex h-dvh flex-col justify-between overflow-hidden bg-[#111827]/95 p-2 backdrop-blur-md animate-in fade-in duration-200 sm:p-4 md:p-6"
     >
       {/* 1. Top Modal Bar */}
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between pb-3 sm:pb-4 border-b border-stone-700/60 shrink-0">
@@ -118,7 +116,7 @@ export function ServicesGalleryModal({
       </div>
 
       {/* 3. Main Stage (Large Image & Navigation Controls) */}
-      <div className="relative w-full max-w-7xl mx-auto flex-1 flex items-center justify-center my-2 min-h-[300px] sm:min-h-[400px] max-h-[560px]">
+      <div className="relative my-2 mx-auto flex min-h-0 w-full max-w-7xl flex-1 items-center justify-center">
         {/* Previous Button */}
         <button
           onClick={onPrevPhoto}
@@ -131,7 +129,7 @@ export function ServicesGalleryModal({
         </button>
 
         {/* Central Active Image Container */}
-        <div className="relative w-full h-full max-h-[540px] bg-[#111827] rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border border-white/10">
+        <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10 bg-[#111827] shadow-2xl">
           <Image
             src={currentPhoto.src}
             alt={currentPhoto.alt}
@@ -208,4 +206,3 @@ export function ServicesGalleryModal({
     </div>
   );
 }
-

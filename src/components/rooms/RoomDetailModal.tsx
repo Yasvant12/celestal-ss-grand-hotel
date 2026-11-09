@@ -14,6 +14,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
+import { RoomImagePlaceholder } from "./RoomImagePlaceholder";
 
 export interface RoomDetailModalProps {
   isOpen: boolean;
@@ -52,12 +53,16 @@ export function RoomDetailModal({
 
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
+      const previousOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+        document.body.style.overflow = previousOverflow;
+      };
     }
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "auto";
     };
   }, [isOpen, activeTab, currentImageIndex]);
 
@@ -75,7 +80,7 @@ export function RoomDetailModal({
   };
 
   return (
-    <div className="fixed inset-0 z-[10000] bg-noir-charcoal/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[100000] bg-noir-charcoal/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       <div
         className="bg-surface-container-lowest border border-[#B38728]/40 rounded-2xl max-w-6xl w-full shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
@@ -145,14 +150,20 @@ export function RoomDetailModal({
               /* VIEW 1: IMAGE CAROUSEL TAB */
               <div className="flex flex-col h-full justify-between">
                 <div className="relative w-full flex-1 min-h-[280px] sm:min-h-[340px] max-h-[420px] rounded-xl overflow-hidden bg-noir-charcoal flex items-center justify-center group shadow-inner">
-                  <Image
-                    src={currentImage.src}
-                    alt={currentImage.label}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-cover transition-opacity duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/90 via-transparent to-noir-charcoal/30 pointer-events-none" />
+                  {currentImage.src ? (
+                    <>
+                      <Image
+                        src={currentImage.src}
+                        alt={currentImage.label}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="object-contain transition-opacity duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/70 via-transparent to-transparent pointer-events-none" />
+                    </>
+                  ) : (
+                    <RoomImagePlaceholder roomName={suite.name} />
+                  )}
 
                   {/* Top Indicator Badge */}
                   <div className="absolute top-4 left-4 bg-noir-charcoal/85 backdrop-blur-md px-3 py-1 rounded-md text-surface-container-lowest font-label-compact text-xs tracking-wider border border-white/10">
@@ -207,13 +218,17 @@ export function RoomDetailModal({
                             : "border-transparent opacity-60 hover:opacity-100"
                         }`}
                       >
-                        <Image
-                          src={img.src}
-                          alt={img.label}
-                          fill
-                          sizes="80px"
-                          className="object-cover"
-                        />
+                        {img.src ? (
+                          <Image
+                            src={img.src}
+                            alt={img.label}
+                            fill
+                            sizes="80px"
+                            className="object-contain"
+                          />
+                        ) : (
+                          <RoomImagePlaceholder roomName={suite.name} compact />
+                        )}
                       </button>
                     ))}
                   </div>
@@ -550,4 +565,3 @@ export function RoomDetailModal({
     </div>
   );
 }
-

@@ -3,11 +3,9 @@
 import { motion } from "framer-motion";
 import { Wifi, Check, ArrowUpRight } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
+import { RoomImagePlaceholder } from "@/components/rooms/RoomImagePlaceholder";
 
 export function AccommodationFeature() {
-  const roomImage =
-    "/images/hotel-banquet-ballroom-02.jpg";
-
   const roomHighlights = [
     "Bespoke Climate Control",
     "24/7 Dedicated Room Service",
@@ -27,11 +25,7 @@ export function AccommodationFeature() {
           className="lg:col-span-6 relative"
         >
           <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
-            <img
-              src={roomImage}
-              alt="Luxury boutique Suite at Celestal SS Grand Hotel Lucknow"
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            />
+            <RoomImagePlaceholder roomName="guest room" />
           </div>
 
           {/* Floating Pill Card */}
@@ -103,4 +97,3 @@ export function AccommodationFeature() {
     </section>
   );
 }
-

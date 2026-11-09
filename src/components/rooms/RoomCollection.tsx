@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ROOMS_DATA, RoomData } from "./roomsData";
+import { RoomImagePlaceholder } from "./RoomImagePlaceholder";
 import { Eye, Calendar, Wifi, Tv, Utensils, Shirt, Compass, ShowerHead, Coffee, Wind } from "lucide-react";
 
 export interface RoomCollectionProps {
@@ -85,14 +86,20 @@ export function RoomCollection({
             >
               {/* Image Frame */}
               <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-noir-charcoal">
-                <Image
-                  src={room.heroImage}
-                  alt={room.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/75 via-transparent to-transparent" />
+                {room.heroImage ? (
+                  <Image
+                    src={room.heroImage}
+                    alt={room.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                ) : (
+                  <RoomImagePlaceholder roomName={room.name} />
+                )}
+                {room.heroImage && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/75 via-transparent to-transparent" />
+                )}
 
                 {/* Top Category Badge */}
                 <div className="absolute top-4 left-4">
@@ -171,4 +178,3 @@ export function RoomCollection({
     </section>
   );
 }
-

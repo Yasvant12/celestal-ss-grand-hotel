@@ -8,7 +8,7 @@ export function BanquetFeature() {
   const ballroomImage =
     "/images/hotel-banquet-ballroom-01.jpg";
   const lawnImage =
-    "/images/hotel-banquet-wedding-stage.jpg";
+    "/images/hotel-open-lawn.webp";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-noir-charcoal text-surface-ivory relative overflow-hidden" id="banquet-section">
@@ -192,4 +192,3 @@ export function BanquetFeature() {
     </section>
   );
 }
-

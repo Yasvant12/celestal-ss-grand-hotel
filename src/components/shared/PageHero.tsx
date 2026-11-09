@@ -35,23 +35,44 @@ export function PageHero({
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
   const resolvedBackgroundImage = backgroundImage || getHeroBackgroundImageForPage(pageKey);
+  const isHomeHero = pageKey === "home";
 
   return (
-    <section className="relative w-full overflow-hidden bg-noir-charcoal text-surface-container-lowest">
+    <section
+      className={`relative w-full bg-noir-charcoal text-surface-container-lowest ${
+        isHomeHero ? "overflow-clip" : "overflow-hidden"
+      }`}
+    >
       <div className="absolute inset-0 z-0">
-        <Image
-          src={resolvedBackgroundImage}
-          alt="Celestal SS Grand Hotel"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1115]/70 via-[#0d1115]/25 to-[#0d1115]/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1115]/45 via-transparent to-[#0d1115]/15" />
+        {isHomeHero ? (
+          <picture className="absolute inset-0 block">
+            <source
+              media="(max-width: 767px)"
+              srcSet="/images/celestal-ss-grand-hero-mobile.webp"
+            />
+            <img
+              src="/images/celestal-ss-grand-hero-desktop.webp"
+              alt="Celestal SS Grand Hotel exterior"
+              fetchPriority="high"
+              className="h-full w-full object-contain object-center"
+            />
+          </picture>
+        ) : (
+          <Image
+            src={resolvedBackgroundImage}
+            alt="Celestal SS Grand Hotel"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[65%_46%] sm:object-[60%_40%] md:object-[55%_34%] lg:object-[52%_30%] 2xl:object-[50%_18%]"
+          />
+        )}
+        <div className="absolute inset-0 z-[2] bg-[#111827]/40" />
       </div>
 
-      <div className="relative z-10 site-container flex min-h-[820px] flex-col justify-end pb-12 pt-8 sm:min-h-[760px] sm:pb-16 sm:pt-12 md:min-h-[700px] md:pb-20 lg:min-h-[640px] lg:pt-14">
+      <div
+        className="relative z-10 site-container flex h-[max(520px,65svh)] flex-col justify-end py-10 sm:h-[max(540px,66svh)] md:h-[max(560px,68svh)] lg:h-[max(580px,72svh)] 2xl:h-[max(600px,75svh)]"
+      >
         {breadcrumb && breadcrumb.length > 0 && (
           <motion.nav
             aria-label="Breadcrumb"
@@ -83,7 +104,7 @@ export function PageHero({
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col gap-3 lg:col-span-8"
+            className="flex w-full flex-col gap-3 lg:col-span-8 lg:max-w-[980px]"
           >
             {eyebrow && (
               <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3.5 py-1 shadow-sm backdrop-blur-md">
@@ -94,7 +115,9 @@ export function PageHero({
               </div>
             )}
 
-            <h1 className="mt-1 text-3xl font-medium tracking-tight text-surface-container-lowest sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.08]">
+            <h1
+              className="mt-1 max-w-[900px] text-3xl font-medium tracking-tight text-surface-container-lowest drop-shadow-[0_3px_12px_rgba(0,0,0,0.45)] sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.08]"
+            >
               {title}
             </h1>
 
@@ -125,7 +148,7 @@ export function PageHero({
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="mt-8 sm:mt-10"
+            className={isHomeHero ? "mt-5 sm:mt-7" : "mt-8 sm:mt-10"}
           >
             {children}
           </motion.div>

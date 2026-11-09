@@ -36,14 +36,12 @@ export function GalleryLightbox({
   );
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, handleKeyDown]);
@@ -58,7 +56,7 @@ export function GalleryLightbox({
       role="dialog"
       aria-modal="true"
       aria-label={`Visual plate detail: ${plate.title}`}
-      className="fixed inset-0 z-[10000] bg-black/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 lg:p-8 animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100000] flex h-dvh flex-col justify-between overflow-hidden bg-black/95 p-3 backdrop-blur-md animate-in fade-in duration-200 sm:p-6 lg:p-8"
     >
       {/* Top Navigation Bar */}
       <div className="w-full flex items-center justify-between text-[#FAF7F2] z-20">
@@ -83,7 +81,7 @@ export function GalleryLightbox({
       </div>
 
       {/* Centered Stage & Navigation Arrows */}
-      <div className="relative flex-1 flex items-center justify-center w-full my-4 overflow-hidden">
+      <div className="relative my-2 flex min-h-0 w-full flex-1 items-center justify-center overflow-hidden sm:my-4">
         {/* Previous Button */}
         <button
           onClick={onPrev}
@@ -97,7 +95,7 @@ export function GalleryLightbox({
         </button>
 
         {/* Main Stage Image */}
-        <div className="relative max-w-5xl w-full h-[60vh] sm:h-[70vh] flex items-center justify-center">
+        <div className="relative h-full max-h-[calc(100dvh-220px)] w-full max-w-5xl">
           <Image
             src={plate.src}
             alt={plate.alt}
@@ -147,4 +145,3 @@ export function GalleryLightbox({
     </div>
   );
 }
-

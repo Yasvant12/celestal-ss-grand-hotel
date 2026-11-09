@@ -40,8 +40,7 @@ export function HotelOfferings() {
       tag: "Open Lawns",
       description:
         "Spacious open lawn and hospitality for memorable gatherings of 800+ distinguished guests.",
-      image:
-        "/images/hotel-banquet-ballroom-05.jpg",
+      image: "/images/hotel-open-lawn.webp",
       link: "#banquet-section",
       cta: "Discover Events",
     },
@@ -127,4 +126,3 @@ export function HotelOfferings() {
     </section>
   );
 }
-
