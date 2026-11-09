@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Wifi, Check, ArrowUpRight } from "lucide-react";
-import { HOTEL_INFO } from "@/lib/constants";
-import { RoomImagePlaceholder } from "@/components/rooms/RoomImagePlaceholder";
+import { Wifi, Check } from "lucide-react";
 
 export function AccommodationFeature() {
   const roomHighlights = [
@@ -25,7 +25,13 @@ export function AccommodationFeature() {
           className="lg:col-span-6 relative"
         >
           <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
-            <RoomImagePlaceholder roomName="guest room" />
+            <Image
+              src="/images/hotel-room-bedroom-03.jpeg"
+              alt="Single-bed guest room at Celestal SS Grand Hotel"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
 
           {/* Floating Pill Card */}
@@ -85,13 +91,13 @@ export function AccommodationFeature() {
             ))}
           </div>
 
-          <a
-            href={`tel:${HOTEL_INFO.phones.primary}`}
+          <Link
+            href="/rooms"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-on-primary font-label-button text-label-button uppercase tracking-wider shadow-md hover:bg-gold-deep transition-all"
           >
             <span>View Rooms &amp; Suites</span>
             <span className="material-symbols-outlined text-[16px]">north_east</span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

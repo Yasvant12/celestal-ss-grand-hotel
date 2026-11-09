@@ -7,7 +7,6 @@ import { HOTEL_INFO } from "@/lib/constants";
 export function HeroSection() {
   return (
     <PageHero
-      pageKey="home"
       eyebrow={HOTEL_INFO.tagline}
       title={
         <>

@@ -6,7 +6,6 @@ import { HERO_BACKGROUND_IMAGE } from "@/lib/constants";
 export function ServicesHero() {
   return (
     <PageHero
-      pageKey="services"
       eyebrow="Bespoke Concierge • Hospitality & Celebrations"
       title={
         <>

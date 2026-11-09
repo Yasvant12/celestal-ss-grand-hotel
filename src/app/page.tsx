@@ -15,7 +15,7 @@ export default function HomePage() {
       <Header />
 
       {/* Main Content Sections (Responsive padding accounts for fixed header) */}
-      <main className="w-full pt-[116px] md:pt-[132px] bg-surface min-h-[calc(100vh-132px)]">
+      <main className="w-full overflow-x-clip pt-[116px] md:pt-[132px] bg-surface min-h-[calc(100vh-132px)]">
         <div className="flex flex-col w-full">
           {/* 1. Full-Width Cinematic Hero Section */}
           <HeroSection />

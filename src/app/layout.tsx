@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { FirstVisitEnquiryModal } from "@/components/ui/FirstVisitEnquiryModal";
+import { WhatsAppFloating } from "@/components/ui/WhatsAppFloating";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,6 +34,8 @@ export default function RootLayout({
       </head>
       <body className="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
         {children}
+        <WhatsAppFloating />
+        <FirstVisitEnquiryModal />
       </body>
     </html>
   );

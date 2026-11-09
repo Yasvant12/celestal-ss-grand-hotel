@@ -40,6 +40,7 @@ export function ServicesView() {
     const currentService = SERVICES_DATA[activeServiceIndex];
     if (!currentService) return;
     const count = currentService.photos.length;
+    if (count === 0) return;
     setActivePhotoIndex((prev) => (prev + 1) % count);
   };
 
@@ -47,6 +48,7 @@ export function ServicesView() {
     const currentService = SERVICES_DATA[activeServiceIndex];
     if (!currentService) return;
     const count = currentService.photos.length;
+    if (count === 0) return;
     setActivePhotoIndex((prev) => (prev - 1 + count) % count);
   };
 
@@ -96,4 +98,3 @@ export function ServicesView() {
     </div>
   );
 }
-

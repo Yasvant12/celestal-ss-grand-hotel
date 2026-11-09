@@ -11,6 +11,7 @@ interface EventCategory {
   description: string;
   capacity: string;
   image: string;
+  illustrative?: boolean;
 }
 
 const EVENTS: EventCategory[] = [
@@ -20,7 +21,8 @@ const EVENTS: EventCategory[] = [
     title: "Majestic Vows",
     description: "Comprehensive staging for ceremony themes, royal dining banquets, and grand celebratory receptions up to 900 guests.",
     capacity: "Up to 900 Guests",
-    image: "/images/hotel-banquet-wedding-stage.jpg",
+    image: "/images/hotel-banquet-wedding-reception-illustration.png",
+    illustrative: true,
   },
   {
     id: "engagements",
@@ -36,7 +38,8 @@ const EVENTS: EventCategory[] = [
     title: "Milestone Birthdays",
     description: "Contemporary audio setups, DJ console staging, gourmet live stations, and thematic photo installations.",
     capacity: "100 - 300 Guests",
-    image: "/images/hotel-banquet-ballroom-03.jpg",
+    image: "/images/hotel-banquet-birthday-celebration-illustration.png",
+    illustrative: true,
   },
   {
     id: "sangeet",
@@ -44,7 +47,8 @@ const EVENTS: EventCategory[] = [
     title: "Sangeet & Mehendi",
     description: "Spacious open dance floors with high-clarity sound engineering and lounge-style cocktail service.",
     capacity: "200 - 450 Guests",
-    image: "/images/hotel-banquet-ballroom-04.jpg",
+    image: "/images/hotel-banquet-sangeet-mehndi-illustration.png",
+    illustrative: true,
   },
   {
     id: "corporate",
@@ -52,7 +56,8 @@ const EVENTS: EventCategory[] = [
     title: "Corporate Summits",
     description: "Dual-screen projection, digital lecterns, high-speed Wi-Fi, breakout zones, and prompt executive luncheon catering.",
     capacity: "80 - 400 Delegates",
-    image: "/images/hotel-banquet-ballroom-05.jpg",
+    image: "/images/hotel-banquet-corporate-conference-illustration.png",
+    illustrative: true,
   },
   {
     id: "social",
@@ -60,7 +65,8 @@ const EVENTS: EventCategory[] = [
     title: "Social Celebrations",
     description: "Unrushed family reunions, retirement soirees, and sacred anniversaries hosted with attentive warmth.",
     capacity: "100 - 300 Guests",
-    image: "/images/hotel-banquet-ballroom-06.jpg",
+    image: "/images/hotel-banquet-family-reunion-illustration.png",
+    illustrative: true,
   },
 ];
 
@@ -132,6 +138,11 @@ export function BanquetCuratedEvents({ onSelectEventType }: BanquetCuratedEvents
                 <span className="absolute top-4 left-4 bg-surface-ivory/95 text-on-surface font-eyebrow-luxury text-eyebrow-luxury uppercase px-3 py-1 rounded-md shadow-sm border border-stone-200">
                   {event.pill}
                 </span>
+                {event.illustrative && (
+                  <span className="absolute top-4 right-4 bg-noir-charcoal/80 text-white font-eyebrow-luxury text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md shadow-sm">
+                    Illustrative concept
+                  </span>
+                )}
                 <span className="absolute bottom-4 left-4 text-primary-fixed-dim font-headline-sm text-xl text-white font-semibold">
                   {event.title}
                 </span>
@@ -158,4 +169,3 @@ export function BanquetCuratedEvents({ onSelectEventType }: BanquetCuratedEvents
     </section>
   );
 }
-

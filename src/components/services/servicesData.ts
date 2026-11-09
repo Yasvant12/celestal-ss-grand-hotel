@@ -27,24 +27,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "restaurant",
     photos: [
       {
-        src: "/images/hotel-banquet-ballroom-01.jpg",
-        alt: "Fine dining restaurant banquet table setting with silver cutlery and crystal glassware",
-        caption: "Bespoke banquet table settings with fine bone china, silver-tier service, and ambient dinner illumination.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-02.jpg",
-        alt: "Bistro signature cocktail bar with illuminated brass bottle shelves",
-        caption: "Artisan mocktail craft counters and signature hospitality beverage stations.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-03.jpg",
-        alt: "Live chef theatre kitchen station preparing culinary specialties",
-        caption: "Interactive live cooking theatres with dedicated chef stations for customized event menus.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-04.jpg",
-        alt: "Private candlelit dining salon for intimate gatherings",
-        caption: "Exclusive private dining salons accommodating intimate celebratory banquets and family gatherings.",
+        src: "/images/hotel-restaurant-interior-01.jpeg",
+        alt: "Restaurant dining room with tables at Celestal SS Grand Hotel.",
+        caption: "The hotel's restaurant dining room.",
       },
     ],
   },
@@ -59,19 +44,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "celebration",
     photos: [
       {
-        src: "/images/hotel-banquet-wedding-stage.jpg",
-        alt: "Opulent wedding Jaimala stage setup with fresh white and blush flower arches",
-        caption: "Monumental floral stage arches with layered ambient sconce lighting and grand couple banquettes.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-05.jpg",
-        alt: "Lavish matrimonial scenography with cascading orchids and candlelit tiers",
-        caption: "Cascading floral scenography with mirror-finish aisle walks and architectural pillar wash lighting.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-06.jpg",
-        alt: "Grand matrimonial setup inside pillarless ballroom",
-        caption: "Pillarless ballroom integration allowing completely unobstructed sightlines for all wedding attendees.",
+        src: "/images/hotel-banquet-wedding-seating.webp",
+        alt: "Indian wedding ceremony seating arranged in front of a floral Jaimala stage.",
+        caption: "Wedding seating facing a floral stage with a circular Jaimala backdrop.",
       },
     ],
   },
@@ -86,19 +61,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "auto_awesome",
     photos: [
       {
-        src: "/images/hotel-banquet-ballroom-07.jpg",
-        alt: "Grand wedding ballroom decoration with crystal chandeliers and draped ceiling",
-        caption: "Artistic ceiling drapery, imported crystal chandeliers, and gold Chiavari dining arrangements.",
-      },
-      {
-        src: "/images/hotel-front-entrance-stairs.jpg",
-        alt: "Astor Ballroom decorated with ambient warm uplighting and tiered dining",
-        caption: "Warm architectural downlighting and custom floral table scapes for landmark wedding receptions.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-01.jpg",
-        alt: "Pre-function foyer welcoming guests with contemporary sculptural decor",
-        caption: "Double-height pre-function reception area styled for guest greeting, welcome beverages, and photography.",
+        src: "/images/hotel-banquet-wedding-stage.jpg",
+        alt: "Wedding stage with a floral backdrop and decorated couple seating.",
+        caption: "A decorated wedding stage arranged for a celebration at the hotel.",
       },
     ],
   },
@@ -111,18 +76,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Classical symphony ensembles, contemporary fusion bands, acoustic stage sound checks, and tailor-made celebratory setlists.",
     desc: "Elevate your celebrations with handpicked live acoustic artists, instrumental quartets, and celebratory musical ensembles tailored to your event timeline.",
     icon: "music_note",
-    photos: [
-      {
-        src: "/images/hotel-banquet-ballroom-02.jpg",
-        alt: "Live wedding musical band performing on a luxury hotel stage",
-        caption: "Acoustic live music ensembles with professional stage acoustics and warm spotlighting.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-03.jpg",
-        alt: "Musical concert arena with dynamic stage illumination",
-        caption: "Full concert sound engineering and synchronized stage beam lighting for high-energy celebratory evenings.",
-      },
-    ],
+    photos: [],
   },
   {
     id: 4,
@@ -133,18 +87,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Celebrity and resident DJs, concert-grade line array audio, 4K curved LED walls, and synchronized intelligent beam lighting.",
     desc: "Complete club-grade and celebratory acoustic systems with dual digital mixers, bass subwoofers, moving head lighting fixtures, and dedicated dance floor installations.",
     icon: "graphic_eq",
-    photos: [
-      {
-        src: "/images/hotel-banquet-ballroom-04.jpg",
-        alt: "Hotel event DJ booth with professional audio mixers and architectural lighting",
-        caption: "Concert line-array audio, professional DJ mixing consoles, and intelligent moving beam heads.",
-      },
-      {
-        src: "/images/hotel-banquet-wedding-stage.jpg",
-        alt: "Celebration dance floor with synchronized lighting",
-        caption: "High-octane Sangeet and reception dance floor setup with soundproofed perimeter acoustics.",
-      },
-    ],
+    photos: [],
   },
   {
     id: 5,
@@ -155,23 +98,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Weather-protected double-height porte-cochère, 150+ vehicle capacity, computerized digital tagging, and 24/7 monitored CCTV.",
     desc: "Ensure seamless arrival for every dignitary and attendee. Our uniformed valet personnel manage guest car drop-off, retrieval, and dedicated security coordination under an architectural canopy.",
     icon: "local_parking",
-    photos: [
-      {
-        src: "/images/hotel-banquet-ballroom-05.jpg",
-        alt: "Grand arrival portico with uniformed valet attendant opening car door",
-        caption: "Uniformed valet attendants providing warm personalized arrival assistance for every guest.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-06.jpg",
-        alt: "Illuminated porte-cochere canopy with reflections",
-        caption: "Grand illuminated porte-cochère with sheltered weather-protected arrival and dedicated lanes.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-07.jpg",
-        alt: "Portico canopy welcoming guests at dusk",
-        caption: "24/7 dedicated porter desk and secure monitored parking for up to 150+ vehicles.",
-      },
-    ],
+    photos: [],
   },
   {
     id: 6,
@@ -184,19 +111,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "manage_accounts",
     photos: [
       {
-        src: "/images/hotel-front-entrance-stairs.jpg",
-        alt: "Event coordinator and concierge team discussing celebration itinerary with hosts",
-        caption: "Dedicated Event Directors reviewing every milestone detail with family hosts.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-01.jpg",
-        alt: "The Conclave Boardroom for planning and coordinator meetings",
-        caption: "Private planning boardrooms equipped for pre-event reviews, AV rehearsals, and vendor alignment.",
-      },
-      {
-        src: "/images/hotel-banquet-ballroom-02.jpg",
-        alt: "Grand staircase connecting lobby to ballroom mezzanine",
-        caption: "Photogenic grand staircase designed for dramatic couple entrances and celebratory processions.",
+        src: "/images/hotel-open-lawn-celebration.png",
+        alt: "Outdoor celebration in the hotel lawn with a lit venue and event catering setup.",
+        caption: "A nighttime outdoor celebration with event seating and catering at the hotel.",
       },
     ],
   },
@@ -228,4 +145,3 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
   },
 ];
-

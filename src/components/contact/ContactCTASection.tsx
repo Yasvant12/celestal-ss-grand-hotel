@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Phone, MessageCircle, Mail } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
 
 export function ContactCTASection() {
@@ -52,7 +52,7 @@ export function ContactCTASection() {
             {/* WhatsApp Us */}
             <a
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] text-white hover:opacity-90 font-label-button text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all"
-              href={`${HOTEL_INFO.whatsappUrl}&text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20connect%20with%20Concierge.`}
+              href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20connect%20with%20Concierge.`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -60,13 +60,13 @@ export function ContactCTASection() {
               <span>WhatsApp Us</span>
             </a>
 
-            {/* Send an Enquiry */}
+            {/* Enquire by Phone */}
             <a
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-on-primary hover:bg-gold-deep font-label-button text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition-all"
-              href="#enquiry-form"
+              href={`tel:${HOTEL_INFO.phones.primary}`}
             >
-              <Mail className="w-4 h-4 text-white" />
-              <span>Send an Enquiry</span>
+              <Phone className="w-4 h-4 text-white" />
+              <span>Enquire by Phone</span>
             </a>
           </div>
         </motion.div>
@@ -74,4 +74,3 @@ export function ContactCTASection() {
     </section>
   );
 }
-

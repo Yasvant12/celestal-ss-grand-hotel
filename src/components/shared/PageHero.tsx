@@ -19,7 +19,6 @@ export interface PageHeroProps {
   conciergeBadge?: boolean;
   badgeText?: string;
   children?: React.ReactNode;
-  pageKey?: string;
 }
 
 export function PageHero({
@@ -31,42 +30,21 @@ export function PageHero({
   conciergeBadge = true,
   badgeText = "Reservations Desk",
   children,
-  pageKey = "page",
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
-  const resolvedBackgroundImage = backgroundImage || getHeroBackgroundImageForPage(pageKey);
-  const isHomeHero = pageKey === "home";
+  const resolvedBackgroundImage = backgroundImage || getHeroBackgroundImageForPage();
 
   return (
-    <section
-      className={`relative w-full bg-noir-charcoal text-surface-container-lowest ${
-        isHomeHero ? "overflow-clip" : "overflow-hidden"
-      }`}
-    >
+    <section className="relative w-full overflow-hidden bg-noir-charcoal text-surface-container-lowest">
       <div className="absolute inset-0 z-0">
-        {isHomeHero ? (
-          <picture className="absolute inset-0 block">
-            <source
-              media="(max-width: 767px)"
-              srcSet="/images/celestal-ss-grand-hero-mobile.webp"
-            />
-            <img
-              src="/images/celestal-ss-grand-hero-desktop.webp"
-              alt="Celestal SS Grand Hotel exterior"
-              fetchPriority="high"
-              className="h-full w-full object-contain object-center"
-            />
-          </picture>
-        ) : (
-          <Image
-            src={resolvedBackgroundImage}
-            alt="Celestal SS Grand Hotel"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[65%_46%] sm:object-[60%_40%] md:object-[55%_34%] lg:object-[52%_30%] 2xl:object-[50%_18%]"
-          />
-        )}
+        <Image
+          src={resolvedBackgroundImage}
+          alt="Celestal SS Grand Hotel exterior"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[65%_46%] sm:object-[60%_40%] md:object-[55%_34%] lg:object-[52%_30%] 2xl:object-[50%_18%]"
+        />
         <div className="absolute inset-0 z-[2] bg-[#111827]/40" />
       </div>
 
@@ -148,7 +126,7 @@ export function PageHero({
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className={isHomeHero ? "mt-5 sm:mt-7" : "mt-8 sm:mt-10"}
+            className="mt-8 sm:mt-10"
           >
             {children}
           </motion.div>

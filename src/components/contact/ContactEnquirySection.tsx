@@ -90,6 +90,7 @@ export function ContactEnquirySection() {
           data.message || "Failed to submit enquiry. Please call our concierge desk directly."
         );
       }
+
     } catch {
       setSubmitStatus("error");
       setErrorMessage("Network connection issue. Please try again or reach out on WhatsApp.");
@@ -168,7 +169,7 @@ export function ContactEnquirySection() {
             {/* WhatsApp Direct Chat Badge */}
             <a
               className="flex items-center justify-between p-4 sm:p-5 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-all group border border-stone-200/90 hover:border-[#25D366]/50"
-              href={`${HOTEL_INFO.whatsappUrl}&text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry.`}
+              href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry.`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -457,4 +458,3 @@ export function ContactEnquirySection() {
     </section>
   );
 }
-

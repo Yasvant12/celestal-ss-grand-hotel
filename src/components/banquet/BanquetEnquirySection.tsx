@@ -142,16 +142,16 @@ export function BanquetEnquirySection({
                       Direct Banquet Desk
                     </span>
                     <a
-                      href="tel:+917054250911"
+                      href={`tel:${HOTEL_INFO.phones.primary}`}
                       className="font-title-editorial text-base text-on-primary hover:text-primary-fixed-dim transition-colors"
                     >
-                      +91 70542 50911
+                      {HOTEL_INFO.phones.primary}
                     </a>
                     <a
-                      href="tel:+917054250912"
+                      href={`tel:${HOTEL_INFO.phones.weddingDesk}`}
                       className="font-body-sm text-body-sm text-secondary-fixed hover:text-primary-fixed-dim transition-colors"
                     >
-                      +91 70542 50912
+                      {HOTEL_INFO.phones.weddingDesk}
                     </a>
                   </div>
                 </div>

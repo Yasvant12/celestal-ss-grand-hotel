@@ -6,6 +6,11 @@ import { HOTEL_INFO } from "@/lib/constants";
 
 export function ContactInfoCards() {
   const shouldReduceMotion = useReducedMotion();
+  const contactNumbers = [
+    { label: "Front Desk & Rooms:", number: HOTEL_INFO.phones.primary },
+    { label: "Banquet & Events:", number: HOTEL_INFO.phones.weddingDesk },
+    { label: "Lawns & Catering:", number: HOTEL_INFO.phones.lawnsCatering },
+  ];
 
   const cards = [
     {
@@ -16,9 +21,7 @@ export function ContactInfoCards() {
         "Visit us and experience the hospitality of CELESTAL SS GRAND HOTEL in the heart of modern Lucknow.",
       detailNode: (
         <p className="font-body-sm text-sm font-semibold text-stone-800 mb-6 leading-relaxed">
-          CC-4, Sector-M, Near Ashiyana Power House,
-          <br />
-          LDA Colony, Ashiyana, Lucknow – 226012
+          {HOTEL_INFO.address}
         </p>
       ),
       actionText: "Get Directions",
@@ -34,24 +37,16 @@ export function ContactInfoCards() {
         "Our guest relations team is available around the clock to assist you with inquiries and reservations.",
       detailNode: (
         <div className="space-y-2 mb-6">
-          <a
-            href={`tel:${HOTEL_INFO.phones.primary}`}
-            className="flex items-center justify-between text-sm text-stone-800 hover:text-primary transition-colors py-1 border-b border-stone-100"
-          >
-            <span className="font-medium text-stone-600">Front Desk &amp; Rooms:</span>
-            <span className="font-bold tracking-tight text-primary">
-              {HOTEL_INFO.phones.primary}
-            </span>
-          </a>
-          <a
-            href={`tel:${HOTEL_INFO.phones.weddingDesk}`}
-            className="flex items-center justify-between text-sm text-stone-800 hover:text-primary transition-colors py-1"
-          >
-            <span className="font-medium text-stone-600">Banquet &amp; Events:</span>
-            <span className="font-bold tracking-tight text-primary">
-              {HOTEL_INFO.phones.weddingDesk}
-            </span>
-          </a>
+          {contactNumbers.map(({ label, number }) => (
+            <a
+              key={label}
+              href={`tel:${number}`}
+              className="flex items-center justify-between gap-2 text-sm text-stone-800 hover:text-primary transition-colors py-1 border-b border-stone-100 last:border-b-0"
+            >
+              <span className="font-medium text-stone-600">{label}</span>
+              <span className="font-bold tracking-tight text-primary">{number}</span>
+            </a>
+          ))}
         </div>
       ),
       actionText: "Connect Direct",
@@ -147,4 +142,3 @@ export function ContactInfoCards() {
     </section>
   );
 }
-

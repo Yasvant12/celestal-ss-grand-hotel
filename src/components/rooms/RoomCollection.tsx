@@ -4,17 +4,16 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ROOMS_DATA, RoomData } from "./roomsData";
 import { RoomImagePlaceholder } from "./RoomImagePlaceholder";
-import { Eye, Calendar, Wifi, Tv, Utensils, Shirt, Compass, ShowerHead, Coffee, Wind } from "lucide-react";
+import { Eye, Phone, Wifi, Tv, Utensils, Shirt, Compass, ShowerHead, Coffee, Wind } from "lucide-react";
+import { HOTEL_INFO } from "@/lib/constants";
 
 export interface RoomCollectionProps {
   activeFilter: "all" | "executive" | "courtyard";
-  onOpenEnquiry: (suiteName: string) => void;
   onOpenDetail: (suiteId: string, defaultTab?: "gallery" | "floorplan") => void;
 }
 
 export function RoomCollection({
   activeFilter,
-  onOpenEnquiry,
   onOpenDetail,
 }: RoomCollectionProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -152,14 +151,13 @@ export function RoomCollection({
 
                 {/* Action Buttons */}
                 <div className="pt-6 mt-4 border-t border-stone-100 flex items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => onOpenEnquiry(room.name)}
+                  <a
+                    href={`tel:${HOTEL_INFO.phones.primary}`}
                     className="flex-1 py-3 px-4 bg-primary hover:bg-gold-deep text-on-primary font-label-button text-xs font-bold uppercase tracking-wider rounded-xl transition-all text-center shadow-md flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <Calendar className="w-4 h-4" />
-                    <span>Enquire Now</span>
-                  </button>
+                    <Phone className="w-4 h-4" />
+                    <span>Call to Enquire</span>
+                  </a>
 
                   <button
                     type="button"

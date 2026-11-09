@@ -8,7 +8,7 @@ export function AboutIntroduction() {
   const mainImage =
     "/images/hotel-banquet-ballroom-01.jpg";
   const secondaryImage =
-    "/images/hotel-front-entrance-foyer.jpg";
+    "/images/hotel-corridor-01.jpeg";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-surface" id="intro-section">
@@ -23,20 +23,24 @@ export function AboutIntroduction() {
         >
           {/* Main Photo Frame */}
           <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
-            <img
+            <Image
               src={mainImage}
               alt="Celestal SS Grand Hotel Grand Ballroom configured for elegant banquet celebration"
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
           {/* Overlapping Secondary Photo Frame */}
           <div className="absolute -bottom-4 right-0 w-3/5 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-surface-ivory p-2 -mt-16">
-            <div className="w-full h-full rounded-xl overflow-hidden bg-noir-charcoal">
-              <img
+            <div className="relative w-full h-full rounded-xl overflow-hidden bg-noir-charcoal">
+              <Image
                 src={secondaryImage}
-                alt="Celestal SS Grand Hotel Executive Suite with plush bed and bespoke finishes"
-                className="w-full h-full object-cover"
+                alt="Hotel corridor outside guest rooms at Celestal SS Grand Hotel"
+                fill
+                sizes="(max-width: 1024px) 60vw, 30vw"
+                className="object-cover"
               />
             </div>
           </div>
@@ -113,4 +117,3 @@ export function AboutIntroduction() {
     </section>
   );
 }
-

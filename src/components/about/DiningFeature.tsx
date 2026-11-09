@@ -1,12 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Utensils, Flame, ArrowRight } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
 
 export function DiningFeature() {
-  const diningImage =
-    "/images/hotel-banquet-ballroom-04.jpg";
+  const diningImage = "/images/hotel-restaurant-dining-table.png";
 
   return (
     <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-surface" id="dining-section">
@@ -83,10 +83,12 @@ export function DiningFeature() {
           className="lg:col-span-6 relative order-1 lg:order-2"
         >
           <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
-            <img
+            <Image
               src={diningImage}
               alt="Artisanal multi-cuisine dining experience at Celestal SS Grand Hotel Lucknow"
-              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
 
@@ -103,4 +105,3 @@ export function DiningFeature() {
     </section>
   );
 }
-

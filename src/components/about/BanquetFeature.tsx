@@ -171,13 +171,13 @@ export function BanquetFeature() {
 
       {/* Dual CTAs */}
       <div className="site-container flex flex-wrap items-center justify-center gap-6">
-        <a
+        {/* <a
           href={`tel:${HOTEL_INFO.phones.weddingDesk}`}
           className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-on-primary font-label-button text-label-button uppercase tracking-wider shadow-xl hover:bg-gold-deep transition-all font-semibold"
         >
           <span>Explore Banquet Halls</span>
           <Calendar className="w-4 h-4" />
-        </a>
+        </a> */}
 
         <a
           href={HOTEL_INFO.whatsappUrl}

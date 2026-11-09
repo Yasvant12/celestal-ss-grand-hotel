@@ -1,7 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { GALLERY_CATEGORIES } from "./galleryData";
+import { GALLERY_CATEGORIES, GALLERY_PLATES } from "./galleryData";
 
 interface GalleryHeroProps {
   activeCategory: string;
@@ -14,7 +14,6 @@ export function GalleryHero({
 }: GalleryHeroProps) {
   return (
     <PageHero
-      pageKey="gallery"
       eyebrow="Visual Chronicles & Spaces"
       title={
         <>
@@ -23,7 +22,7 @@ export function GalleryHero({
       }
       subtitle="Discover the spaces, experiences, and moments that make every stay special. An intimate visual journey through contemporary architecture, grand celebratory sanctuaries, and artisanal culinary art."
       breadcrumb={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
-      badgeText="Curated Archive (48 Photographs)"
+      badgeText={`Curated Archive (${GALLERY_PLATES.length} Photographs)`}
     >
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {GALLERY_CATEGORIES.map((cat) => {
@@ -46,4 +45,3 @@ export function GalleryHero({
     </PageHero>
   );
 }
-

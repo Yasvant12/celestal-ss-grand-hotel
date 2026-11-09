@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { SERVICES_DATA, ServiceItem } from "./servicesData";
+import { SERVICES_DATA } from "./servicesData";
+import { ServiceImagePlaceholder } from "./ServiceImagePlaceholder";
 
 interface ServicesGridProps {
   onOpenGallery: (serviceId: number) => void;
@@ -22,7 +23,7 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
             </h2>
           </div>
           <p className="font-label-compact text-xs sm:text-sm text-stone-500 max-w-sm md:text-right">
-            Click any card to launch the comprehensive high-resolution photo archive and technical specifications.
+            Explore each service gallery, or view a placeholder while verified photographs are being prepared.
           </p>
         </div>
 
@@ -39,27 +40,35 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
                 className="group cursor-pointer bg-white rounded-xl border border-stone-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
               >
                 {/* Image Container */}
-                <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#111827]">
-                  <Image
-                    src={coverPhoto.src}
-                    alt={coverPhoto.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/85 via-transparent to-transparent" />
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#111827]">
+                  {coverPhoto ? (
+                    <>
+                      <Image
+                        src={coverPhoto.src}
+                        alt={coverPhoto.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/85 via-transparent to-transparent" />
+                    </>
+                  ) : (
+                    <ServiceImagePlaceholder serviceTitle={service.title} />
+                  )}
 
-                  {/* Real Photo Count Badge */}
                   <span className="absolute top-3 left-3 px-2.5 py-1 bg-[#111827]/85 backdrop-blur-md rounded font-eyebrow-luxury text-[10px] text-[#E8D3A2] uppercase tracking-wider border border-[#B38728]/40 shadow-sm">
-                    {realPhotoCount} Photos
+                    {realPhotoCount > 0
+                      ? `${realPhotoCount} ${realPhotoCount === 1 ? "Photo" : "Photos"}`
+                      : "Photos Coming Soon"}
                   </span>
 
-                  {/* Hover Eye Icon */}
-                  <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#7a5508] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                    <span className="material-symbols-outlined text-[16px]">
-                      visibility
-                    </span>
-                  </div>
+                  {coverPhoto && (
+                    <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#7a5508] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                      <span className="material-symbols-outlined text-[16px]">
+                        visibility
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Body */}
@@ -84,7 +93,7 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
                       <span className="material-symbols-outlined text-[15px]">
                         photo_library
                       </span>
-                      <span>View Photo Gallery</span>
+                      <span>{realPhotoCount > 0 ? "View Photo Gallery" : "View Service Details"}</span>
                     </button>
                   </div>
                 </div>
@@ -96,4 +105,3 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
     </section>
   );
 }
-

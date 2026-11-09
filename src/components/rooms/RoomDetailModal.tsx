@@ -9,7 +9,6 @@ import {
   ChevronRight,
   Images,
   Compass,
-  Calendar,
   Phone,
   MessageCircle,
 } from "lucide-react";
@@ -21,7 +20,6 @@ export interface RoomDetailModalProps {
   suiteId: string;
   defaultTab?: "gallery" | "floorplan";
   onClose: () => void;
-  onEnquire: (suiteName: string) => void;
 }
 
 export function RoomDetailModal({
@@ -29,7 +27,6 @@ export function RoomDetailModal({
   suiteId,
   defaultTab = "gallery",
   onClose,
-  onEnquire,
 }: RoomDetailModalProps) {
   const [activeTab, setActiveTab] = useState<"gallery" | "floorplan">(defaultTab);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -526,17 +523,14 @@ export function RoomDetailModal({
 
             {/* Quick Reservation Action Strip */}
             <div className="pt-6 mt-6 border-t border-stone-200 flex flex-col gap-3">
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  onEnquire(suite.name);
-                }}
+              <a
+                href={`tel:${HOTEL_INFO.phones.primary}`}
+                onClick={onClose}
                 className="w-full py-3.5 px-4 bg-primary hover:bg-gold-deep text-on-primary font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Enquire For This Suite</span>
-              </button>
+                <Phone className="w-4 h-4" />
+                <span>Call to Enquire About This Suite</span>
+              </a>
 
               <div className="grid grid-cols-2 gap-2">
                 <a
@@ -548,7 +542,7 @@ export function RoomDetailModal({
                 </a>
                 <a
                   className="py-2.5 px-3 bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white text-stone-800 font-label-compact text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-[#25D366]/30"
-                  href={`${HOTEL_INFO.whatsappUrl}&text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(
+                  href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(
                     suite.name
                   )}.`}
                   target="_blank"

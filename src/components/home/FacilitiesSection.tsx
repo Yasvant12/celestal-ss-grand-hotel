@@ -11,7 +11,7 @@ export function FacilitiesSection() {
       title: "Expansive Parking Space",
       description:
         "Hosting an event at Celestal SS Grand Hotel? Our parking facilities are designed to accommodate events of all sizes. Whether it's an intimate gathering or a grand celebration, your guests find hassle-free, secure parking right on campus.",
-      badge: "Capacity for 150+ Vehicles",
+      badge: "Capacity for 50+ Vehicles",
     },
     {
       icon: "directions_car",

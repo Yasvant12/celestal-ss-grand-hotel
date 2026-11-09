@@ -19,30 +19,42 @@ export const HOTEL_INFO = {
     lng: 80.9028,
   },
   phones: {
-    primary: "+91 7054447423", //banquet booking
-    primaryRaw: "91 9151888637",
-    weddingDesk: "+91 9151888637",
-    lawnsCatering: "+91 9151888637",
+    primary: "+91 9151888637", //banquet booking
+    primaryRaw: "91  7054447423",
+    weddingDesk: "+91 9151888636",
+    lawnsCatering: "+91 9151888638",
   },
-  whatsapp: "+91 7054250911",
-  whatsappUrl: "https://wa.me/917054250911",
-  email: "info@celestalssgrand.com",
-  reservationsEmail: "reservations@celestalssgrand.com",
-  eventsEmail: "events@celestalssgrand.com",
+  whatsapp: "+91 9151888637",
+  whatsappUrl: "https://wa.me/919151888637",
+  email: "celestialssgrand@gmail.com",
+  reservationsEmail: "celestialssgrand@gmail.com",
+  eventsEmail: "celestialssgrand@gmail.com",
   stats: {
     lawnCapacity: "1,200+",
     acBanquetCapacity: "400+",
-    luxuryRooms: "50+",
+    luxuryRooms: "60",
     serviceAvailability: "24 / 7",
     celebrationsHosted: "1,200+",
-    rating: "4.9★",
+    rating: "4.2★",
     reviewsCount: "1,240+",
-    parkingCapacity: "150+ Vehicles",
+    parkingCapacity: "50+ Vehicles",
   },
   proximities: [
-    { destination: "Chaudhary Charan Singh Airport (LKO)", time: "15 Mins", icon: "flight" },
-    { destination: "Charbagh Railway Station", time: "20 Mins", icon: "train" },
-    { destination: "Kanpur Road / Shaheed Path Crossing", time: "08 Mins", icon: "signpost" },
+    {
+      destination: "Major Dhyan Chand Astroturf Stadium",
+      time: "02–05 Mins",
+      icon: "trophy"
+    },
+    {
+      destination: "Kukrail Gharial Park",
+      time: "18–25 Mins",
+      icon: "trees"
+    },
+    {
+      destination: "Regional Science City",
+      time: "20–25 Mins",
+      icon: "flask"
+    }
   ],
 };
 

@@ -2,7 +2,8 @@
 
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
-import { SERVICES_DATA, ServiceItem } from "./servicesData";
+import { SERVICES_DATA } from "./servicesData";
+import { ServiceImagePlaceholder } from "./ServiceImagePlaceholder";
 
 interface ServicesGalleryModalProps {
   isOpen: boolean;
@@ -32,10 +33,11 @@ export function ServicesGalleryModal({
     (e: KeyboardEvent) => {
       if (!isOpen) return;
       if (e.key === "Escape") onClose();
+      if (SERVICES_DATA[activeServiceIndex]?.photos.length === 0) return;
       if (e.key === "ArrowLeft") onPrevPhoto();
       if (e.key === "ArrowRight") onNextPhoto();
     },
-    [isOpen, onClose, onPrevPhoto, onNextPhoto]
+    [isOpen, activeServiceIndex, onClose, onPrevPhoto, onNextPhoto]
   );
 
   useEffect(() => {
@@ -54,7 +56,7 @@ export function ServicesGalleryModal({
   const currentService = SERVICES_DATA[activeServiceIndex] || SERVICES_DATA[0];
   const photos = currentService.photos;
   const safePhotoIndex = Math.min(activePhotoIndex, photos.length - 1);
-  const currentPhoto = photos[safePhotoIndex] || photos[0];
+  const currentPhoto = photos[safePhotoIndex];
 
   return (
     <div
@@ -81,7 +83,9 @@ export function ServicesGalleryModal({
 
         <div className="flex items-center gap-3 sm:gap-4">
           <span className="font-label-compact text-xs text-stone-300 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-            Photo {safePhotoIndex + 1} of {photos.length}
+            {photos.length > 0
+              ? `Photo ${safePhotoIndex + 1} of ${photos.length}`
+              : "Actual photographs coming soon"}
           </span>
           <button
             onClick={onClose}
@@ -118,75 +122,89 @@ export function ServicesGalleryModal({
       {/* 3. Main Stage (Large Image & Navigation Controls) */}
       <div className="relative my-2 mx-auto flex min-h-0 w-full max-w-7xl flex-1 items-center justify-center">
         {/* Previous Button */}
-        <button
-          onClick={onPrevPhoto}
-          aria-label="Previous Photo"
-          className="absolute left-2 sm:left-4 z-20 w-11 h-11 rounded-full bg-[#111827]/85 hover:bg-[#7a5508] text-[#E8D3A2] hover:text-white flex items-center justify-center transition-all backdrop-blur-md shadow-lg border border-white/10 cursor-pointer hover:scale-105 active:scale-95"
-        >
-          <span className="material-symbols-outlined text-[24px]">
-            chevron_left
-          </span>
-        </button>
+        {photos.length > 1 && (
+          <button
+            onClick={onPrevPhoto}
+            aria-label="Previous Photo"
+            className="absolute left-2 sm:left-4 z-20 w-11 h-11 rounded-full bg-[#111827]/85 hover:bg-[#7a5508] text-[#E8D3A2] hover:text-white flex items-center justify-center transition-all backdrop-blur-md shadow-lg border border-white/10 cursor-pointer hover:scale-105 active:scale-95"
+          >
+            <span className="material-symbols-outlined text-[24px]">
+              chevron_left
+            </span>
+          </button>
+        )}
 
         {/* Central Active Image Container */}
         <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10 bg-[#111827] shadow-2xl">
-          <Image
-            src={currentPhoto.src}
-            alt={currentPhoto.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-contain select-none transition-opacity duration-300"
-          />
-
-          {/* Caption Overlay */}
-          <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#111827] via-[#111827]/75 to-transparent z-10">
-            <p className="font-body-sm text-xs sm:text-sm text-[#FAF7F2] max-w-3xl leading-relaxed">
-              {currentPhoto.caption}
-            </p>
-          </div>
+          {currentPhoto ? (
+            <>
+              <Image
+                src={currentPhoto.src}
+                alt={currentPhoto.alt}
+                fill
+                priority
+                sizes="100vw"
+                className="object-contain select-none transition-opacity duration-300"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#111827] via-[#111827]/75 to-transparent z-10">
+                <p className="font-body-sm text-xs sm:text-sm text-[#FAF7F2] max-w-3xl leading-relaxed">
+                  {currentPhoto.caption}
+                </p>
+              </div>
+            </>
+          ) : (
+            <ServiceImagePlaceholder serviceTitle={currentService.title} />
+          )}
         </div>
 
         {/* Next Button */}
-        <button
-          onClick={onNextPhoto}
-          aria-label="Next Photo"
-          className="absolute right-2 sm:right-4 z-20 w-11 h-11 rounded-full bg-[#111827]/85 hover:bg-[#7a5508] text-[#E8D3A2] hover:text-white flex items-center justify-center transition-all backdrop-blur-md shadow-lg border border-white/10 cursor-pointer hover:scale-105 active:scale-95"
-        >
-          <span className="material-symbols-outlined text-[24px]">
-            chevron_right
-          </span>
-        </button>
+        {photos.length > 1 && (
+          <button
+            onClick={onNextPhoto}
+            aria-label="Next Photo"
+            className="absolute right-2 sm:right-4 z-20 w-11 h-11 rounded-full bg-[#111827]/85 hover:bg-[#7a5508] text-[#E8D3A2] hover:text-white flex items-center justify-center transition-all backdrop-blur-md shadow-lg border border-white/10 cursor-pointer hover:scale-105 active:scale-95"
+          >
+            <span className="material-symbols-outlined text-[24px]">
+              chevron_right
+            </span>
+          </button>
+        )}
       </div>
 
       {/* 4. Bottom Real Thumbnail Strip & CTA Action */}
       <div className="w-full max-w-7xl mx-auto pt-3 border-t border-stone-700/60 flex flex-col md:flex-row items-center justify-between gap-4 shrink-0">
         {/* Real Thumbnail Photos (NOT empty boxes!) */}
         <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2 scrollbar-none">
-          {photos.map((photo, pIdx) => {
-            const isThumbActive = pIdx === safePhotoIndex;
-            return (
-              <button
-                key={pIdx}
-                type="button"
-                onClick={() => onSelectPhoto(pIdx)}
-                className={`relative w-16 h-12 rounded overflow-hidden shrink-0 transition-transform cursor-pointer border ${
-                  isThumbActive
-                    ? "ring-2 ring-[#E8D3A2] scale-105 border-white opacity-100"
-                    : "border-stone-700 opacity-60 hover:opacity-100"
-                }`}
-                title={`Photo ${pIdx + 1}`}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </button>
-            );
-          })}
+          {photos.length > 0 ? (
+            photos.map((photo, pIdx) => {
+              const isThumbActive = pIdx === safePhotoIndex;
+              return (
+                <button
+                  key={pIdx}
+                  type="button"
+                  onClick={() => onSelectPhoto(pIdx)}
+                  className={`relative w-16 h-12 rounded overflow-hidden shrink-0 transition-transform cursor-pointer border ${
+                    isThumbActive
+                      ? "ring-2 ring-[#E8D3A2] scale-105 border-white opacity-100"
+                      : "border-stone-700 opacity-60 hover:opacity-100"
+                  }`}
+                  title={`Photo ${pIdx + 1}`}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </button>
+              );
+            })
+          ) : (
+            <span className="font-label-compact text-xs text-stone-400">
+              Service photographs will be added soon.
+            </span>
+          )}
         </div>
 
         {/* Action Button: Enquire About This Service */}

@@ -87,20 +87,20 @@ export function LocationSection() {
               </div>
             </div>
 
-            {/* Host Assistance Call Box */}
+            {/* Reservations Call Box */}
             <div className="p-4 rounded-lg bg-surface-champagne flex items-center justify-between border border-primary/20">
               <div className="flex flex-col">
                 <span className="font-label-compact text-label-compact uppercase text-on-surface-variant">
-                  Host Assistance
+                  Reservations &amp; Assistance
                 </span>
                 <span className="font-body-md text-body-md font-semibold text-on-surface">
-                  Free Guest Pickup Escort Coordination
+                  Room &amp; Event Enquiries
                 </span>
               </div>
               <a
                 className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-gold-deep transition-colors shrink-0"
                 href={`tel:${HOTEL_INFO.phones.primary}`}
-                aria-label="Call Host Assistance"
+                aria-label="Call for room and event enquiries"
               >
                 <span className="material-symbols-outlined text-[18px]">call</span>
               </a>

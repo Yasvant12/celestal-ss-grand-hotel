@@ -6,7 +6,6 @@ import { HERO_BACKGROUND_IMAGE, HOTEL_INFO } from "@/lib/constants";
 export function AboutHero() {
   return (
     <PageHero
-      pageKey="about"
       eyebrow="About Celestal SS Grand Hotel • Kursi Road, Lucknow"
       title={
         <>

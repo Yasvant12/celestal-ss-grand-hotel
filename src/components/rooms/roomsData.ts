@@ -64,7 +64,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       "Tailored for discerning business travellers and weekend getaways, offering seamless connectivity, expansive dressing wardrobe, and tailored turndown amenities.",
     description:
       "Tailored specifically for discerning corporate professionals and weekend guests seeking seamless efficiency without sacrificing residential warmth. Features an ergonomic solid-walnut work desk, high-speed fiber data ports, a 55\" Smart UHD display, and tailored evening turndown service.",
-    heroImage: "",
+    heroImage: "/images/hotel-room-bedroom-02.jpeg",
     quickFeatures: ["Fiber Wi-Fi", "55\" Smart UHD TV", "24/7 Dining", "Express Pressing"],
     amenities: [
       { icon: "desk", title: "Ergonomic Executive Desk", desc: "Crafted solid walnut with integrated USB/HDMI" },
@@ -76,9 +76,14 @@ export const ROOMS_DATA: Record<string, RoomData> = {
     ],
     images: [
       {
-        src: "",
-        label: "Verified room photograph pending",
-        caption: "An actual room photograph has not been provided yet.",
+        src: "/images/hotel-room-bedroom-01.jpeg",
+        label: "Guest bedroom",
+        caption: "A guest bedroom with one bed.",
+      },
+      {
+        src: "/images/hotel-room-bedroom-03.jpeg",
+        label: "Guest bedroom detail",
+        caption: "Another guest bedroom with one bed.",
       },
     ],
     floorplan: {
@@ -111,7 +116,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       "Tranquil room overlooking landscaped courtyards, flooded with natural daylight and crafted with soothing neutral tones and acoustic glazing.",
     description:
       "Overlooking manicured botanical courtyards with sunlit glass apertures, this tranquil sanctuary embraces natural daylight, warm Scandinavian-inspired neutral timbers, and soothing linen finishes. Designed for restful getaways and quiet morning contemplation.",
-    heroImage: "",
+    heroImage: "/images/hotel-room-twin-01.jpeg",
     quickFeatures: ["Patio Vista", "Rain Shower", "Artisanal Tea Bar", "Climate Control"],
     amenities: [
       { icon: "deck", title: "Garden Patio Aperture", desc: "Direct view to private landscaped greenery" },
@@ -122,11 +127,16 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       { icon: "curtains", title: "Blackout Motorized Linen", desc: "Dual blackout & sheer natural daylight panels" },
     ],
     images: [
-      {
-        src: "",
-        label: "Verified room photograph pending",
-        caption: "An actual room photograph has not been provided yet.",
-      },
+      // {
+      //   src: "/images/hotel-room-twin-01.jpeg",
+      //   label: "Twin-bed guest room",
+      //   caption: "A guest room furnished with two beds.",
+      // },
+      // {
+      //   src: "/images/hotel-room-twin-03.jpeg",
+      //   label: "Second twin-bed room",
+      //   caption: "A second guest room furnished with two beds.",
+      // },
     ],
     floorplan: {
       title: "Garden Courtyard Deluxe Architectural Layout",

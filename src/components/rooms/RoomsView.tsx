@@ -9,9 +9,7 @@ import { RoomFilterBar } from "@/components/rooms/RoomFilterBar";
 import { RoomCollection } from "@/components/rooms/RoomCollection";
 import { RoomAmenitiesMatrix } from "@/components/rooms/RoomAmenitiesMatrix";
 import { RoomValuePillars } from "@/components/rooms/RoomValuePillars";
-import { RoomCTABanner } from "@/components/rooms/RoomCTABanner";
 import { RoomDetailModal } from "@/components/rooms/RoomDetailModal";
-import { RoomEnquiryModal } from "@/components/rooms/RoomEnquiryModal";
 
 export function RoomsView() {
   const [activeFilter, setActiveFilter] = useState<"all" | "executive" | "courtyard">("all");
@@ -19,18 +17,10 @@ export function RoomsView() {
   const [selectedSuiteId, setSelectedSuiteId] = useState("executive");
   const [detailModalTab, setDetailModalTab] = useState<"gallery" | "floorplan">("gallery");
 
-  const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
-  const [enquirySuiteName, setEnquirySuiteName] = useState("Executive Club Suite");
-
   const handleOpenDetail = (suiteId: string, defaultTab: "gallery" | "floorplan" = "gallery") => {
     setSelectedSuiteId(suiteId);
     setDetailModalTab(defaultTab);
     setDetailModalOpen(true);
-  };
-
-  const handleOpenEnquiry = (suiteName: string) => {
-    setEnquirySuiteName(suiteName);
-    setEnquiryModalOpen(true);
   };
 
   return (
@@ -43,7 +33,6 @@ export function RoomsView() {
         <div className="flex flex-col w-full">
           {/* Section 1: Standardized PageHero with Filter Bar Slot */}
           <PageHero
-            pageKey="rooms"
             eyebrow="Accommodation &amp; Residences"
             title={
               <>
@@ -75,7 +64,6 @@ export function RoomsView() {
           {/* Section 2: Curated Room Categories (Editorial Grid) */}
           <RoomCollection
             activeFilter={activeFilter}
-            onOpenEnquiry={handleOpenEnquiry}
             onOpenDetail={handleOpenDetail}
           />
 
@@ -85,8 +73,6 @@ export function RoomsView() {
           {/* Section 4: Why Discerning Guests Choose Celestal SS Grand (3 Pillars) */}
           <RoomValuePillars />
 
-          {/* Section 5: Room Enquiry Call to Action Banner */}
-          {/* <RoomCTABanner onOpenEnquiry={handleOpenEnquiry} /> */}
         </div>
       </main>
 
@@ -99,16 +85,7 @@ export function RoomsView() {
         suiteId={selectedSuiteId}
         defaultTab={detailModalTab}
         onClose={() => setDetailModalOpen(false)}
-        onEnquire={handleOpenEnquiry}
-      />
-
-      {/* 5. Room Enquiry Dialog */}
-      <RoomEnquiryModal
-        isOpen={enquiryModalOpen}
-        prefilledSuiteName={enquirySuiteName}
-        onClose={() => setEnquiryModalOpen(false)}
       />
     </>
   );
 }
-

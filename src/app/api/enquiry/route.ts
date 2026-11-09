@@ -65,7 +65,17 @@ export async function POST(req: NextRequest) {
     const enquiryData = validationResult.data;
 
     // Dispatch email
-    await sendEnquiryEmail(enquiryData);
+    const delivery = await sendEnquiryEmail(enquiryData);
+    if ("simulated" in delivery && delivery.simulated) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "The enquiry email service is not configured yet. Please call our concierge desk directly.",
+        },
+        { status: 503 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
@@ -87,4 +97,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

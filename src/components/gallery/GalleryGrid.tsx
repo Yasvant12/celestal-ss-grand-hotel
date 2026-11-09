@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { GALLERY_CATEGORIES, GalleryPlate } from "./galleryData";
+import { GALLERY_CATEGORIES, GALLERY_PLATES, GalleryPlate } from "./galleryData";
 
 interface GalleryGridProps {
   plates: GalleryPlate[];
@@ -52,7 +52,7 @@ export function GalleryGrid({
               <strong className="text-[#7a5508] font-bold">
                 {plates.length}
               </strong>{" "}
-              of 48 Curation Plates
+              of {GALLERY_PLATES.length} Curation Plates
             </span>
 
             {/* Density Toggles */}
@@ -178,4 +178,3 @@ export function GalleryGrid({
     </>
   );
 }
-

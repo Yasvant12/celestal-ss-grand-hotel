@@ -1,14 +1,10 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Calendar, Phone, MessageCircle, Info } from "lucide-react";
+import { Phone, Info } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
 
-export interface RoomCTABannerProps {
-  onOpenEnquiry: (suiteName: string) => void;
-}
-
-export function RoomCTABanner({ onOpenEnquiry }: RoomCTABannerProps) {
+export function RoomCTABanner() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -51,14 +47,13 @@ export function RoomCTABanner({ onOpenEnquiry }: RoomCTABannerProps) {
 
             {/* Right Buttons */}
             <div className="lg:col-span-4 flex flex-col gap-3">
-              <button
-                type="button"
-                onClick={() => onOpenEnquiry("General Reservation Inquiry")}
+              <a
+                href={`tel:${HOTEL_INFO.phones.primary}`}
                 className="w-full py-3.5 px-6 bg-primary hover:bg-gold-deep text-on-primary font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Enquire About Rooms</span>
-              </button>
+                <Phone className="w-4 h-4" />
+                <span>Call to Enquire About Rooms</span>
+              </a>
 
               <a
                 className="w-full py-3 px-6 bg-white/10 hover:bg-white/20 text-surface-container-lowest font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 border border-white/10"
@@ -70,7 +65,7 @@ export function RoomCTABanner({ onOpenEnquiry }: RoomCTABannerProps) {
 
               <a
                 className="w-full py-3 px-6 bg-white/10 hover:bg-[#25D366] hover:text-white text-surface-container-lowest font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 border border-white/10"
-                href={`${HOTEL_INFO.whatsappUrl}&text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability.`}
+                href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability.`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,4 +79,3 @@ export function RoomCTABanner({ onOpenEnquiry }: RoomCTABannerProps) {
     </section>
   );
 }
-

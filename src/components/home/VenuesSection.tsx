@@ -6,9 +6,9 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 export function VenuesSection() {
   const shouldReduceMotion = useReducedMotion();
   const banquetHallImg = "/images/hotel-banquet-ballroom-03.jpg";
-  const lawnImg = "/images/hotel-open-lawn.webp";
-  const roomsImg = "/images/hotel-front-entrance-stairs.jpg";
-  const diningImg = "/images/hotel-front-entrance-foyer.jpg";
+  const lawnImg = "/images/hotel-open-lawn-night-01.jpeg";
+  const roomsImg = "/images/hotel-room-bedroom-02.jpeg";
+  const diningImg = "/images/hotel-restaurant-interior-01.jpeg";
 
   const cardsContainerVariants: Variants = {
     hidden: { opacity: 0 },
