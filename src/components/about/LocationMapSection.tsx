@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { MapPin, Plane, Train, Navigation, Compass } from "lucide-react";
+import { MapPin, Navigation, Compass } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
 
 const HotelMap = dynamic(
@@ -43,7 +43,7 @@ export function LocationMapSection() {
             </h2>
 
             <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-8">
-              Nestled in the peaceful, well-planned residential enclave of LDA Colony Ashiyana, Celestal SS Grand Hotel offers tranquil refuge alongside swift connectivity to the city&apos;s key transit hubs, corporate corridors, and celebratory venues.
+              Located at {HOTEL_INFO.shortAddress}, Celestal SS Grand Hotel offers a comfortable stay with convenient access to Lucknow&apos;s key destinations and event venues.
             </p>
 
             {/* Address Card */}
@@ -63,29 +63,24 @@ export function LocationMapSection() {
 
             {/* Proximity Markers Grid */}
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <div className="p-4 rounded-xl bg-surface-container-low border border-surface-container-highest/50">
-                <div className="flex items-center gap-2 text-primary mb-1">
-                  <Plane className="w-5 h-5" />
-                  <span className="font-headline-sm text-headline-sm text-sm sm:text-base font-semibold text-noir-charcoal">
-                    CCS International Airport
+              {HOTEL_INFO.proximities.map(({ destination, time, icon }) => (
+                <div
+                  key={destination}
+                  className="p-4 rounded-xl bg-surface-container-low border border-surface-container-highest/50"
+                >
+                  <div className="flex items-center gap-2 text-primary mb-1">
+                    <span className="material-symbols-outlined text-[20px]">
+                      {icon}
+                    </span>
+                    <span className="font-headline-sm text-headline-sm text-sm sm:text-base font-semibold text-noir-charcoal">
+                      {destination}
+                    </span>
+                  </div>
+                  <span className="font-body-sm text-body-sm text-on-surface-variant">
+                    {time}
                   </span>
                 </div>
-                <span className="font-body-sm text-body-sm text-on-surface-variant">
-                  Approx. 15–20 Minutes Drive
-                </span>
-              </div>
-
-              <div className="p-4 rounded-xl bg-surface-container-low border border-surface-container-highest/50">
-                <div className="flex items-center gap-2 text-primary mb-1">
-                  <Train className="w-5 h-5" />
-                  <span className="font-headline-sm text-headline-sm text-sm sm:text-base font-semibold text-noir-charcoal">
-                    Charbagh Railway Station
-                  </span>
-                </div>
-                <span className="font-body-sm text-body-sm text-on-surface-variant">
-                  Approx. 20–25 Minutes Drive
-                </span>
-              </div>
+              ))}
             </div>
 
             <a
@@ -134,4 +129,3 @@ export function LocationMapSection() {
     </section>
   );
 }
-

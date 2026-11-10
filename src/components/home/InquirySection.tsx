@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { HOTEL_INFO } from "@/lib/constants";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
 export function InquirySection() {
   const shouldReduceMotion = useReducedMotion();
@@ -35,37 +36,38 @@ export function InquirySection() {
     setStatus("submitting");
     setErrorMessage("");
 
-    // Prepare payload matching the Zod schema in src/lib/validation.ts
-    const payload = {
-      type: "banquet" as const,
-      name: formData.name.trim(),
-      phone: formData.phone.trim(),
-      email: formData.email.trim() || "guest@celestalssgrand.com", // fallback if guest does not input email
-      eventDate: formData.event_date,
-      eventType: formData.event_type,
-      guestsCount: formData.guests,
-      foodRequirements: formData.catering,
-      message: formData.message.trim(),
-      honeypot: formData.honeypot,
-    };
-
     try {
-      const res = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+      const eventTypes: Record<string, string> = {
+        wedding: "Wedding",
+        mehendi: "Sangeet & Mehendi",
+        banquet: "Banquet",
+        lawn: "Lawn Event",
+        corporate: "Corporate Event",
+        stay: "Wedding Room Block",
+      };
+
+      await submitWeb3FormsEnquiry({
+        category: eventTypes[formData.event_type] || "Event",
+        sourcePage: "Home",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        botcheck: formData.honeypot,
+        fields: {
+          "Event Type": eventTypes[formData.event_type] || formData.event_type,
+          "Event Date": formData.event_date,
+          "Number of Guests": formData.guests,
+          "Catering Preference": formData.catering,
+          "Special Requirements": formData.message,
+        },
       });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        throw new Error(data.message || "Unable to send your request. Please try calling directly.");
-      }
-
       setStatus("success");
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : "Submission failed. Please call our concierge desk.";
-      setErrorMessage(msg);
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Submission failed. Please call our concierge desk."
+      );
       setStatus("error");
     }
   };
@@ -223,11 +225,18 @@ export function InquirySection() {
                     <label htmlFor="form-honeypot">Leave empty</label>
                     <input
                       id="form-honeypot"
-                      name="honeypot"
+                      name="botcheck"
+                      type="checkbox"
                       tabIndex={-1}
                       autoComplete="off"
-                      value={formData.honeypot}
-                      onChange={handleChange}
+                      checked={Boolean(formData.honeypot)}
+                      onChange={(event) =>
+                        setFormData((previous) => ({
+                          ...previous,
+                          honeypot: event.target.checked ? "on" : "",
+                        }))
+                      }
+                      style={{ display: "none" }}
                     />
                   </div>
 
@@ -404,4 +413,3 @@ export function InquirySection() {
     </section>
   );
 }
-

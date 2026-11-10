@@ -45,7 +45,7 @@ export function PageHero({
           sizes="100vw"
           className="object-cover object-[65%_46%] sm:object-[60%_40%] md:object-[55%_34%] lg:object-[52%_30%] 2xl:object-[50%_18%]"
         />
-        <div className="absolute inset-0 z-[2] bg-[#111827]/40" />
+        <div className="absolute inset-0 z-[2] bg-noir-charcoal/50" />
       </div>
 
       <div

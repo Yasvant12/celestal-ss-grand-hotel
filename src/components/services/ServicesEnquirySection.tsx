@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { HOTEL_INFO } from "@/lib/constants";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 import { SERVICES_DATA } from "./servicesData";
 
 interface ServicesEnquirySectionProps {
@@ -61,66 +62,45 @@ export function ServicesEnquirySection({
     e.preventDefault();
 
     // Validate phone number (must be 10 digits)
-    const cleanPhone = formData.phone.replace(/\D/g, "");
-    if (cleanPhone.length !== 10) {
-      setSubmitStatus("error");
-      setStatusMessage("Please enter a valid 10-digit mobile number.");
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setStatusMessage("");
 
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "general",
-          name: formData.name.trim(),
-          phone: cleanPhone,
-          email: formData.email.trim(),
-          subject: `[Service Inquiry] ${formData.serviceInterest}`,
-          message: `Service Selected: ${formData.serviceInterest}\nTentative Event Date: ${
-            formData.eventDate || "Not specified"
-          }\nExpected Guests: ${
-            formData.guestsCount || "Not specified"
-          }\n\nSpecial Requests:\n${
-            formData.specialRequests || "None provided"
-          }`,
-          honeypot: formData.honeypot,
-        }),
+      await submitWeb3FormsEnquiry({
+        category: "Services",
+        sourcePage: "Services",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        botcheck: formData.honeypot,
+        fields: {
+          "Service Interest": formData.serviceInterest,
+          "Tentative Event Date": formData.eventDate,
+          "Expected Guests": formData.guestsCount,
+          "Special Requests": formData.specialRequests,
+        },
       });
-
-      const resData = await response.json();
-
-      if (response.ok && resData.success) {
-        setSubmitStatus("success");
-        setStatusMessage(
-          "Thank you! Your enquiry has been routed to our Senior Event Director. We will contact you within 30 minutes."
-        );
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          serviceInterest: "Dining Experience",
-          eventDate: "",
-          guestsCount: "",
-          specialRequests: "",
-          honeypot: "",
-        });
-      } else {
-        setSubmitStatus("error");
-        setStatusMessage(
-          resData.message ||
-            "Unable to submit enquiry at this time. Please reach our concierge directly at +91 7054250911."
-        );
-      }
+      setSubmitStatus("success");
+      setStatusMessage(
+        "Thank you! Your enquiry has been received. Our team will contact you soon."
+      );
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        serviceInterest: "Dining Experience",
+        eventDate: "",
+        guestsCount: "",
+        specialRequests: "",
+        honeypot: "",
+      });
     } catch (err: unknown) {
       setSubmitStatus("error");
       setStatusMessage(
-        "Network connection issue. Please call our concierge desk directly at +91 7054250911."
+        err instanceof Error
+          ? err.message
+          : "Network connection issue. Please call our concierge desk directly."
       );
     } finally {
       setIsSubmitting(false);
@@ -247,11 +227,17 @@ export function ServicesEnquirySection({
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Honeypot field for anti-spam */}
               <input
-                type="text"
-                name="honeypot"
-                value={formData.honeypot}
-                onChange={handleChange}
+                type="checkbox"
+                name="botcheck"
+                checked={Boolean(formData.honeypot)}
+                onChange={(event) =>
+                  setFormData((previous) => ({
+                    ...previous,
+                    honeypot: event.target.checked ? "on" : "",
+                  }))
+                }
                 className="hidden"
+                style={{ display: "none" }}
                 tabIndex={-1}
                 autoComplete="off"
               />
@@ -420,4 +406,3 @@ export function ServicesEnquirySection({
     </section>
   );
 }
-

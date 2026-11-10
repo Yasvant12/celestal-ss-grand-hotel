@@ -43,17 +43,17 @@ export const HOTEL_INFO = {
     {
       destination: "Major Dhyan Chand Astroturf Stadium",
       time: "02–05 Mins",
-      icon: "trophy"
+      icon: "emoji_events"
     },
     {
       destination: "Kukrail Gharial Park",
       time: "18–25 Mins",
-      icon: "trees"
+      icon: "park"
     },
     {
       destination: "Regional Science City",
       time: "20–25 Mins",
-      icon: "flask"
+      icon: "science"
     }
   ],
 };

@@ -31,7 +31,7 @@ export function LocationSection() {
               Prime Location in the Heart of Ashiyana
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              Situated in LDA Colony Sector-M, Celestal SS Grand Hotel offers seamless transit connectivity for wedding attendees, business leaders, and travelers.
+              Situated at {HOTEL_INFO.shortAddress}, Celestal SS Grand Hotel offers convenient access to Lucknow&apos;s key destinations for wedding guests, business travelers, and visitors.
             </p>
           </div>
           <div className="flex items-center gap-space-sm">
@@ -71,17 +71,17 @@ export function LocationSection() {
                 {HOTEL_INFO.proximities.map((item) => (
                   <div
                     key={item.destination}
-                    className="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest shadow-sm border border-surface-container-highest/40"
+                      className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3 p-3 rounded-lg bg-surface-container-lowest shadow-sm border border-surface-container-highest/40"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="material-symbols-outlined text-primary text-[20px]">{item.icon}</span>
-                      <span className="font-body-md text-body-md text-on-surface font-medium">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-surface-champagne text-primary">
+                        <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                      </span>
+                      <span className="min-w-0 break-words font-body-md text-body-md font-medium leading-snug text-on-surface">
                         {item.destination}
                       </span>
-                    </div>
-                    <span className="font-label-button text-label-button text-primary shrink-0">
-                      {item.time}
-                    </span>
+                      <span className="whitespace-nowrap font-label-button text-xs sm:text-label-button text-primary">
+                        {item.time}
+                      </span>
                   </div>
                 ))}
               </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
-  Calendar,
+  MessageCircle,
   Menu,
 } from "lucide-react";
 import { HeaderTopBar } from "./HeaderTopBar";
@@ -187,13 +187,13 @@ export function Header() {
 
             {/* CTA & MOBILE TOGGLE (Right side, stays aligned in one line) */}
             <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-              {/* Book Now Button (Signature Gold Gradient) */}
+              {/* Inquiry Button (Signature Gold Gradient) */}
               <Link
                 href="/#inquiry-form-section"
                 className="hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 md:px-6 py-2.5 rounded-full gold-gradient-bg text-[#14110E] font-semibold text-xs md:text-sm tracking-wider uppercase shadow-[0_4px_14px_rgba(184,134,11,0.35)] hover:shadow-[0_6px_20px_rgba(184,134,11,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book Now</span>
+                <MessageCircle className="w-4 h-4" />
+                <span>Send an Inquiry</span>
               </Link>
 
               {/* Mobile Hamburger Toggle Button (Below lg) */}

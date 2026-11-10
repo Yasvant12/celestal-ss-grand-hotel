@@ -97,7 +97,7 @@ export function DiningFeature() {
               Authentic
             </span>
             <span className="font-headline-sm text-headline-sm text-surface-ivory text-base font-semibold leading-snug">
-              Master Culinary Team &amp; Contemporary Cuisine
+              Expert Chefs &amp; Refined Cuisine
             </span>
           </div>
         </motion.div>

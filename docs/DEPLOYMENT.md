@@ -1,6 +1,6 @@
 # Hotel Celestial Casa — Deployment & Operations Guide
 
-A step-by-step technical deployment guide for deploying the Hotel Celestial Casa website to Vercel with GitHub version control and Resend email delivery.
+A step-by-step technical deployment guide for deploying the Celestal SS Grand Hotel website to Vercel with GitHub version control and Web3Forms enquiry delivery.
 
 ---
 
@@ -9,7 +9,7 @@ A step-by-step technical deployment guide for deploying the Hotel Celestial Casa
 - **Package Manager**: `npm` (v10+).
 - **Git**: Installed and configured with your GitHub account.
 - **Vercel Account**: Linked with GitHub.
-- **Resend Account**: Configured at [resend.com](https://resend.com) with domain `celestialcasa.in` verified for sending emails.
+- **Web3Forms Account**: Create an access key at [web3forms.com](https://web3forms.com) and configure the hotel's recipient email address for that key.
 
 ---
 
@@ -31,13 +31,12 @@ A step-by-step technical deployment guide for deploying the Hotel Celestial Casa
    ```bash
    cp .env.example .env.local
    ```
-   Populate `.env.local` with your development keys:
+   Set the Web3Forms access key in `.env.local`:
    ```env
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   RESEND_API_KEY=re_your_api_key
-   HOTEL_ENQUIRY_EMAIL=info@celestialcasa.in
-   RESEND_FROM_EMAIL=Hotel Celestial Casa <enquiry@celestialcasa.in>
+   NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
    ```
+   The access key is used by the browser because Web3Forms is a frontend integration. Configure the destination hotel email in the Web3Forms account; do not add a recipient address to the client payload.
 
 4. **Run the local development server**:
    ```bash
@@ -79,9 +78,7 @@ A step-by-step technical deployment guide for deploying the Hotel Celestial Casa
 3. **Environment Variables**:
    Add the following production environment variables under **Settings > Environment Variables**:
    - `NEXT_PUBLIC_SITE_URL`: `https://celestialcasa.in`
-   - `RESEND_API_KEY`: Production API Key from Resend
-   - `HOTEL_ENQUIRY_EMAIL`: Designee email (e.g., `info@celestialcasa.in`)
-   - `RESEND_FROM_EMAIL`: `Hotel Celestial Casa <enquiry@celestialcasa.in>`
+   - `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`: The access key from the Web3Forms account configured with the hotel's recipient email.
 4. **Deploy**:
    Click **Deploy**. Vercel will build the project using Next.js Turbopack/Webpack and publish it to the global edge network.
 
@@ -111,4 +108,3 @@ To ensure enquiry notifications never land in spam:
    - **TXT (DKIM)**: Provided by Resend
    - **TXT (DMARC)**: `v=DMARC1; p=none;`
 3. Verify DNS status in the Resend dashboard.
-

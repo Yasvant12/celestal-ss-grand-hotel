@@ -15,7 +15,7 @@ This project represents the production-ready website development for Hotel Celes
 ## 2. Strategic Objectives
 1. **Fidelity to Approved Stitch Design**: Convert the Google Stitch HTML prototype (`reference/stitch-homepage.html`) into modern Next.js 16 components with pixel-accurate fidelity to typography, color palette, spacing, and editorial layout.
 2. **High-Conversion Enquiry Funnels**: Deliver seamless, high-trust reservation forms across rooms, grand banquets, royal weddings, and corporate events.
-3. **Instant Email Notification System**: Route guest leads directly to hotel management within minutes via Resend / SMTP with Zod validation and spam mitigation.
+3. **Instant Email Notification System**: Send guest enquiries through Web3Forms using client-side validation and honeypot spam mitigation, without a custom email backend.
 4. **Lightweight & High-Performance Architecture**: Zero database, zero CMS, and zero payment gateway overhead in this release, maximizing performance, security, and Core Web Vitals.
 5. **SEO & Geographic Dominance**: Optimize metadata, schema markup (LocalBusiness, Hotel, EventVenue), and local search visibility for Ashiyana, LDA Colony, and Lucknow wedding keywords.
 
@@ -32,8 +32,8 @@ This project represents the production-ready website development for Hotel Celes
 | **Iconography** | Material Symbols & Lucide React | Google Material Symbols (Stitch source) + Lucide React |
 | **Animations** | Framer Motion 14.9 | Subtle, elegant scroll reveals respecting reduced motion |
 | **Form Handling** | React Hook Form 7.91 | Client-side reactive form states and accessibility |
-| **Validation** | Zod 4.6 | End-to-end type inference and server-side schema validation |
-| **Email Service** | Resend 6.37 / Secure SMTP | Direct transactional notification delivery |
+| **Validation** | Native form validation and shared TypeScript utility | Client-side required-field and contact-format checks |
+| **Email Service** | Web3Forms | Frontend enquiry delivery to the account-configured hotel email |
 | **Deployment** | Vercel & GitHub | Edge hosting, continuous integration, and SSL |
 
 ---
@@ -54,4 +54,3 @@ In alignment with client requirements, the following are **strictly excluded**:
 - **Primary Email**: `info@celestialcasa.in`
 - **WhatsApp Concierge**: `https://wa.me/917054250911`
 - **Physical Address**: CC-4, Sector-M, in front of Ansal Orchid Green, near Vishwanath Academy, LDA Colony, Ashiyana, Lucknow, Uttar Pradesh 226012
-

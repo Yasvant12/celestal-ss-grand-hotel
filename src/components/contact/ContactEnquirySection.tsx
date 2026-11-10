@@ -15,6 +15,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
 export function ContactEnquirySection() {
   const shouldReduceMotion = useReducedMotion();
@@ -44,56 +45,41 @@ export function ContactEnquirySection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Client-side phone check
-    const phoneDigits = formData.phone.replace(/\D/g, "");
-    if (phoneDigits.length !== 10) {
-      setSubmitStatus("error");
-      setErrorMessage("Please enter a valid 10-digit mobile number.");
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "general",
-          name: formData.name.trim(),
-          phone: phoneDigits,
-          email: formData.email.trim(),
-          subject: `[${formData.enquiryType}] ${formData.subject.trim()}`,
-          message: formData.message.trim(),
-          honeypot: formData.honeypot,
-        }),
+      await submitWeb3FormsEnquiry({
+        category: formData.enquiryType,
+        sourcePage: "Contact Us",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        botcheck: formData.honeypot,
+        fields: {
+          "Enquiry Type": formData.enquiryType,
+          Subject: formData.subject,
+          Message: formData.message,
+        },
       });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          enquiryType: "General Enquiry",
-          subject: "",
-          message: "",
-          honeypot: "",
-        });
-      } else {
-        setSubmitStatus("error");
-        setErrorMessage(
-          data.message || "Failed to submit enquiry. Please call our concierge desk directly."
-        );
-      }
-
-    } catch {
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        enquiryType: "General Enquiry",
+        subject: "",
+        message: "",
+        honeypot: "",
+      });
+    } catch (error: unknown) {
       setSubmitStatus("error");
-      setErrorMessage("Network connection issue. Please try again or reach out on WhatsApp.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your enquiry. Please try again or reach out on WhatsApp."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -398,11 +384,17 @@ export function ContactEnquirySection() {
 
               {/* Honeypot hidden input for anti-spam */}
               <input
-                type="text"
-                name="honeypot"
-                value={formData.honeypot}
-                onChange={handleChange}
+                type="checkbox"
+                name="botcheck"
+                checked={Boolean(formData.honeypot)}
+                onChange={(event) =>
+                  setFormData((previous) => ({
+                    ...previous,
+                    honeypot: event.target.checked ? "on" : "",
+                  }))
+                }
                 className="hidden"
+                style={{ display: "none" }}
                 tabIndex={-1}
                 autoComplete="off"
               />

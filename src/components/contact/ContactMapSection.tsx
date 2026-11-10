@@ -1,33 +1,12 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Plane, Train, Building2, Car, Map, ArrowRight } from "lucide-react";
+import { Car, Map, ArrowRight } from "lucide-react";
 import { HotelMap } from "@/components/shared/HotelMap";
 import { HOTEL_INFO } from "@/lib/constants";
 
 export function ContactMapSection() {
   const shouldReduceMotion = useReducedMotion();
-
-  const transitNodes = [
-    {
-      icon: Plane,
-      name: "Chaudhary Charan Singh Airport (LKO)",
-      route: "Via VIP Road / Amar Shaheed Path",
-      duration: "15 Mins",
-    },
-    {
-      icon: Train,
-      name: "Charbagh Railway Station",
-      route: "Direct city arterial corridor",
-      duration: "20 Mins",
-    },
-    {
-      icon: Building2,
-      name: "Hazratganj Financial Center",
-      route: "City Center & Commercial District",
-      duration: "25 Mins",
-    },
-  ];
 
   return (
     <section className="w-full bg-surface-container-low py-16 sm:py-20 md:py-24" id="map-view">
@@ -99,28 +78,20 @@ export function ContactMapSection() {
               </h3>
 
               <div className="space-y-3">
-                {transitNodes.map((node) => {
-                  const NodeIcon = node.icon;
+                {HOTEL_INFO.proximities.map((node) => {
                   return (
                     <div
-                      key={node.name}
-                      className="flex items-center justify-between p-3.5 bg-surface-container-low rounded-xl border border-stone-200/50"
+                      key={node.destination}
+                      className="grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 sm:gap-3 p-3 sm:p-3.5 bg-surface-container-low rounded-xl border border-stone-200/50"
                     >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-surface-champagne text-primary flex items-center justify-center shrink-0">
-                          <NodeIcon className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="font-body-sm text-xs sm:text-sm font-bold text-on-surface">
-                            {node.name}
-                          </p>
-                          <p className="font-label-compact text-[11px] text-stone-500">
-                            {node.route}
-                          </p>
-                        </div>
-                      </div>
-                      <span className="font-label-compact text-xs font-bold text-primary px-2.5 py-1 bg-surface-container-lowest rounded-lg shadow-xs shrink-0 ml-2">
-                        {node.duration}
+                      <span className="flex h-9 w-10 items-center justify-center rounded-lg bg-surface-champagne text-primary">
+                        <span className="material-symbols-outlined text-[20px]">{node.icon}</span>
+                      </span>
+                      <span className="min-w-0 break-words font-body-sm text-xs sm:text-sm font-bold leading-snug text-on-surface">
+                        {node.destination}
+                      </span>
+                      <span className="whitespace-nowrap rounded-lg bg-surface-container-lowest px-2 py-1 font-label-compact text-[11px] sm:text-xs font-bold text-primary shadow-xs">
+                        {node.time}
                       </span>
                     </div>
                   );
@@ -158,4 +129,3 @@ export function ContactMapSection() {
     </section>
   );
 }
-

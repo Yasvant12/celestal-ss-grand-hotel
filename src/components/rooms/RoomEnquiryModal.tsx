@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Calendar, Lock, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
 export interface RoomEnquiryModalProps {
   isOpen: boolean;
@@ -65,61 +66,49 @@ export function RoomEnquiryModal({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const phoneDigits = formData.phone.replace(/\D/g, "");
-    if (phoneDigits.length !== 10) {
-      setSubmitStatus("error");
-      setErrorMessage("Please enter a valid 10-digit mobile number.");
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "room",
-          name: formData.name.trim(),
-          phone: phoneDigits,
-          email: formData.email.trim() || "guest@celestalssgrand.com",
-          checkInDate: formData.checkInDate,
-          checkOutDate: formData.checkOutDate || formData.checkInDate,
-          guestsCount: formData.guestsCount,
-          roomRequirements: formData.roomRequirements,
-          message: formData.message.trim(),
-          honeypot: formData.honeypot,
-        }),
+      await submitWeb3FormsEnquiry({
+        category: "Room Booking",
+        sourcePage: "Rooms & Suites",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        botcheck: formData.honeypot,
+        fields: {
+          Accommodation: formData.roomRequirements,
+          "Check-in Date": formData.checkInDate,
+          "Check-out Date": formData.checkOutDate,
+          "Number of Guests / Rooms": formData.guestsCount,
+          "Special Requirements": formData.message,
+        },
       });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        setSubmitStatus("success");
-        setTimeout(() => {
-          onClose();
-          setSubmitStatus("idle");
-          setFormData({
-            name: "",
-            phone: "",
-            email: "",
-            checkInDate: "",
-            checkOutDate: "",
-            guestsCount: "1 Room • 1–2 Guests",
-            roomRequirements: prefilledSuiteName || "Executive Club Suite",
-            message: "",
-            honeypot: "",
-          });
-        }, 3000);
-      } else {
-        setSubmitStatus("error");
-        setErrorMessage(data.message || "Failed to submit enquiry. Please call our concierge desk directly.");
-      }
-    } catch {
+      setSubmitStatus("success");
+      setTimeout(() => {
+        onClose();
+        setSubmitStatus("idle");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          checkInDate: "",
+          checkOutDate: "",
+          guestsCount: "1 Room • 1–2 Guests",
+          roomRequirements: prefilledSuiteName || "Executive Club Suite",
+          message: "",
+          honeypot: "",
+        });
+      }, 3000);
+    } catch (error: unknown) {
       setSubmitStatus("error");
-      setErrorMessage("Connection issue. Please call our concierge directly or message via WhatsApp.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Connection issue. Please call our concierge directly or message via WhatsApp."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -300,11 +289,17 @@ export function RoomEnquiryModal({
 
             {/* Honeypot field */}
             <input
-              type="text"
-              name="honeypot"
-              value={formData.honeypot}
-              onChange={handleChange}
+              type="checkbox"
+              name="botcheck"
+              checked={Boolean(formData.honeypot)}
+              onChange={(event) =>
+                setFormData((previous) => ({
+                  ...previous,
+                  honeypot: event.target.checked ? "on" : "",
+                }))
+              }
               className="hidden"
+              style={{ display: "none" }}
               tabIndex={-1}
               autoComplete="off"
             />
@@ -347,4 +342,3 @@ export function RoomEnquiryModal({
     </div>
   );
 }
-

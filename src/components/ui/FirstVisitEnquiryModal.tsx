@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2, X } from "lucide-react";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
 const STORAGE_KEY = "celestal-enquiry-popup-seen-v1";
 
@@ -84,41 +85,30 @@ export function FirstVisitEnquiryModal() {
     setSubmitStatus("idle");
     setErrorMessage("");
 
-    const message = [
-      `Check-in: ${formData.checkInDate}`,
-      `Check-out: ${formData.checkOutDate}`,
-      `Number of guests: ${formData.guestsCount}`,
-      formData.message.trim() ? `Additional message: ${formData.message.trim()}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
     try {
-      const response = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "general",
-          name: formData.name.trim(),
-          phone,
-          email: formData.email.trim(),
-          subject: `${formData.enquiryType} enquiry`,
-          message,
-          honeypot: formData.honeypot,
-        }),
+      await submitWeb3FormsEnquiry({
+        category: formData.enquiryType,
+        sourcePage: "Home — First Visit Enquiry",
+        name: formData.name,
+        phone,
+        email: formData.email,
+        botcheck: formData.honeypot,
+        fields: {
+          "Enquiry Type": formData.enquiryType,
+          "Check-in Date": formData.checkInDate,
+          "Check-out Date": formData.checkOutDate,
+          "Number of Guests": formData.guestsCount,
+          Message: formData.message,
+        },
       });
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        setSubmitStatus("error");
-        setErrorMessage(data.message || "We couldn't send your enquiry. Please try again.");
-        return;
-      }
-
       setSubmitStatus("success");
-    } catch {
+    } catch (error: unknown) {
       setSubmitStatus("error");
-      setErrorMessage("We couldn't connect to the enquiry service. Please try again.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn't connect to the enquiry service. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -198,6 +188,7 @@ export function FirstVisitEnquiryModal() {
                     <input
                       name="name"
                       autoComplete="name"
+                      autoFocus
                       required
                       minLength={2}
                       maxLength={100}
@@ -305,13 +296,20 @@ export function FirstVisitEnquiryModal() {
                 </div>
 
                 <input
-                  name="honeypot"
+                  name="botcheck"
+                  type="checkbox"
                   tabIndex={-1}
                   autoComplete="off"
                   aria-hidden="true"
                   className="hidden"
-                  value={formData.honeypot}
-                  onChange={(event) => setFormData({ ...formData, honeypot: event.target.value })}
+                  checked={Boolean(formData.honeypot)}
+                  onChange={(event) =>
+                    setFormData((previous) => ({
+                      ...previous,
+                      honeypot: event.target.checked ? "on" : "",
+                    }))
+                  }
+                  style={{ display: "none" }}
                 />
 
                 {submitStatus === "error" && (

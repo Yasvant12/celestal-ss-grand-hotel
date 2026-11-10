@@ -8,7 +8,7 @@ A phased, disciplined implementation plan ensuring uncompromising fidelity to th
 - [x] Complete code and visual inspection of `reference/stitch-homepage.html`.
 - [x] Extraction and documentation of design tokens (colors, typography, spacing, shadows).
 - [x] Creation of the recommended Next.js 16 App Router folder structure.
-- [x] Installation and verification of core packages (`lucide-react`, `framer-motion`, `react-hook-form`, `zod`, `resend`, `clsx`, `tailwind-merge`).
+- [x] Installation and verification of core packages (`lucide-react`, `framer-motion`, `react-hook-form`, `clsx`, `tailwind-merge`).
 - [x] Configuration of Tailwind CSS v4 design theme in `src/app/globals.css`.
 - [x] Configuration of TypeScript paths (`@/*` -> `./src/*`) and `next.config.ts`.
 - [x] Creation of environment variables template (`.env.example`).
@@ -36,7 +36,7 @@ A phased, disciplined implementation plan ensuring uncompromising fidelity to th
 6. **Facilities & Amenities**:
    - Implement 6 luxury amenity cards (Parking, Valet, CCTV, Fire Safety, Bouncers, Jaimala/DJ).
 7. **Direct Concierge & Enquiry Form**:
-   - Replace demo alert dialog with real reactive form connected to `/api/enquiry`.
+   - Replace demo alert dialog with a real reactive form connected to Web3Forms.
    - Implement instant client-side feedback and validation.
 8. **Location & Vicinity Map**:
    - Build proximity milestones (Airport, Railway Station, Shaheed Path) and Google Maps navigation card.
@@ -61,13 +61,13 @@ A phased, disciplined implementation plan ensuring uncompromising fidelity to th
 
 ---
 
-## Phase 4: Enquiry API & Email Service Integration
-*Objective: End-to-end server validation and reliable notification delivery.*
-1. **API Route Implementation**: Create `/api/enquiry/route.ts` with Zod schema validation.
-2. **Email Service Configuration**: Connect Resend API with HTML notification templates formatted with Hotel Celestial Casa branding.
-3. **SMTP Fallback**: Provide secure nodemailer fallback if custom SMTP is preferred.
-4. **Spam & Abuse Protection**: Hidden honeypot fields, IP-based in-memory rate limiting, and double-submit prevention.
-5. **Testing**: Comprehensive automated and manual payload tests across all 4 form variants.
+## Phase 4: Enquiry Form Integration
+*Objective: Deliver enquiry notifications through the configured Web3Forms account without a custom backend.*
+1. **Shared Frontend Utility**: Submit existing enquiry forms through Web3Forms with consistent guest and source metadata.
+2. **Form Feedback**: Retain validation, loading, success, error, duplicate-submit prevention, and success-only form reset behavior.
+3. **Spam Mitigation**: Include Web3Forms honeypot protection.
+4. **Configuration**: Set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` locally and in the deployment environment, and configure the destination email in Web3Forms.
+5. **Live Delivery Test**: Submit a test enquiry after the real access key is configured and verify receipt at the hotel email.
 
 ---
 
@@ -86,4 +86,3 @@ A phased, disciplined implementation plan ensuring uncompromising fidelity to th
 3. **Environment Secrets**: Secure production configuration of Resend and hotel email targets.
 4. **DNS & Custom Domain**: Guidance for configuring `celestialcasa.in` records and SSL certificate.
 5. **Documentation Delivery**: Final operations manual and maintenance guide.
-

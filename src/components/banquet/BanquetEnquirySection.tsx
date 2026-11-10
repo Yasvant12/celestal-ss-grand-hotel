@@ -12,6 +12,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
+import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
 interface BanquetEnquirySectionProps {
   initialVenue?: string;
@@ -50,15 +51,6 @@ export function BanquetEnquirySection({
       setError("Please enter your full name (minimum 2 characters).");
       return;
     }
-    const cleanPhone = phone.replace(/\D/g, "");
-    if (cleanPhone.length !== 10) {
-      setError("Please enter a valid 10-digit mobile number.");
-      return;
-    }
-    if (!email.trim() || !email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
-    }
     if (!eventType) {
       setError("Please select the occasion type.");
       return;
@@ -75,32 +67,28 @@ export function BanquetEnquirySection({
     setLoading(true);
 
     try {
-      const res = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "banquet",
-          name: fullName.trim(),
-          phone: cleanPhone,
-          email: email.trim(),
-          eventDate,
-          eventType,
-          guestsCount: guestCount,
-          foodRequirements: venuePreference,
-          message: message.trim() || `Preferred Space: ${venuePreference}`,
-          honeypot: honeypot || undefined,
-        }),
+      await submitWeb3FormsEnquiry({
+        category: eventType,
+        sourcePage: "Banquet",
+        name: fullName,
+        phone,
+        email,
+        botcheck: honeypot,
+        fields: {
+          "Event Type": eventType,
+          "Event Date": eventDate,
+          "Number of Guests": guestCount,
+          "Preferred Venue": venuePreference,
+          "Special Requirements": message,
+        },
       });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || "Unable to submit enquiry. Please call us directly.");
-      }
-
       setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred. Please try again or call our desk.");
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to submit enquiry. Please try again or call our desk."
+      );
     } finally {
       setLoading(false);
     }
@@ -250,11 +238,12 @@ export function BanquetEnquirySection({
 
                 {/* Honeypot for bots */}
                 <input
-                  type="text"
-                  name="honeypot"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
+                  type="checkbox"
+                  name="botcheck"
+                  checked={Boolean(honeypot)}
+                  onChange={(e) => setHoneypot(e.target.checked ? "on" : "")}
                   className="hidden"
+                  style={{ display: "none" }}
                   tabIndex={-1}
                   autoComplete="off"
                 />

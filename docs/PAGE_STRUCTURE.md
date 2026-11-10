@@ -46,16 +46,15 @@ This document outlines the architectural blueprint, URL schema, components, and 
 
 ---
 
-## 3. Dedicated Enquiry Forms Matrix
+## 3. Enquiry Forms
 
-1. **Room Enquiry Form (`src/components/forms/RoomEnquiryForm.tsx`)**:
-   - Fields: Full Name, 10-digit Phone, Email, Check-in Date, Check-out Date, Number of Guests, Room Category, Special Requests.
-2. **Banquet Enquiry Form (`src/components/forms/BanquetEnquiryForm.tsx`)**:
-   - Fields: Full Name, Phone, Email, Event Date, Event Type, Guest Count Range, Catering Requirement, Approximate Budget, Message.
-3. **Wedding Enquiry Form (`src/components/forms/WeddingEnquiryForm.tsx`)**:
-   - Fields: Full Name, Phone, Email, Wedding Date, Expected Guests, Guest Rooms Required, Function Details (Mehendi / Sangeet / Jaimala), Special Requirements.
-4. **General Contact Form (`src/components/forms/ContactForm.tsx`)**:
-   - Fields: Name, Phone, Email, Subject, Message.
+The active enquiry forms submit directly from the browser to Web3Forms through the shared `src/lib/web3forms.ts` utility:
 
-All forms connect to `/api/enquiry` via POST, validated by Zod, with anti-spam honeypot protection, client validation states, loading spinners, and friendly confirmation banners.
+1. **General Contact** (`src/components/contact/ContactEnquirySection.tsx`)
+2. **Wedding and Banquet** (`src/components/banquet/BanquetEnquirySection.tsx`)
+3. **Room Enquiry** (`src/components/rooms/RoomEnquiryModal.tsx`)
+4. **Corporate and Event** (`src/components/services/ServicesEnquirySection.tsx`)
+5. **Homepage Enquiry** (`src/components/home/InquirySection.tsx`)
+6. **First Visit Popup** (`src/components/ui/FirstVisitEnquiryModal.tsx`)
 
+The shared utility validates guest name, mobile number, and an optional email address, includes enquiry fields, category, source page, and submission time, and reports service errors to the existing form UI. The forms use Web3Forms' honeypot field and retain their existing loading, success, error, and reset behavior. The destination email is configured in the Web3Forms account; there is no custom enquiry API or server-side email service.

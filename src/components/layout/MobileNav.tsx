@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
-  Calendar,
   PhoneCall,
   MessageCircle,
 } from "lucide-react";
@@ -162,14 +160,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
         {/* Bottom CTA Block */}
         <div className="pt-4 border-t border-stone-200 space-y-3">
-          <a
+          <Link
             href="/#inquiry-form-section"
             onClick={onClose}
             className="w-full flex items-center justify-center gap-2 py-3 rounded-xl gold-gradient-bg text-[#14110E] font-bold text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all"
           >
-            <Calendar className="w-4 h-4" />
-            <span>Book Your Date Now</span>
-          </a>
+            <MessageCircle className="w-4 h-4" />
+            <span>Send an Inquiry</span>
+          </Link>
 
           <div className="grid grid-cols-2 gap-2 text-xs">
             <a

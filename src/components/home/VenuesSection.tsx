@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 export function VenuesSection() {
@@ -8,7 +9,7 @@ export function VenuesSection() {
   const banquetHallImg = "/images/hotel-banquet-ballroom-03.jpg";
   const lawnImg = "/images/hotel-open-lawn-night-01.jpeg";
   const roomsImg = "/images/hotel-room-bedroom-02.jpeg";
-  const diningImg = "/images/hotel-restaurant-interior-01.jpeg";
+  const diningImg = "/images/hotel-restaurant-chef.png";
 
   const cardsContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -242,9 +243,9 @@ export function VenuesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full bg-noir-charcoal text-surface-ivory rounded-xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 items-center group"
+          className="w-full bg-noir-charcoal text-surface-ivory rounded-xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-2 items-center group"
         >
-          <div className="lg:col-span-7 p-space-xl flex flex-col gap-space-md">
+          <div className="p-space-xl flex flex-col gap-space-md">
             <div className="inline-flex items-center gap-2">
               <span className="w-6 h-[2px] bg-primary-fixed-dim" />
               <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-gold-light">
@@ -268,11 +269,13 @@ export function VenuesSection() {
               </div>
             </div>
           </div>
-          <div className="lg:col-span-5 h-72 lg:h-full relative min-h-[260px] overflow-hidden">
-            <div
-              className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-              style={{ backgroundImage: `url('${diningImg}')` }}
-              aria-label="Gourmet Multi-Cuisine Catering"
+          <div className="relative w-full aspect-[4/3] overflow-hidden bg-noir-charcoal">
+            <Image
+              src={diningImg}
+              alt="Chef preparing a meal at Celestial SS Grand Hotel"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
             />
           </div>
         </motion.div>

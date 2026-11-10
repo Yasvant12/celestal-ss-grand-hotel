@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Building2,
   Layers,
   Compass,
-  FileDown,
   CalendarDays,
   Info,
   CheckCircle,
@@ -90,33 +88,6 @@ export function BanquetFloorPlanViewer() {
   };
 
   const metrics = getMetrics();
-
-  const handleDownloadCad = () => {
-    // Generate clean text specification file for download
-    const content = `CELESTAL SS GRAND HOTEL - BANQUET ARCHITECTURAL CAD SPECIFICATION
-================================================================================
-Venue: ${activeVenue === "astor" ? "The Grand Astor Ballroom (First Floor)" : "The Celestial Crystal Hall (Second Floor)"}
-Dimensions: 105 ft. (Length) x 50 ft. (Width)
-Clear Area: 5,250 Sq. Ft. (100% Pillarless)
-Clear Height: ${activeVenue === "astor" ? "18.0 ft. Ceiling Clearance" : "16.5 ft. Clear Height"}
-Selected Configuration: ${metrics.type} (${metrics.capacity})
-Main Stage: 32 ft. x 16 ft. with HD LED backdrop rigging
-Pre-Function Foyer: 1,200 sq. ft. with 3x high-speed elevator bay
-Amenities: Bridal en-suite, live culinary counters (80 ft.), AV control booth
-Verified Address: CC-4, Sector-M, Near Ashiyana Power House, LDA Colony, Ashiyana, Lucknow 226012
-Inquiries: +91 7054250911 | events@celestalssgrand.com
-================================================================================`;
-
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `Celestal-SS-Grand-${activeVenue}-CAD-Specs.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
 
   return (
     <section
@@ -982,15 +953,6 @@ Inquiries: +91 7054250911 | events@celestalssgrand.com
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
-              onClick={handleDownloadCad}
-              className="font-label-button text-label-button uppercase px-6 py-3 bg-surface-container/20 text-on-primary hover:bg-surface-container/30 rounded-xl transition-all tracking-widest inline-flex items-center gap-2 border border-white/10"
-            >
-              <FileDown className="w-4 h-4 text-primary-fixed-dim" />
-              <span>Download CAD Floor Plan</span>
-            </button>
-
             <a
               href="#enquiry-section"
               className="font-label-button text-label-button uppercase px-6 py-3 bg-primary text-on-primary hover:bg-gold-deep rounded-xl transition-all tracking-widest inline-flex items-center gap-2 shadow-md hover:scale-[1.02] active:scale-[0.98]"
@@ -1004,4 +966,3 @@ Inquiries: +91 7054250911 | events@celestalssgrand.com
     </section>
   );
 }
-

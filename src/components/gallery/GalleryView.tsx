@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { GALLERY_PLATES, GalleryPlate } from "./galleryData";
+import { GALLERY_PLATES } from "./galleryData";
 import { GalleryHero } from "./GalleryHero";
 import { GalleryGrid } from "./GalleryGrid";
 import { GalleryPerspectivePillars } from "./GalleryPerspectivePillars";
-import { GalleryCTABanner } from "./GalleryCTABanner";
+import { GalleryVideoSection } from "./GalleryVideoSection";
 import { GalleryLightbox } from "./GalleryLightbox";
 
 export function GalleryView() {
@@ -69,13 +69,13 @@ export function GalleryView() {
         onOpenLightbox={handleOpenLightbox}
       />
 
-      {/* 3. Architectural Perspective Highlight Break */}
+      {/* 3. Hotel video tour */}
+      <GalleryVideoSection />
+
+      {/* 4. Architectural Perspective Highlight Break */}
       <GalleryPerspectivePillars />
 
-      {/* 4. Closing Call to Action Banner */}
-      {/* <GalleryCTABanner /> */}
-
-      {/* 5. Interactive Fullscreen Lightbox Modal */}
+      {/* Interactive Fullscreen Lightbox Modal */}
       <GalleryLightbox
         plate={currentPlate}
         currentIndex={currentFilteredIndex >= 0 ? currentFilteredIndex : 0}
@@ -88,4 +88,3 @@ export function GalleryView() {
     </div>
   );
 }
-
