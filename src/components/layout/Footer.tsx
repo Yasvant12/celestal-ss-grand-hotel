@@ -132,7 +132,8 @@ export function Footer() {
               <p className="flex items-start gap-2 leading-relaxed">
                 <MapPin className="w-4 h-4 text-gold-light shrink-0 mt-1" />
                 <span>
-                  Plot 5, Misripur Guramba, Kursi Rd, Lucknow, Uttar Pradesh 226026</span>
+                  Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026
+                </span>
               </p>
               <p className="flex items-center gap-2 pt-1">
                 <Phone className="w-4 h-4 text-gold-light shrink-0" />

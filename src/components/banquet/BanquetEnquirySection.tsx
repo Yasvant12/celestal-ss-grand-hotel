@@ -159,7 +159,7 @@ export function BanquetEnquirySection({
                       {HOTEL_INFO.eventsEmail}
                     </a>
                     <span className="font-body-sm text-body-sm text-secondary-fixed">
-                      Ashiyana, Lucknow – 226012
+                      {HOTEL_INFO.shortAddress}
                     </span>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export function BanquetEnquirySection({
                         maxLength={10}
                         value={phone}
                         onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-                        placeholder="70542 50911"
+                        placeholder="Enter your 10-digit mobile number"
                         className="w-full px-3 py-2.5 bg-transparent border-0 focus:outline-none text-on-surface font-body-md text-sm placeholder:text-stone-400"
                       />
                     </div>

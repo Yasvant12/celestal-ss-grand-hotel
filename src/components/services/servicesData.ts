@@ -13,6 +13,7 @@ export interface ServiceItem {
   desc: string;
   icon: string;
   photos: ServicePhoto[];
+  coverImage?: Pick<ServicePhoto, "src" | "alt">;
 }
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -77,6 +78,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     desc: "Elevate your celebrations with handpicked live acoustic artists, instrumental quartets, and celebratory musical ensembles tailored to your event timeline.",
     icon: "music_note",
     photos: [],
+    coverImage: {
+      src: "/images/services/live-band-ai.png",
+      alt: "AI-generated illustration of a live band performing at a hotel event.",
+    },
   },
   {
     id: 4,
@@ -88,6 +93,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     desc: "Complete club-grade and celebratory acoustic systems with dual digital mixers, bass subwoofers, moving head lighting fixtures, and dedicated dance floor installations.",
     icon: "graphic_eq",
     photos: [],
+    coverImage: {
+      src: "/images/services/dj-sound-ai.png",
+      alt: "AI-generated illustration of a DJ performing at a hotel celebration.",
+    },
   },
   {
     id: 5,
@@ -99,6 +108,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     desc: "Ensure seamless arrival for every dignitary and attendee. Our uniformed valet personnel manage guest car drop-off, retrieval, and dedicated security coordination under an architectural canopy.",
     icon: "local_parking",
     photos: [],
+    coverImage: {
+      src: "/images/services/valet-parking-ai.png",
+      alt: "AI-generated illustration of a valet welcoming guests at a hotel entrance.",
+    },
   },
   {
     id: 6,

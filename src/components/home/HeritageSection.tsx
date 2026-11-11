@@ -23,17 +23,17 @@ export function HeritageSection() {
               <span>About Celestal SS Grand Hotel</span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-on-surface">
-              Best Banquet Hall in LDA Colony, Lucknow
+              Banquet Hall &amp; Celebrations on Kursi Road, Lucknow
             </h2>
             <div className="space-y-space-md text-on-surface-variant font-body-md text-body-md leading-relaxed">
               <p className="font-title-editorial text-title-editorial text-primary font-semibold">
                 Elevate Your Celebrations with Luxury &amp; Elegance
               </p>
               <p>
-                Looking for the best banquet hall in LDA Colony to host your dream event? Our premium luxury banquet hall in Lucknow offers a perfect setting for weddings, receptions, corporate gatherings, and special celebrations. Designed with elegance and modern amenities, our venue ensures a seamless and grand experience for you and your guests.
+                Looking for a venue for your next event? Celestal SS Grand Hotel on Kursi Road offers banquet spaces for weddings, receptions, corporate gatherings, and other celebrations.
               </p>
               <p>
-                Celebrate your big day at our beautifully designed marriage hall in Celestal SS Grand Hotel located in LDA Colony of Lucknow, equipped with sophisticated décor, spacious seating, and top-class catering services. Whether it’s a traditional wedding or a contemporary event, our expert event planners ensure that every detail is executed flawlessly.
+                Our hotel is located at Plot 5, Misripur Guramba, Kursi Road, Lucknow. Our team can help you plan your event, from venue arrangements to catering.
               </p>
               <p>
                 As a premier wedding hotel in Lucknow, we provide an all-in-one venue for your wedding functions, including engagement parties, mehendi ceremonies, receptions, and post-wedding celebrations. Our dedicated team takes care of everything—from customized decorations to gourmet catering—to make your wedding truly unforgettable.

@@ -15,7 +15,7 @@ export function RoomValuePillars() {
     {
       num: "02",
       title: "Prime Strategic Connectivity",
-      desc: "Conveniently situated in Ashiyana, LDA Colony, providing seamless access: 15 minutes to Chaudhary Charan Singh International Airport and 20 minutes to Lucknow Charbagh Railway.",
+      desc: "Located at Plot 5, Misripur Guramba, Kursi Road, Lucknow, with convenient access to the city.",
       tags: ["15 Mins Airport", "Express Arterials"],
     },
     {
@@ -74,4 +74,3 @@ export function RoomValuePillars() {
     </section>
   );
 }
-

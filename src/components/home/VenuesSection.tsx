@@ -119,7 +119,7 @@ export function VenuesSection() {
                 <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
               </Link>
               <span className="font-label-compact text-label-compact text-on-surface-variant">
-                Sector-M, Ashiyana
+                Misripur Guramba, Kursi Road
               </span>
             </div>
           </motion.div>

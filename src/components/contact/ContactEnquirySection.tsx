@@ -274,7 +274,7 @@ export function ContactEnquirySection() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="70542 50911"
+                      placeholder="Enter your 10-digit mobile number"
                       className="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-r-xl font-body-md text-sm placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#9a7126] transition-all border border-stone-200/80"
                     />
                   </div>

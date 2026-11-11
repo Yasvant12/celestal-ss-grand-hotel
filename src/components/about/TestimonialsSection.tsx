@@ -14,7 +14,7 @@ export function TestimonialsSection() {
     },
     {
       quote:
-        "The rooms are spotlessly clean, whisper-quiet, and spacious. Having stayed across multiple hotels in Lucknow, Celestal SS Grand Hotel in Ashiyana offers unbeatable comfort and personal attention from the front desk.",
+        "The rooms are spotlessly clean, quiet, and spacious. Having stayed across multiple hotels in Lucknow, I appreciated the comfort and personal attention from the front desk at Celestal SS Grand Hotel.",
       initials: "AK",
       name: "Amitava Kapoor",
       role: "Corporate Executive • New Delhi",
@@ -108,4 +108,3 @@ export function TestimonialsSection() {
     </section>
   );
 }
-

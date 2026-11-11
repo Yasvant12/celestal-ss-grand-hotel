@@ -27,7 +27,7 @@ export function HomeHighlightsSection() {
               workspace_premium
             </span>
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-on-surface-variant">
-              60 Rooms • 5 Banquet Halls • 2 Lawn
+              60 Rooms • 4 Banquet Halls • 1 Lawn
             </span>
           </div>
         </div>

@@ -28,7 +28,7 @@ export function LocationSection() {
               Strategic Accessibility
             </span>
             <h2 className="font-headline-lg text-headline-lg text-on-surface">
-              Prime Location in the Heart of Ashiyana
+              Conveniently Located on Kursi Road
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
               Situated at {HOTEL_INFO.shortAddress}, Celestal SS Grand Hotel offers convenient access to Lucknow&apos;s key destinations for wedding guests, business travelers, and visitors.

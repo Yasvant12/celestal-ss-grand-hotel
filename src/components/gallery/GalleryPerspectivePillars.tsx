@@ -58,7 +58,7 @@ export function GalleryPerspectivePillars() {
               Verdant Daylight Courtyards
             </h4>
             <p className="font-body-sm text-sm text-stone-600 leading-relaxed">
-              Patios and private suite balconies designed to draw natural cross-ventilation and tranquil garden sceneries in the quiet core of Ashiyana.
+              Patios and private suite balconies designed to draw natural cross-ventilation and offer peaceful garden views.
             </p>
           </div>
         </div>
@@ -66,4 +66,3 @@ export function GalleryPerspectivePillars() {
     </section>
   );
 }
-

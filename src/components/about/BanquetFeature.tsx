@@ -46,7 +46,7 @@ export function BanquetFeature() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-body-lg text-body-lg text-surface-champagne/80 font-light max-w-2xl leading-relaxed"
         >
-          Architected for modern milestone celebrations, corporate galas, and bespoke gatherings in the prime heart of Ashiyana.
+          Designed for milestone celebrations, corporate galas, and gatherings on Kursi Road, Lucknow.
         </motion.p>
       </div>
 

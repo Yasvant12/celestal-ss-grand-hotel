@@ -50,7 +50,7 @@ export function BanquetIntroMetrics() {
                 className="font-label-button text-label-button uppercase text-primary hover:text-gold-deep tracking-wider flex items-center gap-2 font-semibold"
               >
                 <Phone className="w-4 h-4" />
-                <span>+91 70542 50911</span>
+                <span>{HOTEL_INFO.phones.primary}</span>
               </a>
             </div>
           </motion.div>
@@ -116,4 +116,3 @@ export function BanquetIntroMetrics() {
     </section>
   );
 }
-

@@ -11,7 +11,7 @@ import { ContactCTASection } from "@/components/contact/ContactCTASection";
 export const metadata: Metadata = {
   title: "Contact Us | Celestal SS Grand Hotel, Lucknow",
   description:
-    "Contact Celestal SS Grand Hotel at Plot 5, Misripur Guramba, Kursi Road, Lucknow 226026. Call +91 9115202115 or +91 9115202555 for rooms, banquets, and celebrations.",
+    "Contact Celestal SS Grand Hotel at Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026 for room, banquet, and event enquiries.",
 };
 
 export default function ContactPage() {
@@ -47,4 +47,3 @@ export default function ContactPage() {
     </>
   );
 }
-

@@ -19,8 +19,6 @@ export function RoomEnquiryModal({
     name: "",
     phone: "",
     email: "",
-    checkInDate: "",
-    checkOutDate: "",
     guestsCount: "1 Room • 1–2 Guests",
     roomRequirements: prefilledSuiteName || "Executive Club Suite",
     message: "",
@@ -80,8 +78,6 @@ export function RoomEnquiryModal({
         botcheck: formData.honeypot,
         fields: {
           Accommodation: formData.roomRequirements,
-          "Check-in Date": formData.checkInDate,
-          "Check-out Date": formData.checkOutDate,
           "Number of Guests / Rooms": formData.guestsCount,
           "Special Requirements": formData.message,
         },
@@ -94,8 +90,6 @@ export function RoomEnquiryModal({
           name: "",
           phone: "",
           email: "",
-          checkInDate: "",
-          checkOutDate: "",
           guestsCount: "1 Room • 1–2 Guests",
           roomRequirements: prefilledSuiteName || "Executive Club Suite",
           message: "",
@@ -215,33 +209,15 @@ export function RoomEnquiryModal({
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="70542 50911"
+                    placeholder="Enter your 10-digit mobile number"
                     className="w-full px-4 py-2.5 bg-surface-container-low focus:bg-white text-on-surface font-body-sm text-sm rounded-r-xl outline-none border border-stone-200 focus:ring-2 focus:ring-[#9a7126] transition-all"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Dates & Guests */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-1.5">
-                <label
-                  htmlFor="enquiry-checkInDate"
-                  className="font-label-compact text-xs text-on-surface uppercase tracking-wider font-semibold"
-                >
-                  Check-In Date <span className="text-primary">*</span>
-                </label>
-                <input
-                  id="enquiry-checkInDate"
-                  name="checkInDate"
-                  type="date"
-                  required
-                  value={formData.checkInDate}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-surface-container-low focus:bg-white text-on-surface font-body-sm text-sm rounded-xl outline-none border border-stone-200 focus:ring-2 focus:ring-[#9a7126] transition-all"
-                />
-              </div>
-
+            {/* Guest count */}
+            <div className="grid grid-cols-1 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="enquiry-guestsCount"

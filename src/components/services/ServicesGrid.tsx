@@ -30,7 +30,7 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
         {/* 4-Column Responsive Grid (8 Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {SERVICES_DATA.map((service) => {
-            const coverPhoto = service.photos[0];
+            const coverPhoto = service.photos[0] ?? service.coverImage;
             const realPhotoCount = service.photos.length;
 
             return (
@@ -62,7 +62,7 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
                       : "Photos Coming Soon"}
                   </span>
 
-                  {coverPhoto && (
+                  {realPhotoCount > 0 && (
                     <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#7a5508] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
                       <span className="material-symbols-outlined text-[16px]">
                         visibility

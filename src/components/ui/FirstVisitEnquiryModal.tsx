@@ -5,14 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2, X } from "lucide-react";
 import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 
-const STORAGE_KEY = "celestal-enquiry-popup-seen-v1";
-
-function getToday() {
-  const date = new Date();
-  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
-  return date.toISOString().slice(0, 10);
-}
-
 export function FirstVisitEnquiryModal() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +12,6 @@ export function FirstVisitEnquiryModal() {
     name: "",
     phone: "",
     email: "",
-    checkInDate: "",
-    checkOutDate: "",
     guestsCount: "",
     enquiryType: "Room Booking",
     message: "",
@@ -32,17 +22,9 @@ export function FirstVisitEnquiryModal() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    let frame: number | undefined;
-    try {
-      if (window.localStorage.getItem(STORAGE_KEY)) return;
-      frame = window.requestAnimationFrame(() => setIsOpen(true));
-    } catch (error) {
-      console.error("[FirstVisitEnquiryModal] Could not access localStorage:", error);
-      frame = window.requestAnimationFrame(() => setIsOpen(true));
-    }
-
+    const frame = window.requestAnimationFrame(() => setIsOpen(true));
     return () => {
-      if (frame !== undefined) window.cancelAnimationFrame(frame);
+      window.cancelAnimationFrame(frame);
     };
   }, []);
 
@@ -51,11 +33,6 @@ export function FirstVisitEnquiryModal() {
     if (!dialog) return;
 
     if (isOpen && !dialog.open) {
-      try {
-        window.localStorage.setItem(STORAGE_KEY, "shown");
-      } catch (error) {
-        console.error("[FirstVisitEnquiryModal] Could not save visit state:", error);
-      }
       dialog.showModal();
     }
     if (!isOpen && dialog.open) dialog.close();
@@ -75,12 +52,6 @@ export function FirstVisitEnquiryModal() {
       setErrorMessage("Please enter a valid 10-digit mobile number.");
       return;
     }
-    if (formData.checkOutDate <= formData.checkInDate) {
-      setSubmitStatus("error");
-      setErrorMessage("Check-out date must be after the check-in date.");
-      return;
-    }
-
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setErrorMessage("");
@@ -95,8 +66,6 @@ export function FirstVisitEnquiryModal() {
         botcheck: formData.honeypot,
         fields: {
           "Enquiry Type": formData.enquiryType,
-          "Check-in Date": formData.checkInDate,
-          "Check-out Date": formData.checkOutDate,
           "Number of Guests": formData.guestsCount,
           Message: formData.message,
         },
@@ -198,7 +167,7 @@ export function FirstVisitEnquiryModal() {
                     />
                   </label>
                   <label className="text-sm font-semibold text-stone-700">
-                    Mobile Number
+                    Phone Number / WhatsApp
                     <input
                       name="phone"
                       type="tel"
@@ -236,33 +205,9 @@ export function FirstVisitEnquiryModal() {
                       <option>Room Booking</option>
                       <option>Banquet</option>
                       <option>Wedding</option>
-                      <option>Corporate Event</option>
+                      <option>Restaurant</option>
                       <option>Other</option>
                     </select>
-                  </label>
-                  <label className="text-sm font-semibold text-stone-700">
-                    Check-in Date
-                    <input
-                      name="checkInDate"
-                      type="date"
-                      min={getToday()}
-                      required
-                      value={formData.checkInDate}
-                      onChange={(event) => setFormData({ ...formData, checkInDate: event.target.value })}
-                      className="mt-1.5 w-full rounded-lg border border-stone-300 bg-white px-3.5 py-3 font-normal outline-none transition focus:border-[#9a7126] focus:ring-2 focus:ring-[#9a7126]/20"
-                    />
-                  </label>
-                  <label className="text-sm font-semibold text-stone-700">
-                    Check-out Date
-                    <input
-                      name="checkOutDate"
-                      type="date"
-                      min={formData.checkInDate || getToday()}
-                      required
-                      value={formData.checkOutDate}
-                      onChange={(event) => setFormData({ ...formData, checkOutDate: event.target.value })}
-                      className="mt-1.5 w-full rounded-lg border border-stone-300 bg-white px-3.5 py-3 font-normal outline-none transition focus:border-[#9a7126] focus:ring-2 focus:ring-[#9a7126]/20"
-                    />
                   </label>
                   <label className="text-sm font-semibold text-stone-700 sm:col-span-2">
                     Number of Guests

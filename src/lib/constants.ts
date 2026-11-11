@@ -8,7 +8,7 @@ export function getHeroBackgroundImageForPage(_pageKey: string = "home") {
 export const HOTEL_INFO = {
   name: "Celestal SS Grand Hotel",
   tagline: "Contemporary Comfort • Thoughtful Hospitality • Grand Celebrations",
-  subheading: "Premier luxury hotel, executive banquet hall & celebratory destination in LDA Colony, Ashiyana, Lucknow.",
+  subheading: "Hotel, banquet hall & celebration destination on Kursi Road, Lucknow.",
   address: "Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026, India",
   shortAddress: "Plot 5, Misripur Guramba, Kursi Road, Lucknow",
   landmark: "Misripur Guramba, Kursi Road, Lucknow",

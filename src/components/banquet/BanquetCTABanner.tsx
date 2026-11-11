@@ -40,11 +40,10 @@ export function BanquetCTABanner() {
             className="font-label-button text-label-button uppercase px-8 py-4 bg-surface-container/20 text-on-primary hover:bg-surface-container/30 rounded-xl transition-all tracking-widest inline-flex items-center gap-2 border border-white/10 font-semibold"
           >
             <Phone className="w-4 h-4 text-primary-fixed-dim" />
-            <span>Call +91 70542 50911</span>
+            <span>Call {HOTEL_INFO.phones.primary}</span>
           </a>
         </div>
       </div>
     </section>
   );
 }
-

@@ -113,7 +113,7 @@ export function InquirySection() {
                     check_circle
                   </span>
                   <span>
-                    <strong>Prime Central Ashiyana Hub:</strong> Easily accessible on Sector-M, minutes from VIP road and Kanpur Highway.
+                    <strong>On Kursi Road:</strong> Find us at Plot 5, Misripur Guramba, Lucknow.
                   </span>
                 </li>
                 <li className="flex items-start gap-space-xs">
