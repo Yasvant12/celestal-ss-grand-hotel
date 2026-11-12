@@ -70,7 +70,7 @@ export function AccommodationFeature() {
           </h2>
 
           <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-6">
-            Every room and suite at Celestal SS Grand Hotel is crafted as a peaceful retreat from the vibrant tempo of Lucknow. Impeccably clean, thoughtfully maintained, and tailored to provide restful nights for wedding guests, business leaders, and visiting families.
+            Every guest room at Celestal SS Grand Hotel is crafted as a peaceful retreat from the vibrant tempo of Lucknow. Impeccably clean, thoughtfully maintained, and tailored to provide restful nights for wedding guests, business leaders, and visiting families.
           </p>
 
           <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-8">
@@ -95,7 +95,7 @@ export function AccommodationFeature() {
             href="/rooms"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-on-primary font-label-button text-label-button uppercase tracking-wider shadow-md hover:bg-gold-deep transition-all"
           >
-            <span>View Rooms &amp; Suites</span>
+            <span>View Rooms &amp; Accommodation</span>
             <span className="material-symbols-outlined text-[16px]">north_east</span>
           </Link>
         </motion.div>

@@ -13,20 +13,18 @@ import { BanquetEnquirySection } from "./BanquetEnquirySection";
 import { BanquetCTABanner } from "./BanquetCTABanner";
 
 export function BanquetView() {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [selectedVenue, setSelectedVenue] = useState("Destiny Banquet Hall");
+  const [activeVenueId, setActiveVenueId] = useState("all");
+  const [selectedVenue, setSelectedVenue] = useState("Sapphire Hall");
   const [selectedEventType, setSelectedEventType] = useState("");
 
-  const handleFilterClick = (filter: string) => {
-    setActiveFilter(filter);
-    if (filter === "astor") {
-      document.getElementById("venue-astor")?.scrollIntoView({ behavior: "smooth" });
-    } else if (filter === "crystal") {
-      document.getElementById("venue-crystal")?.scrollIntoView({ behavior: "smooth" });
-    } else if (filter === "terrace") {
+  const handleVenueNavigation = (venueId: string) => {
+    setActiveVenueId(venueId);
+    if (venueId === "floorplan-viewer-section") {
       document.getElementById("floorplan-viewer-section")?.scrollIntoView({ behavior: "smooth" });
     } else {
-      document.getElementById("banquet-venues")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById(venueId === "all" ? "banquet-venues" : venueId)
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -60,50 +58,29 @@ export function BanquetView() {
       >
         {/* Quick Category / Floor Navigator Pills */}
         <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-3">
-          <button
-            type="button"
-            onClick={() => handleFilterClick("all")}
-            className={`font-label-button text-xs sm:text-label-button uppercase px-4 sm:px-5 py-2.5 rounded-xl transition-all font-semibold ${
-              activeFilter === "all"
+          {[
+            { id: "all", label: "All Venues" },
+            { id: "venue-sapphire", label: "Sapphire Hall" },
+            { id: "venue-emerald", label: "Emerald Hall" },
+            { id: "venue-ruby", label: "Ruby Lounge" },
+            { id: "venue-destiny-hall", label: "Destiny Hall" },
+            { id: "venue-restaurant-60", label: "Restaurants" },
+            { id: "venue-connected-lawn", label: "Green Lawn + Banquet" },
+            { id: "venue-destiny-lawn", label: "Destiny Hall Lawn" },
+            { id: "floorplan-viewer-section", label: "Floor Plans" },
+          ].map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => handleVenueNavigation(item.id)}
+              className={`rounded-xl px-4 py-2.5 font-label-button text-xs font-semibold uppercase transition-all sm:px-5 sm:text-label-button ${activeVenueId === item.id
                 ? "bg-primary text-on-primary shadow-md"
-                : "bg-surface-container/20 text-inverse-on-surface hover:bg-surface-container/30 border border-white/10"
-            }`}
-          >
-            Published Venues
-          </button>
-          <button
-            type="button"
-            onClick={() => handleFilterClick("astor")}
-            className={`font-label-button text-xs sm:text-label-button uppercase px-4 sm:px-5 py-2.5 rounded-xl transition-all font-semibold ${
-              activeFilter === "astor"
-                ? "bg-primary text-on-primary shadow-md"
-                : "bg-surface-container/20 text-inverse-on-surface hover:bg-surface-container/30 border border-white/10"
-            }`}
-          >
-            Destiny Banquet Hall · 500 guests
-          </button>
-          <button
-            type="button"
-            onClick={() => handleFilterClick("crystal")}
-            className={`font-label-button text-xs sm:text-label-button uppercase px-4 sm:px-5 py-2.5 rounded-xl transition-all font-semibold ${
-              activeFilter === "crystal"
-                ? "bg-primary text-on-primary shadow-md"
-                : "bg-surface-container/20 text-inverse-on-surface hover:bg-surface-container/30 border border-white/10"
-            }`}
-          >
-            Sapphire Banquet Hall · 250 guests
-          </button>
-          <button
-            type="button"
-            onClick={() => handleFilterClick("terrace")}
-            className={`font-label-button text-xs sm:text-label-button uppercase px-4 sm:px-5 py-2.5 rounded-xl transition-all font-semibold ${
-              activeFilter === "terrace"
-                ? "bg-primary text-on-primary shadow-md"
-                : "bg-surface-container/20 text-inverse-on-surface hover:bg-surface-container/30 border border-white/10"
-            }`}
-          >
-            Golden Knot Lawn · 400 guests
-          </button>
+                : "border border-white/10 bg-surface-container/20 text-inverse-on-surface hover:bg-surface-container/30"
+                }`}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       </PageHero>
 
@@ -113,23 +90,23 @@ export function BanquetView() {
       {/* Section 3: Feature Alternating Venue Showcase */}
       <BanquetVenueShowcase
         onSelectVenue={handleSelectVenue}
-        activeFilter={activeFilter}
       />
 
       {/* Section 4: Interactive Floor Plan & CAD Blueprint Viewer */}
-      <BanquetFloorPlanViewer />
+      {/* <BanquetFloorPlanViewer /> */}
 
       {/* Section 5: Events We Host (6 Category Cards) */}
       <BanquetCuratedEvents onSelectEventType={handleSelectEventType} />
 
       {/* Section 6: Banquet Visual Gallery Preview */}
-      <BanquetVisualGallery />
+      {/* <BanquetVisualGallery /> */}
 
       {/* Section 7: Facilities & Event Support */}
       <BanquetSupportFeatures />
 
       {/* Section 8: Plan Your Event Consultation & High-Conversion Enquiry */}
       <BanquetEnquirySection
+        key={selectedVenue}
         initialVenue={selectedVenue}
         initialEventType={selectedEventType}
       />

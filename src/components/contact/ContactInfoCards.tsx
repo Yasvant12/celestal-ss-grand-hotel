@@ -67,7 +67,7 @@ export function ContactInfoCards() {
             className="flex flex-col text-sm text-stone-800 hover:text-primary transition-colors py-1 border-b border-stone-100"
           >
             <span className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider">
-              General &amp; Suites
+              General &amp; Room Enquiries
             </span>
             <span className="font-medium truncate text-stone-900">{HOTEL_INFO.email}</span>
           </a>

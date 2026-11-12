@@ -17,26 +17,26 @@ import { RoomImagePlaceholder } from "./RoomImagePlaceholder";
 
 export interface RoomDetailModalProps {
   isOpen: boolean;
-  suiteId: string;
+  roomId: string;
   defaultTab?: "gallery" | "floorplan";
   onClose: () => void;
 }
 
 export function RoomDetailModal({
   isOpen,
-  suiteId,
+  roomId,
   defaultTab = "gallery",
   onClose,
 }: RoomDetailModalProps) {
   const [activeTab, setActiveTab] = useState<"gallery" | "floorplan">(defaultTab);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const suite: RoomData = ROOMS_DATA[suiteId] || ROOMS_DATA["executive"];
+  const room: RoomData = ROOMS_DATA[roomId] || ROOMS_DATA["executive"];
 
   useEffect(() => {
     setActiveTab(defaultTab);
     setCurrentImageIndex(0);
-  }, [suiteId, defaultTab, isOpen]);
+  }, [roomId, defaultTab, isOpen]);
 
   // Handle Escape key
   useEffect(() => {
@@ -65,7 +65,7 @@ export function RoomDetailModal({
 
   if (!isOpen) return null;
 
-  const images = suite.images;
+  const images = room.images;
   const currentImage = images[currentImageIndex] || images[0];
 
   const handlePrevImage = () => {
@@ -92,7 +92,7 @@ export function RoomDetailModal({
               </span>
               <span className="text-stone-400 hidden sm:inline">•</span>
               <span className="font-label-compact text-xs text-stone-600 hidden sm:inline">
-                {suite.tagline}
+                {room.tagline}
               </span>
             </div>
           </div>
@@ -159,7 +159,7 @@ export function RoomDetailModal({
                       <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/70 via-transparent to-transparent pointer-events-none" />
                     </>
                   ) : (
-                    <RoomImagePlaceholder roomName={suite.name} />
+                    <RoomImagePlaceholder roomName={room.name} />
                   )}
 
                   {/* Top Indicator Badge */}
@@ -224,7 +224,7 @@ export function RoomDetailModal({
                             className="object-contain"
                           />
                         ) : (
-                          <RoomImagePlaceholder roomName={suite.name} compact />
+                          <RoomImagePlaceholder roomName={room.name} compact />
                         )}
                       </button>
                     ))}
@@ -242,14 +242,14 @@ export function RoomDetailModal({
                   <div className="relative z-10 flex items-center justify-between border-b border-gold-metallic/20 pb-2">
                     <div className="flex flex-col">
                       <span className="font-eyebrow-luxury text-[10px] text-gold-light uppercase tracking-widest">
-                        {suite.floorplan.title}
+                        {room.floorplan.title}
                       </span>
                       <span className="font-mono text-[11px] text-stone-400">
-                        {suite.floorplan.scale}
+                        {room.floorplan.scale}
                       </span>
                     </div>
                     <div className="px-2.5 py-0.5 bg-gold-metallic/20 border border-gold-metallic/40 rounded text-gold-light font-mono text-[10px]">
-                      {suite.floorplan.dimensions}
+                      {room.floorplan.dimensions}
                     </div>
                   </div>
 
@@ -365,7 +365,7 @@ export function RoomDetailModal({
 
                     {/* Interactive Hotspot Pins */}
                     <div className="absolute inset-0 pointer-events-auto">
-                      {suite.floorplan.spaces.map((sp) => (
+                      {room.floorplan.spaces.map((sp) => (
                         <div
                           key={sp.name}
                           className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
@@ -392,7 +392,7 @@ export function RoomDetailModal({
                       </div>
                       <div className="flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded bg-gold-metallic" />
-                        <span>Marble En-Suites</span>
+                        <span>Marble Bathrooms</span>
                       </div>
                     </div>
                     <span className="text-gold-light font-mono text-[10px]">
@@ -408,7 +408,7 @@ export function RoomDetailModal({
                       Total Area
                     </span>
                     <span className="font-label-compact text-xs font-semibold">
-                      {suite.sqft} ({suite.sqm})
+                      {room.sqft} ({room.sqm})
                     </span>
                   </div>
                   <div className="p-2 bg-white/5 rounded-lg border border-white/10">
@@ -416,7 +416,7 @@ export function RoomDetailModal({
                       Ceiling Clear
                     </span>
                     <span className="font-label-compact text-xs font-semibold">
-                      {suite.ceilingHeight}
+                      {room.ceilingHeight}
                     </span>
                   </div>
                   <div className="p-2 bg-white/5 rounded-lg border border-white/10">
@@ -424,7 +424,7 @@ export function RoomDetailModal({
                       Acoustics
                     </span>
                     <span className="font-label-compact text-xs font-semibold truncate">
-                      {suite.acousticRating.split(" ")[0]} Isolation
+                      {room.acousticRating.split(" ")[0]} Isolation
                     </span>
                   </div>
                   <div className="p-2 bg-white/5 rounded-lg border border-white/10">
@@ -443,26 +443,26 @@ export function RoomDetailModal({
           {/* ================= RIGHT COLUMN: Narrative & Highlights ================= */}
           <div className="lg:col-span-5 p-6 sm:p-8 bg-surface-container-lowest flex flex-col justify-between">
             <div className="flex flex-col gap-5">
-              {/* Suite Header Strip */}
+              {/* Room Header Strip */}
               <div className="flex flex-col gap-1.5 border-b border-stone-200 pb-4">
                 <div className="flex items-center justify-between">
                   <span className="font-eyebrow-luxury text-[11px] text-primary uppercase tracking-widest font-bold">
-                    {suite.wing}
+                    {room.wing}
                   </span>
                   <span className="px-3 py-0.5 bg-surface-champagne rounded-full font-label-compact text-xs text-on-surface font-semibold">
-                    {suite.occupancy}
+                    {room.occupancy}
                   </span>
                 </div>
 
                 <h2 className="font-headline-sm text-2xl text-on-surface font-serif font-bold mt-1">
-                  {suite.name}
+                  {room.name}
                 </h2>
 
                 <div className="flex items-center gap-2 pt-1 font-label-compact text-xs text-stone-600">
-                  <span className="font-bold text-on-surface text-sm">{suite.sqft}</span>
-                  <span className="text-stone-400">({suite.sqm})</span>
+                  <span className="font-bold text-on-surface text-sm">{room.sqft}</span>
+                  <span className="text-stone-400">({room.sqm})</span>
                   <span>•</span>
-                  <span>{suite.bedConfig}</span>
+                  <span>{room.bedConfig}</span>
                 </div>
               </div>
 
@@ -472,7 +472,7 @@ export function RoomDetailModal({
                   Architectural Narrative
                 </span>
                 <p className="font-body-sm text-xs sm:text-sm text-stone-600 leading-relaxed">
-                  {suite.description}
+                  {room.description}
                 </p>
               </div>
 
@@ -482,19 +482,19 @@ export function RoomDetailModal({
                   <span className="text-stone-500 block text-[10px] uppercase font-eyebrow-luxury">
                     Ceiling Height
                   </span>
-                  <span className="font-semibold text-stone-800">{suite.ceilingHeight}</span>
+                  <span className="font-semibold text-stone-800">{room.ceilingHeight}</span>
                 </div>
                 <div>
                   <span className="text-stone-500 block text-[10px] uppercase font-eyebrow-luxury">
                     Balcony Vista
                   </span>
-                  <span className="font-semibold text-stone-800">{suite.view}</span>
+                  <span className="font-semibold text-stone-800">{room.view}</span>
                 </div>
                 <div className="col-span-2 pt-1.5 border-t border-stone-200">
                   <span className="text-stone-500 block text-[10px] uppercase font-eyebrow-luxury">
                     Sound Attenuation
                   </span>
-                  <span className="font-semibold text-stone-800">{suite.acousticRating}</span>
+                  <span className="font-semibold text-stone-800">{room.acousticRating}</span>
                 </div>
               </div>
 
@@ -504,7 +504,7 @@ export function RoomDetailModal({
                   Signature In-Chamber Amenities
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {suite.amenities.map((am) => (
+                  {room.amenities.map((am) => (
                     <div
                       key={am.title}
                       className="p-2.5 bg-surface-container-low rounded-lg border border-stone-100 flex flex-col"
@@ -529,7 +529,7 @@ export function RoomDetailModal({
                 className="w-full py-3.5 px-4 bg-primary hover:bg-gold-deep text-on-primary font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call to Enquire About This Suite</span>
+                <span>Call to Enquire About This Room</span>
               </a>
 
               <div className="grid grid-cols-2 gap-2">
@@ -543,7 +543,7 @@ export function RoomDetailModal({
                 <a
                   className="py-2.5 px-3 bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white text-stone-800 font-label-compact text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-[#25D366]/30"
                   href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(
-                    suite.name
+                    room.name
                   )}.`}
                   target="_blank"
                   rel="noopener noreferrer"

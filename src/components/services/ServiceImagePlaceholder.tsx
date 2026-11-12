@@ -1,4 +1,11 @@
-import { Car, Music2 } from "lucide-react";
+import {
+  Baby,
+  BriefcaseBusiness,
+  Car,
+  Dumbbell,
+  Music2,
+  Sparkles,
+} from "lucide-react";
 
 interface ServiceImagePlaceholderProps {
   serviceTitle: string;
@@ -9,7 +16,17 @@ export function ServiceImagePlaceholder({
   serviceTitle,
   className = "",
 }: ServiceImagePlaceholderProps) {
-  const PlaceholderIcon = /valet|parking/i.test(serviceTitle) ? Car : Music2;
+  const PlaceholderIcon = /valet|parking/i.test(serviceTitle)
+    ? Car
+    : /fitness|gym/i.test(serviceTitle)
+      ? Dumbbell
+      : /spa/i.test(serviceTitle)
+        ? Sparkles
+        : /kids|children/i.test(serviceTitle)
+          ? Baby
+          : /business|lounge/i.test(serviceTitle)
+            ? BriefcaseBusiness
+            : Music2;
 
   return (
     <div

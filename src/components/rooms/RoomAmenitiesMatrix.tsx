@@ -38,7 +38,7 @@ export function RoomAmenitiesMatrix() {
     },
     {
       icon: ShowerHead,
-      title: "En-Suite Marble Baths",
+      title: "Private Marble Bathrooms",
       desc: "Polished architectural stone bathrooms equipped with pressurized rainforest showers and organic toiletries.",
     },
     {
@@ -104,4 +104,3 @@ export function RoomAmenitiesMatrix() {
     </section>
   );
 }
-

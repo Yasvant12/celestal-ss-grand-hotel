@@ -38,7 +38,7 @@ const HOTSPOTS: Record<string, HotspotDetail> = {
   bridal: {
     id: "bridal",
     number: 3,
-    title: "Zone 3: Bridal & VIP Green En-Suite",
+    title: "Zone 3: Bridal & VIP Green Room",
     desc: "Private air-conditioned green room with full-length vanity mirrors, secure wardrobes, and direct stage access.",
   },
   culinary: {
@@ -395,7 +395,7 @@ export function BanquetFloorPlanViewer() {
                   3× High Speed Cars
                 </text>
 
-                {/* Bridal En-Suite */}
+                {/* Bridal Green Room */}
                 <rect
                   x="37"
                   y="185"
@@ -414,7 +414,7 @@ export function BanquetFloorPlanViewer() {
                   fontFamily="Plus Jakarta Sans"
                   fontWeight="600"
                 >
-                  BRIDAL EN-SUITE
+                  BRIDAL GREEN ROOM
                 </text>
                 <text
                   x="97"

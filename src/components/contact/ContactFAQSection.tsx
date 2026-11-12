@@ -11,7 +11,7 @@ interface FAQItem {
 
 const FAQS: FAQItem[] = [
   {
-    question: "What are the standard check-in and check-out timings for suites?",
+    question: "What are the standard check-in and check-out timings for guest rooms?",
     answer:
       "Check-in is from 14:00 hrs and check-out is until 11:00 hrs. Early check-in and late check-out requests are accommodated based on room availability and can be arranged with our 24/7 concierge desk.",
   },
@@ -23,7 +23,7 @@ const FAQS: FAQItem[] = [
   {
     question: "What is the cancellation and rescheduling policy for rooms and event bookings?",
     answer:
-      "Individual suite stays can be cancelled or rescheduled free of charge up to 48 hours prior to arrival. Banquet and group block cancellation terms are customized and clearly detailed in your event booking contract.",
+      "Individual room reservations can be cancelled or rescheduled free of charge up to 48 hours prior to arrival. Banquet and group block cancellation terms are customized and clearly detailed in your event booking contract.",
   },
   {
     question: "Are customized catering menus and pre-event food tastings offered?",
@@ -127,4 +127,3 @@ export function ContactFAQSection() {
     </section>
   );
 }
-

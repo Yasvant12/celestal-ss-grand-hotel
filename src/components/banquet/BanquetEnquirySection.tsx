@@ -20,7 +20,7 @@ interface BanquetEnquirySectionProps {
 }
 
 export function BanquetEnquirySection({
-  initialVenue = "First Floor Grand Astor (5,250 sq ft)",
+  initialVenue = "Sapphire Hall",
   initialEventType = "",
 }: BanquetEnquirySectionProps) {
   const [fullName, setFullName] = useState("");
@@ -373,14 +373,17 @@ export function BanquetEnquirySection({
                     onChange={(e) => setVenuePreference(e.target.value)}
                     className="px-4 py-2.5 rounded-xl bg-surface-ivory border border-stone-200/80 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:bg-white text-on-surface font-body-md text-sm cursor-pointer"
                   >
-                    <option value="First Floor Grand Astor (5,250 sq ft)">
-                      First Floor Grand Astor Ballroom (5,250 sq. ft.)
+                    <option value="Sapphire Hall">Sapphire Hall · 300 guests</option>
+                    <option value="Emerald Hall">Emerald Hall · 300 guests</option>
+                    <option value="Ruby Lounge">Ruby Lounge · 60 guests</option>
+                    <option value="Destiny Hall">Destiny Hall · 300 guests</option>
+                    <option value="Restaurant (60 guests)">Restaurant · 60 guests</option>
+                    <option value="Restaurant (56 guests)">Restaurant · 56 guests</option>
+                    <option value="Green Lawn with Connected Double-Height Banquet">
+                      Green Lawn with Connected Double-Height Banquet · 1,000 guests
                     </option>
-                    <option value="Second Floor Crystal Hall (5,250 sq ft)">
-                      Second Floor Crystal Hall (5,250 sq. ft.)
-                    </option>
-                    <option value="Combined Dual Floor Buyout (10,500 sq ft)">
-                      Combined Dual Floor Buyout (10,500 sq. ft.)
+                    <option value="Destiny Hall Green Lawn">
+                      Destiny Hall Green Lawn · 1,500 guests
                     </option>
                     <option value="Undecided / Needs Hospitality Recommendation">
                       Undecided / Needs Hospitality Guidance
@@ -397,7 +400,7 @@ export function BanquetEnquirySection({
                     rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Tell us about specific decor themes, culinary requirements, stage dimensions, or suite accommodation needs..."
+                    placeholder="Tell us about specific decor themes, culinary requirements, stage dimensions, or guest room accommodation needs..."
                     className="px-4 py-2.5 rounded-xl bg-surface-ivory border border-stone-200/80 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:bg-white text-on-surface font-body-md text-sm placeholder:text-stone-400 transition-all resize-none"
                   />
                 </div>

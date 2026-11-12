@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export function HotelOfferings() {
   const offerings = [
     {
-      title: "Rooms & Suites",
+      title: "Rooms & Accommodation",
       tag: "Boutique Stay",
       description:
         "Comfortable spaces designed for a relaxing stay with personalized room amenities.",

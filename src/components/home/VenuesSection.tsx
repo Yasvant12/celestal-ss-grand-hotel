@@ -8,7 +8,7 @@ export function VenuesSection() {
   const shouldReduceMotion = useReducedMotion();
   const banquetHallImg = "/images/hotel-banquet-ballroom-03.jpg";
   const lawnImg = "/images/hotel-open-lawn-night-01.jpeg";
-  const roomsImg = "/images/hotel-room-bedroom-02.jpeg";
+  const roomsImg = "/images/hotel-room-bedroom-03.jpeg";
   const diningImg = "/images/hotel-restaurant-chef.png";
 
   const cardsContainerVariants: Variants = {
@@ -43,13 +43,13 @@ export function VenuesSection() {
         >
           <div className="flex flex-col gap-space-xs max-w-2xl">
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-primary">
-              Palatial Spaces &amp; Suites
+              Palatial Spaces &amp; Stays
             </span>
             <h2 className="font-headline-lg text-headline-lg text-on-surface">
               Curated Venues for Unforgettable Occasions
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              From climate-controlled ballroom banquets and starlit open-air lawns to bespoke bridal suites, every space is architected to inspire joy.
+              From climate-controlled ballroom banquets and starlit open-air lawns to private bridal preparation rooms, every space is architected to inspire joy.
             </p>
           </div>
           <div className="flex items-center gap-space-xs">
@@ -180,7 +180,7 @@ export function VenuesSection() {
             </div>
           </motion.div>
 
-          {/* Card 3: Luxury Rooms & Suites */}
+          {/* Card 3: Luxury Rooms */}
           <motion.div
             variants={cardVariants}
             whileHover={shouldReduceMotion ? undefined : { y: -6 }}
@@ -192,15 +192,15 @@ export function VenuesSection() {
                 <div
                   className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ backgroundImage: `url('${roomsImg}')` }}
-                  aria-label="Luxury Rooms &amp; Suites"
+                  aria-label="Luxury Rooms"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded bg-primary text-on-primary font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
-                  50+ Luxury Rooms
+                  60 Luxury Rooms
                 </div>
               </div>
               <div className="p-space-lg flex flex-col gap-space-sm">
                 <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                  Luxury Rooms &amp; Suites
+                  Luxury Rooms
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
                   At Celestal SS Grand Hotel, our rooms are designed to be your personal sanctuary, blending boutique luxury with the comforts of home for wedding families, guests, and corporate travelers.
@@ -217,7 +217,7 @@ export function VenuesSection() {
                     <span className="material-symbols-outlined text-[16px] text-primary">room_service</span> 24/7 Room Service
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-primary">shower</span> En-suite Modern Baths
+                    <span className="material-symbols-outlined text-[16px] text-primary">shower</span> Private Modern Bathrooms
                   </span>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export function VenuesSection() {
                 <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
               </a>
               <span className="font-label-compact text-label-compact text-on-surface-variant">
-                Bridal Suites Available
+                Bridal Preparation Rooms Available
               </span>
             </div>
           </motion.div>

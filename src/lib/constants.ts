@@ -6,7 +6,7 @@ export function getHeroBackgroundImageForPage(_pageKey: string = "home") {
 }
 
 export const HOTEL_INFO = {
-  name: "Celestal SS Grand Hotel",
+  name: "Celestial SS Grand Hotel",
   tagline: "Contemporary Comfort • Thoughtful Hospitality • Grand Celebrations",
   subheading: "Hotel, banquet hall & celebration destination on Kursi Road, Lucknow.",
   address: "Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026, India",
@@ -30,7 +30,7 @@ export const HOTEL_INFO = {
   reservationsEmail: "celestialssgrand@gmail.com",
   eventsEmail: "celestialssgrand@gmail.com",
   stats: {
-    lawnCapacity: "1,200+",
+    lawnCapacity: "1,000+",
     acBanquetCapacity: "400+",
     luxuryRooms: "60",
     serviceAvailability: "24 / 7",
@@ -61,7 +61,7 @@ export const HOTEL_INFO = {
 export const NAV_LINKS = [
   { label: "Home", href: "/", slug: "home" },
   { label: "About Us", href: "/about", slug: "about" },
-  { label: "Rooms & Suites", href: "/rooms", slug: "rooms" },
+  { label: "Rooms & Accommodation", href: "/rooms", slug: "rooms" },
   { label: "Grand Banquet", href: "/banquet", slug: "banquet" },
   { label: "Celebration Lawn", href: "/banquet/celebration-lawn", slug: "celebration-lawn" },
   { label: "Dining & Catering", href: "/restaurant", slug: "restaurant" },

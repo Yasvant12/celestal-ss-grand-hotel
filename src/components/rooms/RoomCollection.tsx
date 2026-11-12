@@ -9,7 +9,7 @@ import { HOTEL_INFO } from "@/lib/constants";
 
 export interface RoomCollectionProps {
   activeFilter: "all" | "executive" | "courtyard";
-  onOpenDetail: (suiteId: string, defaultTab?: "gallery" | "floorplan") => void;
+  onOpenDetail: (roomId: string, defaultTab?: "gallery" | "floorplan") => void;
 }
 
 export function RoomCollection({
@@ -60,7 +60,7 @@ export function RoomCollection({
               </span>
             </div>
             <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface font-medium tracking-tight">
-              Curated Room &amp; Suite Collections
+              Thoughtfully Designed Rooms for a Comfortable Stay
             </h2>
             <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
               Each space at Celestal SS Grand Hotel is calibrated for sensory serenity, blending understated contemporary aesthetics with ergonomic luxury.
@@ -72,8 +72,8 @@ export function RoomCollection({
           </div>
         </div>
 
-        {/* 2-Column Luxury Cards Mosaic */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        {/* Alternating editorial rows for each room type */}
+        <div className="mx-auto flex max-w-6xl flex-col gap-16 sm:gap-20 lg:gap-24">
           {filteredRooms.map((room: RoomData, idx) => (
             <motion.article
               key={room.id}
@@ -81,90 +81,93 @@ export function RoomCollection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden border border-stone-200/90"
+              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-16"
             >
-              {/* Image Frame */}
-              <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-noir-charcoal">
+              <div
+                className={`relative order-1 aspect-[4/3] overflow-hidden rounded-2xl bg-noir-charcoal shadow-xl lg:col-span-6 ${
+                  room.category === "executive" ? "lg:order-2" : "lg:order-1"
+                }`}
+              >
                 {room.heroImage ? (
                   <Image
                     src={room.heroImage}
-                    alt={room.name}
+                    alt={`${room.name} with ${room.bedConfig.toLowerCase()}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
                   />
                 ) : (
                   <RoomImagePlaceholder roomName={room.name} />
                 )}
                 {room.heroImage && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/75 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/65 via-transparent to-transparent" />
                 )}
-
-                {/* Top Category Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="px-3.5 py-1 bg-noir-charcoal/90 text-gold-light font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest rounded-lg shadow-sm border border-white/10">
+                <div className="absolute left-4 top-4">
+                  <span className="rounded-lg border border-white/10 bg-noir-charcoal/90 px-3.5 py-1 font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-gold-light shadow-sm">
                     {room.category === "executive" ? "Executive Club" : "Garden Courtyard"}
                   </span>
                 </div>
-
-                {/* Bottom Specs Bar */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-surface-container-lowest font-label-compact text-xs">
-                  <span className="bg-noir-charcoal/80 px-3 py-1 rounded-md backdrop-blur-md border border-white/10 font-medium">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-label-compact text-xs text-surface-container-lowest">
+                  <span className="rounded-md border border-white/10 bg-noir-charcoal/80 px-3 py-1 font-medium backdrop-blur-md">
                     {room.sqft} ({room.sqm})
                   </span>
-                  <span className="bg-noir-charcoal/80 px-3 py-1 rounded-md backdrop-blur-md border border-white/10 font-medium">
+                  <span className="rounded-md border border-white/10 bg-noir-charcoal/80 px-3 py-1 font-medium backdrop-blur-md">
                     {room.occupancy}
                   </span>
                 </div>
               </div>
 
-              {/* Card Body */}
-              <div className="p-6 sm:p-8 flex flex-col flex-1 justify-between bg-surface-container-lowest">
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-eyebrow-luxury text-eyebrow-luxury text-primary uppercase tracking-wider font-bold">
-                      {room.category === "executive" ? "Business & Weekend" : "Tranquil Retreat"}
-                    </span>
-                    <span className="font-label-compact text-stone-500 font-medium">
-                      {room.bedConfig}
-                    </span>
-                  </div>
-
-                  <h3 className="font-headline-sm text-xl sm:text-2xl text-on-surface group-hover:text-primary transition-colors font-semibold">
-                    {room.name}
-                  </h3>
-
-                  <p className="font-body-sm text-xs sm:text-sm text-stone-600 leading-relaxed">
-                    {room.shortDesc}
-                  </p>
-
-                  {/* 4 Quick Features */}
-                  <div className="pt-2 grid grid-cols-2 gap-2 text-stone-700 font-label-compact text-xs">
-                    {room.quickFeatures.map((feat) => (
-                      <div key={feat} className="flex items-center gap-2 p-1.5 rounded-lg bg-surface-container-low border border-stone-100">
-                        {getAmenityIcon(feat)}
-                        <span className="font-medium text-[11px] truncate">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
+              <div
+                className={`order-2 flex flex-col items-start lg:col-span-6 ${
+                  room.category === "executive" ? "lg:order-1" : "lg:order-2"
+                }`}
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-8 bg-primary" />
+                  <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-[0.22em] text-primary">
+                    {room.category === "executive" ? "Business & Weekend" : "Tranquil Retreat"}
+                  </span>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="pt-6 mt-4 border-t border-stone-100 flex items-center gap-3">
+                <h3 className="mb-3 font-headline-lg text-2xl font-medium tracking-tight text-noir-charcoal transition-colors hover:text-primary sm:text-3xl lg:text-4xl">
+                  {room.name}
+                </h3>
+
+                <p className="mb-5 font-body-sm text-sm leading-relaxed text-on-surface-variant sm:text-base">
+                  {room.shortDesc}
+                </p>
+
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-surface-champagne px-4 py-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span className="font-label-compact text-xs font-medium text-on-surface-variant">
+                    {room.bedConfig}
+                  </span>
+                </div>
+
+                <div className="mb-6 grid w-full grid-cols-2 gap-2 font-label-compact text-xs text-stone-700">
+                  {room.quickFeatures.map((feat) => (
+                    <div key={feat} className="flex items-center gap-2 rounded-lg border border-stone-100 bg-surface-container-low p-2">
+                      {getAmenityIcon(feat)}
+                      <span className="truncate font-medium">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex w-full flex-col gap-3 border-t border-stone-200 pt-5 sm:flex-row">
                   <a
                     href={`tel:${HOTEL_INFO.phones.primary}`}
-                    className="flex-1 py-3 px-4 bg-primary hover:bg-gold-deep text-on-primary font-label-button text-xs font-bold uppercase tracking-wider rounded-xl transition-all text-center shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-center font-label-button text-xs font-bold uppercase tracking-wider text-on-primary shadow-md transition-colors hover:bg-gold-deep"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="h-4 w-4" />
                     <span>Call to Enquire</span>
                   </a>
 
                   <button
                     type="button"
                     onClick={() => onOpenDetail(room.id, "gallery")}
-                    className="px-4 py-3 bg-surface-container-high hover:bg-surface-container text-on-surface font-label-button text-xs font-bold uppercase tracking-wider rounded-xl transition-colors flex items-center gap-1.5 border border-stone-200/80 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-stone-200 bg-surface-container-high px-4 py-3 font-label-button text-xs font-bold uppercase tracking-wider text-on-surface transition-colors hover:bg-surface-container"
                   >
-                    <Eye className="w-4 h-4 text-primary" />
+                    <Eye className="h-4 w-4 text-primary" />
                     <span>View Details</span>
                   </button>
                 </div>

@@ -31,7 +31,7 @@ export function Footer() {
             </div>
 
             <p className="font-body-sm text-sm text-surface-container-highest max-w-sm leading-relaxed">
-              An international hallmark of serene hospitality, bespoke suites, grand celebrations, and elevated gastronomy curated for the discerning global traveler.
+              An international hallmark of serene hospitality, thoughtfully designed rooms, grand celebrations, and elevated gastronomy curated for the discerning global traveler.
             </p>
 
             <div className="pt-1">
@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/rooms" className="hover:text-gold-light transition-colors">
-                  Rooms &amp; Suites
+                  Rooms &amp; Accommodation
                 </Link>
               </li>
               <li>

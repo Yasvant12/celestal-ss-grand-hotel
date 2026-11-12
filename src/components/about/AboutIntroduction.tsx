@@ -11,7 +11,7 @@ export function AboutIntroduction() {
     "/images/hotel-corridor-01.jpeg";
 
   return (
-    <section className="w-full py-24 md:py-32 px-6 lg:px-12 bg-surface" id="intro-section">
+    <section className="w-full px-6 pt-8 pb-24 md:pt-10 md:pb-32 lg:px-12 bg-surface" id="intro-section">
       <div className="site-container grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         {/* Left side: Overlapping Architectural Frames */}
         <motion.div
@@ -80,7 +80,7 @@ export function AboutIntroduction() {
                 Comfortable Accommodation
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant">
-                Suites with plush bedding &amp; modern amenities.
+                Rooms with plush bedding &amp; modern amenities.
               </p>
             </div>
 

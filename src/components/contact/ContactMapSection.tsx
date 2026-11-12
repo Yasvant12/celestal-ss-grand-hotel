@@ -111,7 +111,7 @@ export function ContactMapSection() {
                   </h4>
                 </div>
                 <p className="font-body-sm text-xs sm:text-sm text-surface-variant/90 leading-relaxed">
-                  Complimentary luxury airport arrival coordination is extended to all Executive Suites and Banquet hosts upon advance request.
+                  Complimentary luxury airport arrival coordination is extended to all Executive Room and Banquet guests upon advance request.
                 </p>
               </div>
 

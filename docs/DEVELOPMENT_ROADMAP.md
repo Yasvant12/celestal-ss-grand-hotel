@@ -48,7 +48,7 @@ A phased, disciplined implementation plan ensuring uncompromising fidelity to th
 ## Phase 3: Remaining Website Pages & Modules
 *Objective: Build all remaining 16 modules using the approved design system.*
 1. **About Us (`/about`)**: Full heritage story, royal culinary philosophy, leadership commitment, and facility certifications.
-2. **Rooms & Suites (`/rooms`) & Room Details (`/rooms/[slug]`)**: Detailed luxury room catalog, amenities, bed types, pricing inquiries.
+2. **Rooms & Accommodation (`/rooms`) & Room Details (`/rooms/[slug]`)**: Detailed room catalog, amenities, bed types, and enquiry details.
 3. **Restaurant (`/restaurant`) & Food Menu (`/menu`)**: Royal Awadhi culinary traditions, live counters, segregated kitchens, banquet menu packages.
 4. **Banquet Halls (`/banquet`) & Venue Details (`/banquet/[slug]`)**: The Royal Darbar Ballroom, Gulmohar Lawn, seating charts, floor plans.
 5. **Weddings (`/weddings`) & Wedding Packages (`/wedding-packages`)**: Mandap themes, Jaimala concepts, luxury packages (Silver, Gold, Imperial).

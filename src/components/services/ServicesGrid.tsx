@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { SERVICES_DATA } from "./servicesData";
 import { ServiceImagePlaceholder } from "./ServiceImagePlaceholder";
 
@@ -9,6 +10,8 @@ interface ServicesGridProps {
 }
 
 export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="w-full bg-[#fcf9f4] py-16 sm:py-20 md:py-24">
       <div className="site-container">
@@ -27,17 +30,22 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
           </p>
         </div>
 
-        {/* 4-Column Responsive Grid (8 Cards) */}
+        {/* 4-column desktop, 2-column tablet, and 1-column mobile grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-          {SERVICES_DATA.map((service) => {
+          {SERVICES_DATA.map((service, index) => {
             const coverPhoto = service.photos[0] ?? service.coverImage;
             const realPhotoCount = service.photos.length;
 
             return (
-              <article
+              <motion.article
                 key={service.id}
                 onClick={() => onOpenGallery(service.id)}
-                className="group cursor-pointer bg-white rounded-xl border border-stone-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.35, delay: Math.min(index % 4, 3) * 0.06 }}
+                whileHover={shouldReduceMotion ? undefined : { y: -6 }}
+                className="group cursor-pointer bg-white rounded-xl border border-stone-200/80 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden"
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#111827]">
@@ -97,7 +105,7 @@ export function ServicesGrid({ onOpenGallery }: ServicesGridProps) {
                     </button>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
         </div>

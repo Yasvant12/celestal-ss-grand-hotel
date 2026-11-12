@@ -10,8 +10,8 @@ This document outlines the architectural blueprint, URL schema, components, and 
 | :--- | :--- | :--- | :--- |
 | `/` | Home | Authoritative Stitch conversion: Hero, Availability Bar, Heritage, Venues, Facilities, Inquiry, Map, Footer | Quick Event Inquiry |
 | `/about` | About Us | Hotel heritage, Royal Awadhi ethos, leadership vision, comprehensive facilities & safety credentials | Venue Tour Request |
-| `/rooms` | Rooms & Suites | Boutique rooms showcase (Maharaja Suite, Executive Deluxe, Heritage Twin, Bridal Dressing Suite) | Room Availability Check |
-| `/rooms/[slug]` | Room Details | Individual room specifications, bed dimensions, virtual 360 preview, en-suite features | Room Booking Enquiry |
+| `/rooms` | Rooms & Accommodation | Room collection showcase (Executive Club Room, Garden Courtyard Deluxe, and bridal preparation rooms) | Room Availability Check |
+| `/rooms/[slug]` | Room Details | Individual room specifications, bed dimensions, virtual 360 preview, and private bathroom features | Room Booking Enquiry |
 | `/restaurant` | Restaurant & Dining | Royal Awadhi culinary traditions, Galouti Kebabs, Dum Biryanis, segregated kitchens, banquet dining | Table / Dining Enquiry |
 | `/menu` | Food Menu | Downloadable & interactive royal banquet food course menus, chaat street, dessert buffets | Catering Enquiry |
 | `/banquet` | Banquet Halls | The Royal Darbar Ballroom, Gulmohar Celebration Lawn, capacities, floor plans, technical AV specs | Banquet Proposal Form |

@@ -68,13 +68,13 @@ export function HeritageSection() {
                 <div
                   className="w-full h-80 bg-cover bg-center transition-transform 7-700 ease-out group-hover:scale-105"
                   style={{ backgroundImage: `url('${ballroomImg}')` }}
-                  aria-label="The Grand Darbar Ballroom"
+                  aria-label="Emerald Hall"
                 />
                 <div className="absolute bottom-4 left-4 right-4 p-space-sm rounded-lg bg-noir-charcoal/80 backdrop-blur-md text-surface-ivory flex justify-between items-center shadow-md">
                   <span className="font-label-button text-label-button uppercase tracking-wider text-gold-light">
-                    The Grand Darbar Ballroom
+                    Emerald Hall
                   </span>
-                  <span className="font-label-compact text-label-compact">Capacity: 400 Guests</span>
+                  <span className="font-label-compact text-label-compact">Capacity: 300 Guests</span>
                 </div>
               </div>
 

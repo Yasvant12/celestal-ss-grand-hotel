@@ -71,7 +71,7 @@ export function FloatingAvailabilityBar({ onCheckAvailability }: FloatingAvailab
               <option value="wedding">Royal Wedding &amp; Reception</option>
               <option value="banquet">Grand Indoor Banquet</option>
               <option value="lawn">Open Celebration Lawn Party</option>
-              <option value="stay">Luxury Rooms &amp; Suite Stay</option>
+              <option value="stay">Luxury Room Stay</option>
               <option value="corporate">Executive Corporate Summit</option>
             </select>
           </div>

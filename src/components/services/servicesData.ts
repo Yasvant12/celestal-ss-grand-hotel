@@ -28,7 +28,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "restaurant",
     photos: [
       {
-        src: "/images/hotel-restaurant-interior-01.jpeg",
+        src: "/images/services/dining-experience.jpeg",
         alt: "Restaurant dining room with tables at Celestal SS Grand Hotel.",
         caption: "The hotel's restaurant dining room.",
       },
@@ -45,7 +45,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "celebration",
     photos: [
       {
-        src: "/images/hotel-banquet-wedding-seating.webp",
+        src: "/images/services/jaimala-wedding-seating.webp",
         alt: "Indian wedding ceremony seating arranged in front of a floral Jaimala stage.",
         caption: "Wedding seating facing a floral stage with a circular Jaimala backdrop.",
       },
@@ -62,7 +62,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "auto_awesome",
     photos: [
       {
-        src: "/images/hotel-banquet-wedding-stage.jpg",
+        src: "/images/services/wedding-stage-decoration.jpg",
         alt: "Wedding stage with a floral backdrop and decorated couple seating.",
         caption: "A decorated wedding stage arranged for a celebration at the hotel.",
       },
@@ -82,6 +82,78 @@ export const SERVICES_DATA: ServiceItem[] = [
       src: "/images/services/live-band-ai.png",
       alt: "AI-generated illustration of a live band performing at a hotel event.",
     },
+  },
+  {
+    id: 8,
+    slug: "fitness-gym",
+    title: "Fitness & Gym",
+    category: "Wellness & Fitness",
+    shortDesc:
+      "Interested in fitness facilities during your stay? Contact our team to confirm available options.",
+    desc: "Fitness facilities are not currently verified. Please contact the hotel team to ask about availability and arrangements.",
+    icon: "fitness_center",
+    photos: [
+      {
+        src: "/images/services/fitness-gym.jpg",
+        alt: "Illustrative image of a hotel fitness room with cardio and strength equipment.",
+        caption:
+          "Illustrative facility image from the supplied design; please contact the hotel to confirm current fitness facilities.",
+      },
+    ],
+  },
+  {
+    id: 9,
+    slug: "ayurvedic-spa",
+    title: "Ayurvedic Spa",
+    category: "Wellness & Relaxation",
+    shortDesc:
+      "Ask our team whether Ayurvedic spa treatments or wellness arrangements are available.",
+    desc: "Spa services are not currently verified. Please contact the hotel team to ask about availability and arrangements.",
+    icon: "spa",
+    photos: [
+      {
+        src: "/images/services/ayurvedic-spa.jpg",
+        alt: "Illustrative Ayurvedic spa treatment room with a massage table.",
+        caption:
+          "Illustrative facility image from the supplied design; please contact the hotel to confirm current spa services.",
+      },
+    ],
+  },
+  {
+    id: 10,
+    slug: "kids-play-zone",
+    title: "Kids Play Zone",
+    category: "Family Amenities",
+    shortDesc:
+      "Ask our team whether a dedicated children's play area is available for your visit.",
+    desc: "A kids' play area is not currently verified. Please contact the hotel team to ask about availability and arrangements.",
+    icon: "child_care",
+    photos: [
+      {
+        src: "/images/services/kids-play-zone.jpg",
+        alt: "Illustrative indoor children's play area with soft play equipment.",
+        caption:
+          "Illustrative facility image from the supplied design; please contact the hotel to confirm current family amenities.",
+      },
+    ],
+  },
+  {
+    id: 11,
+    slug: "business-lounge",
+    title: "Business Lounge",
+    category: "Business & Meetings",
+    shortDesc:
+      "Ask our team about quiet work or meeting-space options during your stay.",
+    desc: "A dedicated business lounge is not currently verified. Please contact the hotel team to ask about availability and arrangements.",
+    icon: "business_center",
+    photos: [
+      {
+        src: "/images/services/business-lounge.jpg",
+        alt: "Illustrative executive lounge with meeting tables and workspaces.",
+        caption:
+          "Illustrative facility image from the supplied design; please contact the hotel to confirm current business facilities.",
+      },
+    ],
   },
   {
     id: 4,
@@ -124,7 +196,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "manage_accounts",
     photos: [
       {
-        src: "/images/hotel-open-lawn-celebration.png",
+        src: "/images/services/event-celebration-lawn.png",
         alt: "Outdoor celebration in the hotel lawn with a lit venue and event catering setup.",
         caption: "A nighttime outdoor celebration with event seating and catering at the hotel.",
       },
@@ -136,22 +208,22 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Banquet & Arrangements",
     category: "Comprehensive Hospitality",
     shortDesc:
-      "Pillarless Grand Astor & Crystal ballrooms across 10,500 sq. ft., dual private bridal suites, and dedicated multi-bay buffets.",
+      "Pillarless Grand Astor & Crystal ballrooms across 10,500 sq. ft., dual private bridal preparation rooms, and dedicated multi-bay buffets.",
     desc: "Complete venue configuration with high acoustic ceilings, private VIP bride and groom preparation sanctuaries, seamless food stations, and round-the-clock service staff.",
     icon: "apartment",
     photos: [
       {
-        src: "/images/hotel-banquet-ballroom-03.jpg",
+        src: "/images/services/banquet-ballroom-03.jpg",
         alt: "Pillarless banquet ballroom setup for an opulent wedding reception",
         caption: "Column-free grand ballroom layout allowing flexible seating configurations up to 400+ guests.",
       },
       {
-        src: "/images/hotel-banquet-ballroom-04.jpg",
+        src: "/images/services/banquet-ballroom-04.jpg",
         alt: "The Crystal Hall with daylight fenestration",
         caption: "Naturally daylit Crystal Hall suited for morning matrimonial ceremonies and corporate assemblies.",
       },
       {
-        src: "/images/hotel-banquet-wedding-stage.jpg",
+        src: "/images/services/wedding-stage-decoration.jpg",
         alt: "The Grand Astor Ballroom at Twilight with crystal chandeliers",
         caption: "Artisanal crystal chandeliers and climate-controlled ballroom space for up to 400+ banquet seating.",
       },

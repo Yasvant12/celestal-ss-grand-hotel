@@ -71,7 +71,7 @@ export function ServicesView() {
       {/* 2. Short Services Introduction (3 Value Cards) */}
       <ServicesIntro />
 
-      {/* 3. Services Card Grid (8 Disciplines with real photo counts & genuine imagery) */}
+      {/* 3. Services Card Grid */}
       <ServicesGrid onOpenGallery={handleOpenGallery} />
 
       {/* 4. Interactive Photo Gallery Modal with real photos & thumbnail switching */}

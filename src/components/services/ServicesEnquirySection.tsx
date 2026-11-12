@@ -204,7 +204,7 @@ export function ServicesEnquirySection({
                   <span className="material-symbols-outlined text-[16px] text-[#B38728]">
                     check_circle
                   </span>
-                  <span>Dedicated Preparation Suites</span>
+                  <span>Dedicated Preparation Rooms</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-[16px] text-[#B38728]">
@@ -355,7 +355,7 @@ export function ServicesEnquirySection({
                   rows={3}
                   value={formData.specialRequests}
                   onChange={handleChange}
-                  placeholder="Tell us about specific theme preferences, dietary custom requirements, timing details, or suite blocks needed..."
+                  placeholder="Tell us about specific theme preferences, dietary custom requirements, timing details, or room blocks needed..."
                   className="w-full px-3.5 py-2.5 rounded bg-[#FAF7F2] border border-stone-300 text-stone-900 font-body-sm text-sm focus:bg-white focus:border-[#7a5508] focus:outline-none transition-all"
                 />
               </div>

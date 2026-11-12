@@ -50,8 +50,8 @@ export const ROOMS_DATA: Record<string, RoomData> = {
   executive: {
     id: "executive",
     category: "executive",
-    name: "Executive Club Suite",
-    tagline: "Refined Corporate & Weekend Suite",
+    name: "Executive Club Room",
+    tagline: "Refined Corporate & Weekend Stay",
     wing: "Wings 04–09 • Executive Floors",
     sqft: "324 sq. ft.",
     sqm: "30 m²",
@@ -64,7 +64,7 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       "Tailored for discerning business travellers and weekend getaways, offering seamless connectivity, expansive dressing wardrobe, and tailored turndown amenities.",
     description:
       "Tailored specifically for discerning corporate professionals and weekend guests seeking seamless efficiency without sacrificing residential warmth. Features an ergonomic solid-walnut work desk, high-speed fiber data ports, a 55\" Smart UHD display, and tailored evening turndown service.",
-    heroImage: "/images/hotel-room-bedroom-02.jpeg",
+    heroImage: "/images/hotel-room-bedroom-03.jpeg",
     quickFeatures: ["Fiber Wi-Fi", "55\" Smart UHD TV", "24/7 Dining", "Express Pressing"],
     amenities: [
       { icon: "desk", title: "Ergonomic Executive Desk", desc: "Crafted solid walnut with integrated USB/HDMI" },
@@ -87,13 +87,13 @@ export const ROOMS_DATA: Record<string, RoomData> = {
       },
     ],
     floorplan: {
-      title: "Executive Club Suite Architectural Layout",
+      title: "Executive Club Room Architectural Layout",
       scale: "Scale 1:50 Architectural Grid",
       dimensions: "6.2m × 4.8m Perimeter",
       spaces: [
         { name: "Executive King Chamber", area: "18 m² (194 sq. ft.)", x: "35%", y: "40%" },
         { name: "Ergonomic Workstation", area: "4 m² (43 sq. ft.)", x: "75%", y: "30%" },
-        { name: "Rainfall En-Suite", area: "5.5 m² (59 sq. ft.)", x: "35%", y: "80%" },
+        { name: "Rainfall Shower", area: "5.5 m² (59 sq. ft.)", x: "35%", y: "80%" },
         { name: "Entry & Wardrobe Foyer", area: "2.5 m² (27 sq. ft.)", x: "75%", y: "75%" },
       ],
     },

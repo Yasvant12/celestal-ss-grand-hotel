@@ -1,7 +1,7 @@
 export function GalleryVideoSection() {
   return (
     <section className="w-full bg-surface-container-low py-12 sm:py-16">
-      <div className="site-container">
+      {/* <div className="site-container">
         <div className="mx-auto flex max-w-4xl flex-col gap-5">
           <div className="max-w-2xl">
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-primary">
@@ -30,7 +30,7 @@ export function GalleryVideoSection() {
             Add the video as <code className="rounded bg-surface-container px-1.5 py-0.5">public/videos/hotel-tour.mp4</code> to display it here.
           </p>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -3,16 +3,17 @@
 import { useState, useEffect } from "react";
 import { X, Calendar, Lock, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
+import { ROOMS_DATA } from "./roomsData";
 
 export interface RoomEnquiryModalProps {
   isOpen: boolean;
-  prefilledSuiteName: string;
+  prefilledRoomName: string;
   onClose: () => void;
 }
 
 export function RoomEnquiryModal({
   isOpen,
-  prefilledSuiteName,
+  prefilledRoomName,
   onClose,
 }: RoomEnquiryModalProps) {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ export function RoomEnquiryModal({
     phone: "",
     email: "",
     guestsCount: "1 Room • 1–2 Guests",
-    roomRequirements: prefilledSuiteName || "Executive Club Suite",
+    roomRequirements: prefilledRoomName || ROOMS_DATA.executive.name,
     message: "",
     honeypot: "",
   });
@@ -30,10 +31,10 @@ export function RoomEnquiryModal({
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    if (prefilledSuiteName) {
-      setFormData((prev) => ({ ...prev, roomRequirements: prefilledSuiteName }));
+    if (prefilledRoomName) {
+      setFormData((prev) => ({ ...prev, roomRequirements: prefilledRoomName }));
     }
-  }, [prefilledSuiteName]);
+  }, [prefilledRoomName]);
 
   // Handle escape key
   useEffect(() => {
@@ -71,7 +72,7 @@ export function RoomEnquiryModal({
     try {
       await submitWeb3FormsEnquiry({
         category: "Room Booking",
-        sourcePage: "Rooms & Suites",
+        sourcePage: "Rooms & Accommodation",
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
@@ -91,7 +92,7 @@ export function RoomEnquiryModal({
           phone: "",
           email: "",
           guestsCount: "1 Room • 1–2 Guests",
-          roomRequirements: prefilledSuiteName || "Executive Club Suite",
+          roomRequirements: prefilledRoomName || ROOMS_DATA.executive.name,
           message: "",
           honeypot: "",
         });
@@ -133,7 +134,7 @@ export function RoomEnquiryModal({
             Celestal SS Grand Concierge
           </span>
           <h3 className="font-headline-sm text-2xl text-on-surface font-serif font-bold">
-            Room &amp; Suite Reservation Enquiry
+            Room Reservation Enquiry
           </h3>
           <p className="font-body-sm text-xs sm:text-sm text-stone-600 leading-relaxed">
             Complete the details below to receive availability, seasonal quotes, and bespoke accommodation proposals directly from our front desk team.

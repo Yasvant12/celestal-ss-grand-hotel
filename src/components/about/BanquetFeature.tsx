@@ -105,7 +105,7 @@ export function BanquetFeature() {
             </div>
             <div>
               <span className="block font-headline-sm text-headline-sm text-gold-light font-semibold">
-                En-Suite
+                Private Bathroom
               </span>
               <span className="text-[11px] text-surface-champagne/60 uppercase tracking-wider">
                 Bridal Lounges

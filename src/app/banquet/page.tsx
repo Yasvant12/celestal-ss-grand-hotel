@@ -6,7 +6,7 @@ import { BanquetView } from "@/components/banquet/BanquetView";
 export const metadata: Metadata = {
   title: "Grand Ballroom & Banquet Halls in Lucknow | Celestal SS Grand Hotel",
   description:
-    "Banquet halls and Golden Knot Lawn at Celestal SS Grand Hotel, Kursi Road, Lucknow. Published capacities: Destiny 500, Sapphire 250, Emerald 200, Golden Knot Banquet 100, and Golden Knot Lawn 400 guests.",
+    "Explore Sapphire Hall and Emerald Hall, Ruby Lounge, two restaurant venues, a connected lawn and double-height banquet for 1,000 guests, and Destiny Hall Green Lawn for up to 1,500 guests.",
 };
 
 export default function BanquetPage() {
@@ -22,4 +22,3 @@ export default function BanquetPage() {
     </>
   );
 }
-

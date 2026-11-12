@@ -28,8 +28,8 @@ const FEATURES = [
   },
   {
     icon: Sparkles,
-    title: "Dedicated Bridal & Host Suites",
-    desc: "Private climate-controlled en-suite green rooms with vanity mirrors, secure wardrobes, lounge seating, and express butler refreshment service.",
+    title: "Dedicated Bridal & Host Rooms",
+    desc: "Private climate-controlled green rooms with vanity mirrors, secure wardrobes, lounge seating, and express butler refreshment service.",
   },
   {
     icon: Car,
@@ -90,4 +90,3 @@ export function BanquetSupportFeatures() {
     </section>
   );
 }
-

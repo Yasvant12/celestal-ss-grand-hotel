@@ -196,14 +196,14 @@ export function ContactEnquirySection() {
               <div className="relative rounded-xl overflow-hidden group shadow-md aspect-video sm:aspect-4/3">
                 <Image
                   src="/images/hotel-banquet-ballroom-02.jpg"
-                  alt="Celestal SS Grand Hotel Executive Grand Suite"
+                  alt="Celestal SS Grand Hotel grand banquet hall"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-noir-charcoal/85 via-transparent to-transparent flex items-end p-3">
                   <span className="font-label-compact text-xs text-white font-medium drop-shadow-sm">
-                    Executive Grand Suite
+                    Grand Banquet Hall
                   </span>
                 </div>
               </div>
@@ -320,8 +320,8 @@ export function ContactEnquirySection() {
                     className="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#9a7126] transition-all border border-stone-200/80 cursor-pointer"
                   >
                     <option value="General Enquiry">General Enquiry</option>
-                    <option value="Room & Luxury Suite Reservation">
-                      Room &amp; Luxury Suite Reservation
+                    <option value="Room Reservation">
+                      Room Reservation
                     </option>
                     <option value="Restaurant & Celestial Bistro Enquiry">
                       Restaurant &amp; Celestial Bistro Enquiry
@@ -356,7 +356,7 @@ export function ContactEnquirySection() {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="e.g. Two-Night Stay in Presidential Suite / Ballroom Booking for 500 Guests"
+                  placeholder="e.g. Two-Night Stay in a Presidential Room / Ballroom Booking for 500 Guests"
                   className="w-full px-4 py-3 bg-surface-container-low text-on-surface rounded-xl font-body-md text-sm placeholder:text-stone-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#9a7126] transition-all border border-stone-200/80"
                 />
               </div>

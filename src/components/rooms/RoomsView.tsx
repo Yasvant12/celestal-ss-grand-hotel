@@ -14,11 +14,11 @@ import { RoomDetailModal } from "@/components/rooms/RoomDetailModal";
 export function RoomsView() {
   const [activeFilter, setActiveFilter] = useState<"all" | "executive" | "courtyard">("all");
   const [detailModalOpen, setDetailModalOpen] = useState(false);
-  const [selectedSuiteId, setSelectedSuiteId] = useState("executive");
+  const [selectedRoomId, setSelectedRoomId] = useState("executive");
   const [detailModalTab, setDetailModalTab] = useState<"gallery" | "floorplan">("gallery");
 
-  const handleOpenDetail = (suiteId: string, defaultTab: "gallery" | "floorplan" = "gallery") => {
-    setSelectedSuiteId(suiteId);
+  const handleOpenDetail = (roomId: string, defaultTab: "gallery" | "floorplan" = "gallery") => {
+    setSelectedRoomId(roomId);
     setDetailModalTab(defaultTab);
     setDetailModalOpen(true);
   };
@@ -44,7 +44,7 @@ export function RoomsView() {
             backgroundImage={HERO_BACKGROUND_IMAGE}
             breadcrumb={[
               { label: "Home", href: "/" },
-              { label: "Rooms & Suites" },
+              { label: "Rooms & Accommodation" },
             ]}
             badgeText="Reservations Desk"
           >
@@ -82,7 +82,7 @@ export function RoomsView() {
       {/* Luxury Room Detail & Architectural Floor Plan Modal */}
       <RoomDetailModal
         isOpen={detailModalOpen}
-        suiteId={selectedSuiteId}
+        roomId={selectedRoomId}
         defaultTab={detailModalTab}
         onClose={() => setDetailModalOpen(false)}
       />

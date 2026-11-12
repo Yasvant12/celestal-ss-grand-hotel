@@ -33,7 +33,7 @@ export function BanquetIntroMetrics() {
             </p>
 
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              With expansive column-free proportions, specialized acoustic absorption, customizable illumination arrays, and dedicated culinary staging suites, Celestal SS Grand Hotel turns visionary hosts into effortless celebrants.
+              With expansive column-free proportions, specialized acoustic absorption, customizable illumination arrays, and dedicated culinary staging areas, Celestal SS Grand Hotel turns visionary hosts into effortless celebrants.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
@@ -77,13 +77,13 @@ export function BanquetIntroMetrics() {
 
             <div className="bg-surface-container-lowest p-6 sm:p-7 rounded-2xl shadow-sm border border-surface-container-highest/60 flex flex-col gap-1.5 transition-transform hover:-translate-y-1 duration-300">
               <span className="font-headline-lg text-3xl sm:text-4xl text-primary tracking-tight font-semibold">
-                02
+                04
               </span>
               <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-on-surface tracking-widest font-bold">
-                Dual Dedicated Banquets
+                Banquet Halls
               </span>
               <p className="font-body-sm text-body-sm text-secondary pt-1 leading-relaxed">
-                Separate floors for parallel celebrations or pre-wedding ceremonies.
+                Four banquet halls for weddings, celebrations and gatherings.
               </p>
             </div>
 

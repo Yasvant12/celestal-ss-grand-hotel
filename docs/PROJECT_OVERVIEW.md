@@ -4,7 +4,7 @@
 **Hotel Celestial Casa** is a distinguished luxury hospitality destination located at **CC-4, Sector-M, LDA Colony, Ashiyana, Lucknow, Uttar Pradesh 226012**. The property blends the regal traditions of royal Awadhi hospitality with modern palatial infrastructure, serving as an all-in-one celebration destination featuring:
 - **1,200+ Guest Capacity Open Celebration Lawn**
 - **400+ Capacity Climate-Controlled Grand Darbar Ballroom / Banquet Hall**
-- **50+ Boutique Luxury Rooms & Bridal Suites**
+- **50+ Boutique Luxury Rooms & Bridal Preparation Rooms**
 - **In-house Royal Awadhi & Multi-Cuisine Catering** with strictly segregated vegetarian and non-vegetarian kitchens
 - **24/7 Concierge, Uniformed Valet, and 150+ Vehicle Secure Parking**
 
