@@ -174,7 +174,7 @@ const VENUES: Venue[] = [
     ],
     enquiryName: "Ruby Lounge",
     specifications: [
-      { label: "Capacity", value: "60 guests", Icon: Users },
+      { label: "Capacity", value: "100 guests", Icon: Users },
       { label: "Venue Type", value: "Private Lounge", Icon: Building2 },
     ],
     highlights: [
@@ -260,7 +260,7 @@ const VENUES: Venue[] = [
   },
   {
     id: "venue-destiny-lawn",
-    name: "Golden Knot lawn",
+    name: "Golden Knot Lawn",
     category: "Outdoor Green Lawn",
     eyebrow: "Grand Outdoor Celebrations",
     description:
@@ -279,7 +279,7 @@ const VENUES: Venue[] = [
     ],
     enquiryName: "Destiny Hall Green Lawn",
     specifications: [
-      { label: "Capacity", value: "1,500 guests", Icon: Users },
+      { label: "Capacity", value: "1,200 guests", Icon: Users },
       { label: "Green Lawn Area", value: "33,000 sq. ft.", Icon: Maximize2 },
       { label: "From the Hotel", value: "Approx. 50 metres", Icon: MapPin },
     ],

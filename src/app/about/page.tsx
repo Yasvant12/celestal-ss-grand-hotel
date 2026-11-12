@@ -14,9 +14,9 @@ import { TestimonialsSection } from "@/components/about/TestimonialsSection";
 import { AboutCTA } from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About Celestal SS Grand Hotel | Modern Hospitality in Lucknow",
+  title: "About Celestial SS Grand Hotel | Modern Hospitality in Lucknow",
   description:
-    "Discover Celestal SS Grand Hotel on Kursi Road, Lucknow. Contemporary comfort, thoughtful hospitality, 60 guest rooms, one lawn, and four banquet halls.",
+    "Discover Celestial SS Grand Hotel on Kursi Road, Lucknow. Contemporary comfort, thoughtful hospitality, 60 guest rooms, two lawns, and five banquet spaces.",
 };
 
 export default function AboutPage() {
@@ -25,8 +25,7 @@ export default function AboutPage() {
       {/* 1. Master Header with Announcement Bar & Single-Line Navigation */}
       <Header />
 
-      {/* Main Content Sections (Padding accounts for fixed header) */}
-      <main className="w-full pt-[116px] md:pt-[132px] bg-surface min-h-screen">
+      <main className="w-full bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           {/* Section 1: Hero with Breadcrumbs & Verified Badge */}
           <AboutHero />

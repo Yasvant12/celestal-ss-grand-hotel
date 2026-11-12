@@ -43,7 +43,7 @@ export function LocationMapSection() {
             </h2>
 
             <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-8">
-              Located at {HOTEL_INFO.shortAddress}, Celestal SS Grand Hotel offers a comfortable stay with convenient access to Lucknow&apos;s key destinations and event venues.
+              Located at {HOTEL_INFO.shortAddress}, Celestial SS Grand Hotel offers a comfortable stay with convenient access to Lucknow&apos;s key destinations and event venues.
             </p>
 
             {/* Address Card */}

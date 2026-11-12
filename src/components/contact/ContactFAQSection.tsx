@@ -23,17 +23,17 @@ const FAQS: FAQItem[] = [
   {
     question: "What is the cancellation and rescheduling policy for rooms and event bookings?",
     answer:
-      "Individual room reservations can be cancelled or rescheduled free of charge up to 48 hours prior to arrival. Banquet and group block cancellation terms are customized and clearly detailed in your event booking contract.",
+      "Individual room reservations can be cancelled or rescheduled free of charge up to 48 hours prior to arrival. Banquet and group block cancellation terms are customised and clearly detailed in your event booking contract.",
   },
   {
-    question: "Are customized catering menus and pre-event food tastings offered?",
+    question: "Are customised catering menus and pre-event food tastings offered?",
     answer:
-      "Yes. Our culinary brigade prepares customized menus including continental, pan-Asian, and North Indian specialities, with private food tasting sessions available for wedding and banquet hosts.",
+      "Yes. Our culinary brigade prepares customised menus including continental, pan-Asian, and North Indian specialities, with private food tasting sessions available for wedding and banquet hosts.",
   },
   {
     question: "What parking and transit arrangements are provided for event guests?",
     answer:
-      "We offer complimentary on-site valet parking accommodating 150+ vehicles, accompanied by 24/7 CCTV surveillance and security marshals. Private airport limousine transfers can also be arranged.",
+      "We offer on-site valet parking, 24/7 CCTV surveillance, and security marshals. Please contact our team to discuss parking arrangements for your event. Private airport transfers can also be arranged.",
   },
   {
     question: "Can external decor and audiovisual production vendors be engaged?",
@@ -68,7 +68,7 @@ export function ContactFAQSection() {
             </span>
           </div>
           <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface tracking-tight font-medium">
-            Common Inquiries &amp; Booking Guidance
+            Common Enquiries &amp; Booking Guidance
           </h2>
           <p className="font-body-md text-sm sm:text-base text-on-surface-variant pt-1 leading-relaxed">
             Clear answers regarding room reservations, grand celebrations, banquet policies, and concierge coordination.

@@ -22,6 +22,8 @@ export function FirstVisitEnquiryModal() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
     const frame = window.requestAnimationFrame(() => setIsOpen(true));
     return () => {
       window.cancelAnimationFrame(frame);
@@ -118,7 +120,7 @@ export function FirstVisitEnquiryModal() {
 
             <div className="mb-6 pr-12 sm:mb-8">
               <span className="font-eyebrow-luxury text-[10px] font-bold uppercase tracking-[0.24em] text-[#7a5508]">
-                Celestal SS Grand Hotel
+                Celestial SS Grand Hotel
               </span>
               <h2
                 id="first-visit-enquiry-title"
@@ -157,7 +159,6 @@ export function FirstVisitEnquiryModal() {
                     <input
                       name="name"
                       autoComplete="name"
-                      autoFocus
                       required
                       minLength={2}
                       maxLength={100}

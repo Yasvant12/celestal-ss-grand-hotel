@@ -28,8 +28,7 @@ export function RoomsView() {
       {/* 1. Fixed Header with Top Announcement Bar */}
       <Header />
 
-      {/* Main Content Sections (Padding accounts for fixed header) */}
-      <main className="w-full pt-[116px] md:pt-[132px] bg-surface min-h-screen">
+      <main className="w-full bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           {/* Section 1: Standardized PageHero with Filter Bar Slot */}
           <PageHero
@@ -70,7 +69,7 @@ export function RoomsView() {
           {/* Section 3: Room Amenities & Specifications Matrix (8 Cards) */}
           <RoomAmenitiesMatrix />
 
-          {/* Section 4: Why Discerning Guests Choose Celestal SS Grand (3 Pillars) */}
+          {/* Section 4: Why Discerning Guests Choose Celestial SS Grand (3 Pillars) */}
           <RoomValuePillars />
 
         </div>
@@ -81,6 +80,7 @@ export function RoomsView() {
 
       {/* Luxury Room Detail & Architectural Floor Plan Modal */}
       <RoomDetailModal
+        key={`${selectedRoomId}:${detailModalTab}:${detailModalOpen ? "open" : "closed"}`}
         isOpen={detailModalOpen}
         roomId={selectedRoomId}
         defaultTab={detailModalTab}

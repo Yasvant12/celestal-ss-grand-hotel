@@ -13,7 +13,7 @@ export function ServicesIntro() {
             Every Detail Executed with Impeccable Artistry
           </h2>
           <p className="font-body-md text-stone-600 text-sm sm:text-base leading-relaxed">
-            At Celestal SS Grand Hotel, every milestone celebration and private residency is elevated by dedicated craft specialists. Whether hosting a multi-course culinary degustation, curating grand floral jaimala architectures, or orchestrating seamless valet arrivals, our integrated service teams ensure effortless perfection.
+            At Celestial SS Grand Hotel, every milestone celebration and private residency is elevated by dedicated craft specialists. Whether hosting a multi-course culinary degustation, curating grand floral jaimala architectures, or orchestrating seamless valet arrivals, our integrated service teams ensure effortless perfection.
           </p>
         </div>
 

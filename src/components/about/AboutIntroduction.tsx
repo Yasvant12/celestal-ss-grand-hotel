@@ -25,7 +25,7 @@ export function AboutIntroduction() {
           <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
             <Image
               src={mainImage}
-              alt="Celestal SS Grand Hotel Grand Ballroom configured for elegant banquet celebration"
+              alt="Celestial SS Grand Hotel Grand Ballroom configured for elegant banquet celebration"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 hover:scale-105"
@@ -37,7 +37,7 @@ export function AboutIntroduction() {
             <div className="relative w-full h-full rounded-xl overflow-hidden bg-noir-charcoal">
               <Image
                 src={secondaryImage}
-                alt="Hotel corridor outside guest rooms at Celestal SS Grand Hotel"
+                alt="Hotel corridor outside guest rooms at Celestial SS Grand Hotel"
                 fill
                 sizes="(max-width: 1024px) 60vw, 30vw"
                 className="object-cover"
@@ -60,7 +60,7 @@ export function AboutIntroduction() {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-primary" />
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-primary tracking-[0.22em]">
-              Welcome to Celestal SS Grand Hotel
+              Welcome to Celestial SS Grand Hotel
             </span>
           </div>
 
@@ -69,7 +69,7 @@ export function AboutIntroduction() {
           </h2>
 
           <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-8">
-            Celestal SS Grand Hotel welcomes guests to a comfortable and thoughtfully designed hospitality experience in Lucknow. From relaxing stays to memorable celebrations and dining experiences, our team focuses on making every visit pleasant, graceful, and effortlessly memorable.
+            Celestial SS Grand Hotel welcomes guests to a comfortable and thoughtfully designed hospitality experience in Lucknow. From relaxing stays to memorable celebrations and dining experiences, our team focuses on making every visit pleasant, graceful, and effortlessly memorable.
           </p>
 
           {/* 3 Highlight Points */}
@@ -90,7 +90,7 @@ export function AboutIntroduction() {
                 Attentive Hospitality
               </h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant">
-                Attentive staff delivering attentive, personalized care.
+                Courteous staff delivering attentive, personalised care.
               </p>
             </div>
 

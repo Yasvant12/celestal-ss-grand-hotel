@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -17,26 +17,23 @@ import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 interface BanquetEnquirySectionProps {
   initialVenue?: string;
   initialEventType?: string;
+  onEventTypeChange: (eventType: string) => void;
 }
 
 export function BanquetEnquirySection({
   initialVenue = "Sapphire Hall",
   initialEventType = "",
+  onEventTypeChange,
 }: BanquetEnquirySectionProps) {
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [eventType, setEventType] = useState(initialEventType);
   const [eventDate, setEventDate] = useState("");
   const [guestCount, setGuestCount] = useState("");
   const [venuePreference, setVenuePreference] = useState(initialVenue);
   const [message, setMessage] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [minDate, setMinDate] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    setMinDate(new Date().toISOString().split("T")[0]);
-  }, []);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -51,7 +48,7 @@ export function BanquetEnquirySection({
       setError("Please enter your full name (minimum 2 characters).");
       return;
     }
-    if (!eventType) {
+    if (!initialEventType) {
       setError("Please select the occasion type.");
       return;
     }
@@ -68,14 +65,14 @@ export function BanquetEnquirySection({
 
     try {
       await submitWeb3FormsEnquiry({
-        category: eventType,
+        category: initialEventType,
         sourcePage: "Banquet",
         name: fullName,
         phone,
         email,
         botcheck: honeypot,
         fields: {
-          "Event Type": eventType,
+          "Event Type": initialEventType,
           "Event Date": eventDate,
           "Number of Guests": guestCount,
           "Preferred Venue": venuePreference,
@@ -191,7 +188,7 @@ export function BanquetEnquirySection({
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-label-button text-label-button uppercase hover:brightness-110 transition-all shadow-md font-semibold"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Direct WhatsApp Inquiry</span>
+                <span>Direct WhatsApp Enquiry</span>
               </a>
             </div>
           </div>
@@ -208,7 +205,7 @@ export function BanquetEnquirySection({
                   <CheckCircle2 className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-title-editorial text-2xl text-on-surface font-semibold">
-                  Thank you. Your inquiry has been received.
+                  Thank you. Your enquiry has been received.
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
                   Our Banquet Manager will contact you at <strong>+91 {phone}</strong> shortly to coordinate your private hall walk-through and menu discussion.
@@ -224,7 +221,7 @@ export function BanquetEnquirySection({
                   }}
                   className="mt-3 px-6 py-2.5 rounded-xl bg-primary text-on-primary font-label-button text-xs uppercase tracking-wider"
                 >
-                  Submit Another Inquiry
+                  Submit Another Enquiry
                 </button>
               </motion.div>
             ) : (
@@ -310,8 +307,8 @@ export function BanquetEnquirySection({
                     </label>
                     <select
                       required
-                      value={eventType}
-                      onChange={(e) => setEventType(e.target.value)}
+                      value={initialEventType}
+                      onChange={(e) => onEventTypeChange(e.target.value)}
                       className="px-4 py-2.5 rounded-xl bg-surface-ivory border border-stone-200/80 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:bg-white text-on-surface font-body-md text-sm cursor-pointer"
                     >
                       <option value="">Select Occasion</option>
@@ -336,6 +333,7 @@ export function BanquetEnquirySection({
                     <input
                       type="date"
                       required
+                      onFocus={() => setMinDate(new Date().toISOString().split("T")[0])}
                       value={eventDate}
                       onChange={(e) => setEventDate(e.target.value)}
                       min={minDate}
@@ -355,10 +353,10 @@ export function BanquetEnquirySection({
                       className="px-4 py-2.5 rounded-xl bg-surface-ivory border border-stone-200/80 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:bg-white text-on-surface font-body-md text-sm cursor-pointer"
                     >
                       <option value="">Select Guest Range</option>
-                      <option value="50 - 100 Guests">50 – 100 Guests (Intimate)</option>
-                      <option value="100 - 250 Guests">100 – 250 Guests (Classic)</option>
-                      <option value="250 - 500 Guests">250 – 500 Guests (Grand)</option>
-                      <option value="500 - 900 Guests">500 – 900+ Guests (Royal Buyout)</option>
+                      <option value="100 - 249 Guests">100 – 249 Guests (Intimate)</option>
+                      <option value="250 - 499 Guests">250 – 499 Guests (Classic)</option>
+                      <option value="500 - 899 Guests">500 – 899 Guests (Grand)</option>
+                      <option value="900 - 1,200 Guests">900 – 1,200 Guests (Royal Buyout)</option>
                     </select>
                   </div>
                 </div>
@@ -373,17 +371,18 @@ export function BanquetEnquirySection({
                     onChange={(e) => setVenuePreference(e.target.value)}
                     className="px-4 py-2.5 rounded-xl bg-surface-ivory border border-stone-200/80 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:bg-white text-on-surface font-body-md text-sm cursor-pointer"
                   >
-                    <option value="Sapphire Hall">Sapphire Hall · 300 guests</option>
-                    <option value="Emerald Hall">Emerald Hall · 300 guests</option>
-                    <option value="Ruby Lounge">Ruby Lounge · 60 guests</option>
-                    <option value="Destiny Hall">Destiny Hall · 300 guests</option>
-                    <option value="Restaurant (60 guests)">Restaurant · 60 guests</option>
-                    <option value="Restaurant (56 guests)">Restaurant · 56 guests</option>
+                    <option value="Sapphire Hall">Sapphire Hall</option>
+                    <option value="Emerald Hall">Emerald Hall</option>
+                    <option value="Destiny Hall">Destiny Hall</option>
+                    <option value="Ruby Lounge">Ruby Lounge</option>
+                    <option value="Connected Double-Height Banquet">
+                      Connected Double-Height Banquet
+                    </option>
                     <option value="Green Lawn with Connected Double-Height Banquet">
-                      Green Lawn with Connected Double-Height Banquet · 1,000 guests
+                      Green Lawn with Connected Double-Height Banquet
                     </option>
                     <option value="Destiny Hall Green Lawn">
-                      Destiny Hall Green Lawn · 1,500 guests
+                      Destiny Hall Green Lawn · up to 1,200 guests
                     </option>
                     <option value="Undecided / Needs Hospitality Recommendation">
                       Undecided / Needs Hospitality Guidance
@@ -412,12 +411,12 @@ export function BanquetEnquirySection({
                     disabled={loading}
                     className="font-label-button text-label-button uppercase px-8 py-4 bg-primary text-on-primary hover:bg-gold-deep rounded-xl transition-all tracking-widest flex items-center justify-center gap-2 shadow-md hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed font-semibold"
                   >
-                    <span>{loading ? "Transmitting Event Inquiry..." : "Send Event Enquiry"}</span>
+                    <span>{loading ? "Transmitting Event Enquiry..." : "Send Event Enquiry"}</span>
                     <Send className="w-4 h-4" />
                   </button>
 
                   <p className="font-label-compact text-[11px] text-secondary text-center">
-                    Your event inquiry is handled with strict confidentiality by our senior hospitality planners. A response will be provided within 2-4 business hours.
+                    Your event enquiry is handled with strict confidentiality by our senior hospitality planners, who will follow up with you.
                   </p>
                 </div>
               </form>

@@ -109,6 +109,7 @@ export function BanquetView() {
         key={selectedVenue}
         initialVenue={selectedVenue}
         initialEventType={selectedEventType}
+        onEventTypeChange={handleSelectEventType}
       />
 
       {/* Section 9: Closing CTA Banner */}

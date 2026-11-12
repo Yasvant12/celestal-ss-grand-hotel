@@ -5,7 +5,6 @@ import { GALLERY_PLATES } from "./galleryData";
 import { GalleryHero } from "./GalleryHero";
 import { GalleryGrid } from "./GalleryGrid";
 import { GalleryPerspectivePillars } from "./GalleryPerspectivePillars";
-import { GalleryVideoSection } from "./GalleryVideoSection";
 import { GalleryLightbox } from "./GalleryLightbox";
 
 export function GalleryView() {
@@ -69,10 +68,7 @@ export function GalleryView() {
         onOpenLightbox={handleOpenLightbox}
       />
 
-      {/* 3. Hotel video tour */}
-      <GalleryVideoSection />
-
-      {/* 4. Architectural Perspective Highlight Break */}
+      {/* 3. Architectural Perspective Highlight Break */}
       <GalleryPerspectivePillars />
 
       {/* Interactive Fullscreen Lightbox Modal */}

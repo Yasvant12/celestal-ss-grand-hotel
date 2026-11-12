@@ -31,7 +31,7 @@ export function LocationSection() {
               Conveniently Located on Kursi Road
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              Situated at {HOTEL_INFO.shortAddress}, Celestal SS Grand Hotel offers convenient access to Lucknow&apos;s key destinations for wedding guests, business travelers, and visitors.
+              Situated at {HOTEL_INFO.shortAddress}, Celestial SS Grand Hotel offers convenient access to Lucknow&apos;s key destinations for wedding guests, business travellers, and visitors.
             </p>
           </div>
           <div className="flex items-center gap-space-sm">
@@ -58,7 +58,7 @@ export function LocationSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-title-editorial text-title-editorial font-semibold text-on-surface">
-                    Celestal SS Grand Hotel
+                    Celestial SS Grand Hotel
                   </span>
                   <p className="font-body-sm text-body-sm text-on-surface-variant pt-1 leading-relaxed">
                     {HOTEL_INFO.address}

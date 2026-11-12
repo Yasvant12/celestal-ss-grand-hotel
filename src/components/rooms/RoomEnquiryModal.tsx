@@ -16,12 +16,12 @@ export function RoomEnquiryModal({
   prefilledRoomName,
   onClose,
 }: RoomEnquiryModalProps) {
+  const roomName = prefilledRoomName || ROOMS_DATA.executive.name;
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     guestsCount: "1 Room • 1–2 Guests",
-    roomRequirements: prefilledRoomName || ROOMS_DATA.executive.name,
     message: "",
     honeypot: "",
   });
@@ -29,12 +29,6 @@ export function RoomEnquiryModal({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
-    if (prefilledRoomName) {
-      setFormData((prev) => ({ ...prev, roomRequirements: prefilledRoomName }));
-    }
-  }, [prefilledRoomName]);
 
   // Handle escape key
   useEffect(() => {
@@ -78,7 +72,7 @@ export function RoomEnquiryModal({
         email: formData.email,
         botcheck: formData.honeypot,
         fields: {
-          Accommodation: formData.roomRequirements,
+          Accommodation: roomName,
           "Number of Guests / Rooms": formData.guestsCount,
           "Special Requirements": formData.message,
         },
@@ -92,7 +86,6 @@ export function RoomEnquiryModal({
           phone: "",
           email: "",
           guestsCount: "1 Room • 1–2 Guests",
-          roomRequirements: prefilledRoomName || ROOMS_DATA.executive.name,
           message: "",
           honeypot: "",
         });
@@ -131,7 +124,7 @@ export function RoomEnquiryModal({
         {/* Modal Header */}
         <div className="flex flex-col gap-1 pr-6">
           <span className="font-eyebrow-luxury text-eyebrow-luxury text-primary uppercase tracking-widest font-bold">
-            Celestal SS Grand Concierge
+            Celestial SS Grand Concierge
           </span>
           <h3 className="font-headline-sm text-2xl text-on-surface font-serif font-bold">
             Room Reservation Enquiry
@@ -146,7 +139,7 @@ export function RoomEnquiryModal({
             <CheckCircle2 className="w-10 h-10 text-emerald-600" />
             <h4 className="font-headline-sm text-lg font-bold">Stay Enquiry Received</h4>
             <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed">
-              Thank you! Your reservation enquiry for <strong>{formData.roomRequirements}</strong> has been logged. Our concierge desk will contact you within 2 hours.
+              Thank you! Your reservation enquiry for <strong>{roomName}</strong> has been logged. Our concierge desk will follow up with you.
             </p>
           </div>
         ) : (
@@ -164,7 +157,7 @@ export function RoomEnquiryModal({
                 name="roomRequirements"
                 type="text"
                 readOnly
-                value={formData.roomRequirements}
+                value={roomName}
                 className="w-full px-4 py-2.5 bg-surface-champagne text-on-surface font-body-sm text-sm rounded-xl outline-none border border-stone-200 font-semibold cursor-default select-none"
               />
             </div>

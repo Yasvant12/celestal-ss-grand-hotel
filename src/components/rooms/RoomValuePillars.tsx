@@ -35,7 +35,7 @@ export function RoomValuePillars() {
             Distinction &amp; Assurance
           </span>
           <h2 className="font-headline-lg text-2xl sm:text-3xl lg:text-4xl text-on-surface font-medium tracking-tight mt-1">
-            Why Discerning Guests Choose Celestal SS Grand
+            Why Discerning Guests Choose Celestial SS Grand
           </h2>
         </div>
 

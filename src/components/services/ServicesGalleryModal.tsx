@@ -142,7 +142,7 @@ export function ServicesGalleryModal({
                 src={currentPhoto.src}
                 alt={currentPhoto.alt}
                 fill
-                priority
+                loading="lazy"
                 sizes="100vw"
                 className="object-contain select-none transition-opacity duration-300"
               />

@@ -1,17 +1,61 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { HOTEL_INFO } from "@/lib/constants";
 
 export function WhatsAppFloating() {
+  const pathname = usePathname();
+  const [formIsActive, setFormIsActive] = useState(false);
+  const [footerIsVisible, setFooterIsVisible] = useState(false);
+
+  useEffect(() => {
+    let frameId: number | undefined;
+
+    const updateFormFocus = () => {
+      const activeElement = document.activeElement;
+      setFormIsActive(
+        activeElement instanceof HTMLElement && activeElement.closest("form") !== null
+      );
+    };
+
+    const handleFocusOut = () => {
+      if (frameId !== undefined) window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(updateFormFocus);
+    };
+
+    document.addEventListener("focusin", updateFormFocus);
+    document.addEventListener("focusout", handleFocusOut);
+    return () => {
+      document.removeEventListener("focusin", updateFormFocus);
+      document.removeEventListener("focusout", handleFocusOut);
+      if (frameId !== undefined) window.cancelAnimationFrame(frameId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setFooterIsVisible(entry.isIntersecting);
+    });
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  if (formIsActive || footerIsVisible) return null;
+
   return (
     <aside aria-label="Quick Concierge Access" className="fixed bottom-5 right-5 z-[900] sm:bottom-6 sm:right-6">
       <a
         href={`${HOTEL_INFO.whatsappUrl}?text=${encodeURIComponent(
-          "Hello, I would like to enquire about Celestal SS Grand Hotel."
+          "Hello, I would like to enquire about Celestial SS Grand Hotel."
         )}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Celestal SS Grand Hotel on WhatsApp"
+        aria-label="Chat with Celestial SS Grand Hotel on WhatsApp"
         className="group flex items-center gap-2.5 rounded-full bg-[#25D366] px-3.5 py-3 text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_25px_rgba(37,211,102,0.4)] active:scale-95 sm:px-4"
       >
         <span className="relative flex h-7 w-7 items-center justify-center">

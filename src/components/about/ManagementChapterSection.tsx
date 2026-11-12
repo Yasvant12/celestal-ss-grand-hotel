@@ -84,12 +84,12 @@ export function ManagementChapterSection() {
             <p>
               Guests can look forward to thoughtfully enhanced stays and
               celebrations, delivered with attentive care and the welcoming
-              spirit of Celestial S.S Grand.
+              spirit of Celestial SS Grand.
             </p>
             <p>
               We look forward to making every visit and every occasion
               memorable through excellence, warmth, and attentive care.
-              Our new managemnet team brings renewed vision,dedeication and a strong
+              Our new management team brings renewed vision, dedication, and a strong
               commitment to ensuring the complete satisfaction of every guest. 
             </p>
           </div>

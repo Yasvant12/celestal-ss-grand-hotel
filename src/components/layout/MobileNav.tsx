@@ -23,8 +23,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     <AnimatePresence>
       {isOpen && (
         <div
-          style={{ zIndex: 10000 }}
-          className="fixed inset-0 z-[10000] lg:hidden"
+          className="fixed inset-0 z-[100000] lg:hidden"
         >
           {/* Backdrop */}
           <motion.div
@@ -43,19 +42,22 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl flex flex-col justify-between p-5 z-[10000] overflow-y-auto"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+            className="fixed right-0 top-0 z-[100001] flex h-dvh w-full max-w-sm flex-col gap-6 overflow-y-auto overscroll-contain bg-white px-5 pt-[calc(env(safe-area-inset-top)+1.25rem)] pb-[calc(env(safe-area-inset-bottom)+1.25rem)] shadow-2xl"
           >
             <div className="flex flex-col gap-4">
-              {/* Header Row: Celestal SS Grand Hotel Logo + Close */}
+              {/* Header Row: Celestial SS Grand Hotel Logo + Close */}
               <div className="flex items-center justify-between pb-3 border-b border-stone-200">
                 <Link href="/" onClick={onClose} className="flex items-center">
                   <Image
-                    src="/images/logo-ss-grand.webp"
-                    alt="Celestal SS Grand Hotel"
+                    src="/images/celestial-ss-grand-logo.png"
+                    alt="Celestial SS Grand Hotel"
                     width={140}
                     height={55}
                     className="h-12 w-auto object-contain"
-                    priority
+                    loading="lazy"
                   />
                 </Link>
                 <button
@@ -166,7 +168,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             className="w-full flex items-center justify-center gap-2 py-3 rounded-xl gold-gradient-bg text-[#14110E] font-bold text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all"
           >
             <MessageCircle className="w-4 h-4" />
-            <span>Send an Inquiry</span>
+            <span>Send an Enquiry</span>
           </Link>
 
           <div className="grid grid-cols-2 gap-2 text-xs">

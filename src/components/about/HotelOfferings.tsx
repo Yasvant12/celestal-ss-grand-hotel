@@ -10,7 +10,7 @@ export function HotelOfferings() {
       title: "Rooms & Accommodation",
       tag: "Boutique Stay",
       description:
-        "Comfortable spaces designed for a relaxing stay with personalized room amenities.",
+        "Comfortable spaces designed for a relaxing stay with personalised room amenities.",
       image: "/images/hotel-room-bedroom-02.jpeg",
       link: "#rooms-section",
       cta: "Explore Rooms",
@@ -28,7 +28,7 @@ export function HotelOfferings() {
       title: "Banquet & Celebrations",
       tag: "Weddings",
       description:
-        "Beautiful spaces for weddings, parties and special occasions with 400+ guest capacity.",
+        "Five banquet spaces for weddings, parties, and special occasions, with capacities from 100 to 1,200 guests.",
       image:
         "/images/hotel-banquet-wedding-stage.jpg",
       link: "#banquet-section",
@@ -38,7 +38,7 @@ export function HotelOfferings() {
       title: "Events & Gatherings",
       tag: "Open Lawns",
       description:
-        "Spacious open lawn and hospitality for memorable gatherings of 800+ distinguished guests.",
+        "Two outdoor celebration lawns for weddings, receptions, and memorable gatherings.",
       image: "/images/hotel-open-lawn-night-01.jpeg",
       link: "#banquet-section",
       cta: "Discover Events",
@@ -92,7 +92,7 @@ export function HotelOfferings() {
               <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
                 <Image
                   src={item.image}
-                  alt={`Celestal SS Grand Hotel ${item.title}`}
+                  alt={`Celestial SS Grand Hotel ${item.title}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -4,9 +4,9 @@ import { WhatsAppFloating } from "@/components/ui/WhatsAppFloating";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Celestal SS Grand Hotel | Modern Boutique Hotel & Grand Banquets, Lucknow",
+  title: "Celestial SS Grand Hotel | Modern Boutique Hotel & Grand Banquets, Lucknow",
   description:
-    "Celestal SS Grand Hotel on Kursi Road, Lucknow. Contemporary comfort, thoughtful hospitality, and grand celebrations. 60 guest rooms, 1 lawn, and 4 banquet halls.",
+    "Celestial SS Grand Hotel on Kursi Road, Lucknow. Contemporary comfort, thoughtful hospitality, and grand celebrations. 60 guest rooms, 2 lawns, and 5 banquet spaces.",
 };
 
 export default function RootLayout({

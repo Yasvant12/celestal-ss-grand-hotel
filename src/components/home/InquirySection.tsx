@@ -105,7 +105,7 @@ export function InquirySection() {
                 Direct Concierge Desk
               </span>
               <h3 className="font-headline-md text-headline-md text-surface-ivory">
-                Why Celebrate at Celestal SS Grand Hotel?
+                Why Celebrate at Celestial SS Grand Hotel?
               </h3>
               <ul className="space-y-space-sm font-body-sm text-body-sm text-surface-container-highest">
                 <li className="flex items-start gap-space-xs">
@@ -121,7 +121,7 @@ export function InquirySection() {
                     check_circle
                   </span>
                   <span>
-                    <strong>Complete All-In-One Venue:</strong> Open lawn, air-conditioned banquet hall, plus 50+ luxury stay rooms in one campus.
+                    <strong>Complete All-In-One Venue:</strong> Two celebration lawns, banquet spaces, and 60 luxury rooms in one campus.
                   </span>
                 </li>
                 <li className="flex items-start gap-space-xs">
@@ -154,7 +154,7 @@ export function InquirySection() {
                   href={`tel:${HOTEL_INFO.phones.primary}`}
                 >
                   <span className="material-symbols-outlined text-gold-light text-[18px]">call</span>
-                  <span>{HOTEL_INFO.phones.primary} (Front Desk &amp; Banquets)</span>
+                  <span>{HOTEL_INFO.phones.primary} (Front Desk &amp; Rooms)</span>
                 </a>
                 <a
                   className="text-surface-ivory hover:text-gold-light flex items-center gap-2 transition-colors"
@@ -192,7 +192,7 @@ export function InquirySection() {
                   Request Proposal &amp; Custom Tariff
                 </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  Fill out your celebration details below. Our senior event concierge will connect within 30 minutes with venue layouts and customized per-plate packages.
+                  Fill out your celebration details below. Our senior event concierge will be in touch to discuss venue layouts and custom per-plate packages.
                 </p>
               </div>
 
@@ -206,7 +206,7 @@ export function InquirySection() {
                     Enquiry Received Successfully!
                   </h4>
                   <p className="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
-                    Thank you, <strong>{formData.name}</strong>. Our senior event planner has received your enquiry for <strong>{formData.event_date || "your proposed dates"}</strong> and will contact you at <strong>{formData.phone}</strong> within 30 minutes.
+                    Thank you, <strong>{formData.name}</strong>. Our senior event planner has received your enquiry for <strong>{formData.event_date || "your proposed dates"}</strong> and will contact you at <strong>{formData.phone}</strong> to discuss your plans.
                   </p>
                   <div className="pt-2">
                     <button
@@ -321,10 +321,10 @@ export function InquirySection() {
                         value={formData.guests}
                         onChange={handleChange}
                       >
-                        <option value="50-150">50 - 150 Guests (Intimate Gathering)</option>
-                        <option value="150-350">150 - 350 Guests (Banquet Hall)</option>
-                        <option value="350-700">350 - 700 Guests (Banquet + Lawn)</option>
-                        <option value="700-1200">700 - 1,200+ Guests (Mega Wedding)</option>
+                        <option value="100-149">100 - 149 Guests (Intimate Gathering)</option>
+                        <option value="150-349">150 - 349 Guests (Banquet Space)</option>
+                        <option value="350-699">350 - 699 Guests (Banquet + Lawn)</option>
+                        <option value="700-1200">700 - 1,200 Guests (Mega Wedding)</option>
                       </select>
                     </div>
                   </div>
@@ -358,7 +358,7 @@ export function InquirySection() {
                         value={formData.catering}
                         onChange={handleChange}
                       >
-                        <option value="inhouse-royal">Celestal SS Grand Hotel Signature Catering</option>
+                        <option value="inhouse-royal">Celestial SS Grand Hotel Signature Catering</option>
                         <option value="pure-veg">Pure Vegetarian Royal Thali / Buffet</option>
                         <option value="multicuisine">North Indian, Mughlai &amp; Chinese Fusion</option>
                         <option value="lawn-only">Venue Only (Require Consultation)</option>

@@ -9,9 +9,9 @@ import { ContactFAQSection } from "@/components/contact/ContactFAQSection";
 import { ContactCTASection } from "@/components/contact/ContactCTASection";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Celestal SS Grand Hotel, Lucknow",
+  title: "Contact Us | Celestial SS Grand Hotel, Lucknow",
   description:
-    "Contact Celestal SS Grand Hotel at Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026 for room, banquet, and event enquiries.",
+    "Contact Celestial SS Grand Hotel at Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026 for room, banquet, and event enquiries.",
 };
 
 export default function ContactPage() {
@@ -20,8 +20,7 @@ export default function ContactPage() {
       {/* 1. Master Header with Top Utility Bar & Navigation */}
       <Header />
 
-      {/* Main Content Sections (Padding accounts for fixed header) */}
-      <main className="w-full pt-[116px] md:pt-[132px] bg-surface min-h-screen">
+      <main className="w-full bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           {/* Section 1: Architectural Contact Hero Banner */}
           <ContactHero />

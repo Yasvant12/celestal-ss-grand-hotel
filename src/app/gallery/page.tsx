@@ -4,9 +4,9 @@ import { Footer } from "@/components/layout/Footer";
 import { GalleryView } from "@/components/gallery/GalleryView";
 
 export const metadata: Metadata = {
-  title: "Photo Gallery | Celestal SS Grand Hotel, Lucknow",
+  title: "Photo Gallery | Celestial SS Grand Hotel, Lucknow",
   description:
-    "Explore photographs of rooms, banquet halls, the celebration lawn, and dining at Celestal SS Grand Hotel on Kursi Road, Lucknow.",
+    "Explore photographs of rooms, banquet halls, the celebration lawn, and dining at Celestial SS Grand Hotel on Kursi Road, Lucknow.",
 };
 
 export default function GalleryPage() {
@@ -15,8 +15,7 @@ export default function GalleryPage() {
       {/* 1. Master Header with Top Utility Bar & Single-Line Navigation */}
       <Header />
 
-      {/* Main Content Sections (Padding accounts for fixed header) */}
-      <main className="w-full pt-[116px] md:pt-[132px] bg-surface min-h-screen">
+      <main className="w-full bg-surface min-h-screen">
         <GalleryView />
       </main>
 

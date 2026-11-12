@@ -49,6 +49,9 @@ nextjs-portal,
     margin: 0;
     padding: 0;
   }
+  html {
+    scroll-padding-top: 9rem;
+  }
   body {
     overscroll-behavior: none;
   }

@@ -76,10 +76,13 @@ export function VenuesSection() {
           >
             <div>
               <div className="relative overflow-hidden h-64">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url('${banquetHallImg}')` }}
-                  aria-label="Grand Banquet Hall"
+                <Image
+                  src={banquetHallImg}
+                  alt="Grand Banquet Hall"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded bg-primary text-on-primary font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
                   Up to 400 Guests
@@ -101,10 +104,10 @@ export function VenuesSection() {
                     <span className="material-symbols-outlined text-[16px] text-primary">surround_sound</span> Acoustic Pro Sound
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-primary">theater_comedy</span> Customizable Stage
+                    <span className="material-symbols-outlined text-[16px] text-primary">theater_comedy</span> Customisable Stage
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-primary">light_mode</span> Mood Ambient Lighting
+                    <span className="material-symbols-outlined text-[16px] text-primary">light_mode</span> Ambient Mood Lighting
                   </span>
                 </div>
               </div>
@@ -133,21 +136,24 @@ export function VenuesSection() {
           >
             <div>
               <div className="relative overflow-hidden h-64">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url('${lawnImg}')` }}
-                  aria-label="Open Celebration Lawn"
+                <Image
+                  src={lawnImg}
+                  alt="Open Celebration Lawn"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded bg-noir-charcoal text-surface-ivory font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
-                  Up to 800 Guests
+                  Two Outdoor Lawns
                 </div>
               </div>
               <div className="p-space-lg flex flex-col gap-space-sm">
                 <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                  Open Celebration Lawn
+                  Celebration Lawns
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  Our beautifully manicured lawn offers a serene environment where guests can unwind amidst lush greenery, vibrant floral arrangements, and open-air grand festive stages.
+                  Our two celebration lawns offer open-air settings for wedding ceremonies, receptions, and other gatherings. Contact our team to discuss the setup and capacity of each lawn.
                 </p>
                 {/* Amenities List */}
                 <div className="grid grid-cols-2 gap-2 pt-space-xs text-on-surface-variant font-label-compact text-label-compact">
@@ -189,10 +195,13 @@ export function VenuesSection() {
           >
             <div>
               <div className="relative overflow-hidden h-64">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url('${roomsImg}')` }}
-                  aria-label="Luxury Rooms"
+                <Image
+                  src={roomsImg}
+                  alt="Luxury Rooms"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded bg-primary text-on-primary font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-wider shadow-sm">
                   60 Luxury Rooms
@@ -203,7 +212,7 @@ export function VenuesSection() {
                   Luxury Rooms
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant">
-                  At Celestal SS Grand Hotel, our rooms are designed to be your personal sanctuary, blending boutique luxury with the comforts of home for wedding families, guests, and corporate travelers.
+                  At Celestial SS Grand Hotel, our rooms are designed to be your personal sanctuary, blending boutique luxury with the comforts of home for wedding families, guests, and corporate travellers.
                 </p>
                 {/* Amenities List */}
                 <div className="grid grid-cols-2 gap-2 pt-space-xs text-on-surface-variant font-label-compact text-label-compact">

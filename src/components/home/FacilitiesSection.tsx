@@ -10,8 +10,8 @@ export function FacilitiesSection() {
       icon: "local_parking",
       title: "Expansive Parking Space",
       description:
-        "Hosting an event at Celestal SS Grand Hotel? Our parking facilities are designed to accommodate events of all sizes. Whether it's an intimate gathering or a grand celebration, your guests find hassle-free, secure parking right on campus.",
-      badge: "Capacity for 50+ Vehicles",
+        "Hosting an event at Celestial SS Grand Hotel? Our parking facilities are designed to accommodate events of all sizes. Whether it's an intimate gathering or a grand celebration, your guests find hassle-free, secure parking right on campus.",
+      badge: "On-Site Parking",
     },
     {
       icon: "directions_car",
@@ -24,7 +24,7 @@ export function FacilitiesSection() {
       icon: "videocam",
       title: "CCTV Facilities",
       description:
-        "At Celestal SS Grand Hotel, your safety and security are paramount. Explore peace of mind with our state-of-the-art Closed-Circuit Television (CCTV) surveillance monitoring all gates, lawns, lobbies, and corridors.",
+        "At Celestial SS Grand Hotel, your safety and security are paramount. Explore peace of mind with our state-of-the-art Closed-Circuit Television (CCTV) surveillance monitoring all gates, lawns, lobbies, and corridors.",
       badge: "Full Perimeter Coverage",
     },
     {
@@ -84,7 +84,7 @@ export function FacilitiesSection() {
             Uncompromising Comfort &amp; Security
           </span>
           <h2 className="font-headline-lg text-headline-lg text-on-surface">
-            Experience Unrivaled Facilities at Celestal SS Grand Hotel
+            Experience Unrivalled Facilities at Celestial SS Grand Hotel
           </h2>
           <p className="font-body-md text-body-md text-on-surface-variant">
             We combine contemporary boutique luxury with modern security infrastructure, dedicated logistical support, and celebratory services you demand for grand functions.

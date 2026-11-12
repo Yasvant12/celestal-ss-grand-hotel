@@ -54,7 +54,7 @@ export function ContactMapSection() {
             className="lg:col-span-8 relative z-0 isolate rounded-2xl overflow-hidden shadow-lg border border-stone-200/90 min-h-[460px] flex flex-col"
           >
             <HotelMap
-              hotelName="Celestal SS Grand Hotel"
+              hotelName="Celestial SS Grand Hotel"
               address={HOTEL_INFO.address}
               latitude={HOTEL_INFO.coordinates.lat}
               longitude={HOTEL_INFO.coordinates.lng}

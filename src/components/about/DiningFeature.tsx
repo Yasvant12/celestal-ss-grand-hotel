@@ -60,7 +60,7 @@ export function DiningFeature() {
                 </span>
               </div>
               <span className="font-label-compact text-label-compact text-primary font-semibold uppercase text-[11px]">
-                Customizable
+                Customisable
               </span>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function DiningFeature() {
           <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
             <Image
               src={diningImage}
-              alt="Artisanal multi-cuisine dining experience at Celestal SS Grand Hotel Lucknow"
+              alt="Artisanal multi-cuisine dining experience at Celestial SS Grand Hotel Lucknow"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 hover:scale-105"

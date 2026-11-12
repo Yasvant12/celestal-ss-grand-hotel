@@ -12,10 +12,10 @@ export function GalleryCTABanner() {
       <div className="relative site-container flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-12">
         <div className="max-w-2xl flex flex-col gap-3">
           <span className="font-eyebrow-luxury text-eyebrow-luxury text-[#E8D3A2] uppercase tracking-widest font-semibold">
-            Celestal SS Grand Hospitality
+            Celestial SS Grand Hospitality
           </span>
           <h2 className="font-display-hero text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FAF7F2] font-serif leading-tight">
-            Experience CELESTAL SS GRAND HOTEL
+            Experience CELESTIAL SS GRAND HOTEL
           </h2>
           <p className="font-body-md text-stone-300 text-sm sm:text-base md:text-lg leading-relaxed pt-1">
             Discover comfort, hospitality, and memorable experiences. Whether you are reserving a peaceful weekend stay or choreographing a landmark grand wedding celebration.

@@ -20,7 +20,7 @@ export function AboutCTA() {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-gold-metallic" />
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase text-gold-light tracking-[0.25em]">
-              Personalized Assistance
+              Personalised Assistance
             </span>
           </div>
 

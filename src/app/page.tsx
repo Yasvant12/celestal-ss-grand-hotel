@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HomeHighlightsSection } from "@/components/home/HomeHighlightsSection";
+import { HotelVideoSection } from "@/components/home/HotelVideoSection";
 import { HeritageSection } from "@/components/home/HeritageSection";
 import { ReceptionSection } from "@/components/home/ReceptionSection";
 import { VenuesSection } from "@/components/home/VenuesSection";
@@ -14,8 +15,8 @@ export default function HomePage() {
       {/* 1. Master Header with Top Utility Bar & Mobile Navigation */}
       <Header />
 
-      {/* Main Content Sections (Responsive padding accounts for fixed header) */}
-      <main className="w-full overflow-x-clip pt-[116px] md:pt-[132px] bg-surface min-h-[calc(100vh-132px)]">
+      {/* Header stays in document flow so wrapped utility content cannot overlap the page. */}
+      <main className="w-full overflow-x-clip bg-surface min-h-screen">
         <div className="flex flex-col w-full">
           {/* 1. Full-Width Cinematic Hero Section */}
           <HeroSection />
@@ -25,13 +26,15 @@ export default function HomePage() {
           {/* 3. Welcome & Heritage Section */}
           <HeritageSection />
 
+          <HotelVideoSection />
+
           {/* Reception image placeholder until the official photo is provided */}
           <ReceptionSection />
 
           {/* 4. Signature Venues & Accommodations Showcase Grid */}
           <VenuesSection />
 
-          {/* 5. Unrivaled Hotel Facilities & Amenities */}
+          {/* 5. Unrivalled Hotel Facilities & Amenities */}
           <FacilitiesSection />
 
           {/* 6. Interactive Direct Event Concierge & Booking Query Form */}

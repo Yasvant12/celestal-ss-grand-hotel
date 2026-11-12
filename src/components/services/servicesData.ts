@@ -29,7 +29,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     photos: [
       {
         src: "/images/services/dining-experience.jpeg",
-        alt: "Restaurant dining room with tables at Celestal SS Grand Hotel.",
+        alt: "Restaurant dining room with tables at Celestial SS Grand Hotel.",
         caption: "The hotel's restaurant dining room.",
       },
     ],
@@ -176,7 +176,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Valet Parking & Portico",
     category: "Arrival Hospitality",
     shortDesc:
-      "Weather-protected double-height porte-cochère, 150+ vehicle capacity, computerized digital tagging, and 24/7 monitored CCTV.",
+      "Weather-protected double-height porte-cochère, on-site vehicle parking, digital tagging, and 24/7 monitored CCTV.",
     desc: "Ensure seamless arrival for every dignitary and attendee. Our uniformed valet personnel manage guest car drop-off, retrieval, and dedicated security coordination under an architectural canopy.",
     icon: "local_parking",
     photos: [],
@@ -208,7 +208,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Banquet & Arrangements",
     category: "Comprehensive Hospitality",
     shortDesc:
-      "Pillarless Grand Astor & Crystal ballrooms across 10,500 sq. ft., dual private bridal preparation rooms, and dedicated multi-bay buffets.",
+      "Pillarless banquet spaces across 10,500 sq. ft., private bridal preparation rooms, and dedicated multi-bay buffets.",
     desc: "Complete venue configuration with high acoustic ceilings, private VIP bride and groom preparation sanctuaries, seamless food stations, and round-the-clock service staff.",
     icon: "apartment",
     photos: [
@@ -219,12 +219,12 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
       {
         src: "/images/services/banquet-ballroom-04.jpg",
-        alt: "The Crystal Hall with daylight fenestration",
-        caption: "Naturally daylit Crystal Hall suited for morning matrimonial ceremonies and corporate assemblies.",
+        alt: "A banquet hall with daylight fenestration",
+        caption: "A naturally daylit banquet hall suited for ceremonies and corporate gatherings.",
       },
       {
         src: "/images/services/wedding-stage-decoration.jpg",
-        alt: "The Grand Astor Ballroom at Twilight with crystal chandeliers",
+        alt: "A ballroom with crystal chandeliers at twilight",
         caption: "Artisanal crystal chandeliers and climate-controlled ballroom space for up to 400+ banquet seating.",
       },
     ],

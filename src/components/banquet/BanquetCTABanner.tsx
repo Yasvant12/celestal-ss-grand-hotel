@@ -15,7 +15,7 @@ export function BanquetCTABanner() {
 
       <div className="relative z-10 site-container text-center flex flex-col items-center gap-6">
         <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-[0.26em] text-primary-fixed-dim">
-          Celestal SS Grand Hospitality
+          Celestial SS Grand Hospitality
         </span>
 
         <h2 className="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-display-hero text-on-primary max-w-3xl leading-tight">

@@ -132,7 +132,7 @@ export function BanquetFloorPlanViewer() {
               }`}
             >
               <Building2 className="w-4 h-4" />
-              <span>1st Floor: Grand Astor (5,250 sq. ft.)</span>
+              <span>1st Floor Banquet Space (5,250 sq. ft.)</span>
             </button>
             <button
               type="button"
@@ -144,7 +144,7 @@ export function BanquetFloorPlanViewer() {
               }`}
             >
               <Building2 className="w-4 h-4" />
-              <span>2nd Floor: Crystal Hall (5,250 sq. ft.)</span>
+              <span>2nd Floor Banquet Space (5,250 sq. ft.)</span>
             </button>
           </div>
 
@@ -242,8 +242,8 @@ export function BanquetFloorPlanViewer() {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse" />
                 <span className="font-label-compact text-label-compact font-semibold text-on-primary">
                   {activeVenue === "astor"
-                    ? "The Grand Astor Ballroom • 1st Floor"
-                    : "The Celestial Crystal Hall • 2nd Floor"}
+                    ? "Banquet Space • 1st Floor"
+                    : "Banquet Space • 2nd Floor"}
                 </span>
               </div>
               <span className="text-surface-container/40 hidden sm:inline">|</span>

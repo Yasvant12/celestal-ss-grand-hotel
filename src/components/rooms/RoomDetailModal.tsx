@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ROOMS_DATA, RoomData } from "./roomsData";
 import {
@@ -32,13 +32,20 @@ export function RoomDetailModal({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const room: RoomData = ROOMS_DATA[roomId] || ROOMS_DATA["executive"];
+  const images = room.images;
 
-  useEffect(() => {
-    setActiveTab(defaultTab);
-    setCurrentImageIndex(0);
-  }, [roomId, defaultTab, isOpen]);
+  const handlePrevImage = useCallback(() => {
+    setCurrentImageIndex((prev) =>
+      images.length === 0 ? 0 : prev === 0 ? images.length - 1 : prev - 1
+    );
+  }, [images.length]);
 
-  // Handle Escape key
+  const handleNextImage = useCallback(() => {
+    setCurrentImageIndex((prev) =>
+      images.length === 0 ? 0 : prev === images.length - 1 ? 0 : prev + 1
+    );
+  }, [images.length]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -48,33 +55,20 @@ export function RoomDetailModal({
       }
     };
 
-    if (isOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-      const previousOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-        document.body.style.overflow = previousOverflow;
-      };
-    }
+    if (!isOpen) return;
 
+    window.addEventListener("keydown", handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
     };
-  }, [isOpen, activeTab, currentImageIndex]);
+  }, [isOpen, activeTab, onClose, handleNextImage, handlePrevImage]);
 
   if (!isOpen) return null;
 
-  const images = room.images;
-  const currentImage = images[currentImageIndex] || images[0];
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  const currentImage = images[currentImageIndex];
 
   return (
     <div className="fixed inset-0 z-[100000] bg-noir-charcoal/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
@@ -83,10 +77,10 @@ export function RoomDetailModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header Bar */}
-        <div className="px-5 sm:px-6 py-4 border-b border-stone-200 bg-surface-champagne/80 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-3">
+        <div className="px-4 sm:px-6 py-4 border-b border-stone-200 bg-surface-champagne/80 flex flex-wrap items-center justify-between gap-3 shrink-0">
+          <div className="flex min-w-0 flex-1 items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
-            <div className="flex items-baseline gap-2">
+            <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
               <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-primary font-bold">
                 Residence Blueprint &amp; Gallery
               </span>
@@ -97,12 +91,13 @@ export function RoomDetailModal({
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex w-full items-center justify-between gap-2 sm:w-auto sm:gap-3">
             {/* Tab Switcher */}
             <div className="inline-flex p-1 bg-surface-container-high rounded-xl text-xs font-semibold tracking-wider uppercase">
               <button
                 type="button"
                 onClick={() => setActiveTab("gallery")}
+                aria-label="Show room photo gallery"
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
                   activeTab === "gallery"
                     ? "bg-primary-container text-on-primary-container font-bold shadow-xs"
@@ -110,12 +105,13 @@ export function RoomDetailModal({
                 }`}
               >
                 <Images className="w-4 h-4" />
-                <span>Photo Gallery</span>
+                <span className="hidden sm:inline">Photo Gallery</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => setActiveTab("floorplan")}
+                aria-label="Show room floor plan"
                 className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
                   activeTab === "floorplan"
                     ? "bg-primary-container text-on-primary-container font-bold shadow-xs"
@@ -123,7 +119,7 @@ export function RoomDetailModal({
                 }`}
               >
                 <Compass className="w-4 h-4" />
-                <span>Floor Plan</span>
+                <span className="hidden sm:inline">Floor Plan</span>
               </button>
             </div>
 
@@ -147,7 +143,7 @@ export function RoomDetailModal({
               /* VIEW 1: IMAGE CAROUSEL TAB */
               <div className="flex flex-col h-full justify-between">
                 <div className="relative w-full flex-1 min-h-[280px] sm:min-h-[340px] max-h-[420px] rounded-xl overflow-hidden bg-noir-charcoal flex items-center justify-center group shadow-inner">
-                  {currentImage.src ? (
+                  {currentImage?.src ? (
                     <>
                       <Image
                         src={currentImage.src}
@@ -165,15 +161,16 @@ export function RoomDetailModal({
                   {/* Top Indicator Badge */}
                   <div className="absolute top-4 left-4 bg-noir-charcoal/85 backdrop-blur-md px-3 py-1 rounded-md text-surface-container-lowest font-label-compact text-xs tracking-wider border border-white/10">
                     <span className="text-gold-light font-bold">
-                      {currentImageIndex + 1} / {images.length}
-                    </span>{" "}
-                    • {currentImage.label}
+                      {images.length > 0 ? `${currentImageIndex + 1} / ${images.length}` : "No photos"}
+                    </span>
+                    {currentImage ? ` • ${currentImage.label}` : ""}
                   </div>
 
                   {/* Arrow Controls */}
                   <button
                     type="button"
                     onClick={handlePrevImage}
+                    disabled={images.length < 2}
                     className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-noir-charcoal/70 hover:bg-noir-charcoal backdrop-blur-md text-white flex items-center justify-center transition-all opacity-90 hover:scale-105 border border-white/10 cursor-pointer"
                     title="Previous Image"
                   >
@@ -183,6 +180,7 @@ export function RoomDetailModal({
                   <button
                     type="button"
                     onClick={handleNextImage}
+                    disabled={images.length < 2}
                     className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-noir-charcoal/70 hover:bg-noir-charcoal backdrop-blur-md text-white flex items-center justify-center transition-all opacity-90 hover:scale-105 border border-white/10 cursor-pointer"
                     title="Next Image"
                   >
@@ -192,7 +190,7 @@ export function RoomDetailModal({
                   {/* Bottom Caption */}
                   <div className="absolute bottom-3 left-4 right-4 pointer-events-none">
                     <p className="font-body-sm text-xs sm:text-sm text-stone-300 line-clamp-2">
-                      {currentImage.caption}
+                      {currentImage?.caption ?? "Room photographs are not available yet."}
                     </p>
                   </div>
                 </div>
@@ -542,7 +540,7 @@ export function RoomDetailModal({
                 </a>
                 <a
                   className="py-2.5 px-3 bg-[#25D366]/10 hover:bg-[#25D366] hover:text-white text-stone-800 font-label-compact text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-[#25D366]/30"
-                  href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(
+                  href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestial%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20${encodeURIComponent(
                     room.name
                   )}.`}
                   target="_blank"

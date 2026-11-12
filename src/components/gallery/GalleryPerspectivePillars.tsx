@@ -13,7 +13,7 @@ export function GalleryPerspectivePillars() {
             &ldquo;Every contour, every chandelier, every tranquil terrace is sculpted for serenity and timeless celebration.&rdquo;
           </blockquote>
           <span className="text-xs sm:text-sm text-stone-500 tracking-wider uppercase font-semibold">
-            Celestal SS Grand Hotel • Design Philosophy
+            Celestial SS Grand Hotel • Design Philosophy
           </span>
         </div>
 

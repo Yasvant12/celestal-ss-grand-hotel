@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HOTEL_INFO } from "@/lib/constants";
 import { submitWeb3FormsEnquiry } from "@/lib/web3forms";
 import { SERVICES_DATA } from "./servicesData";
@@ -15,30 +15,22 @@ export function ServicesEnquirySection({
   onServiceSelectChange,
 }: ServicesEnquirySectionProps) {
   const [minDate, setMinDate] = useState<string>("");
-
-  useEffect(() => {
-    // Avoid SSR hydration mismatch in Next.js 16
-    const today = new Date().toISOString().split("T")[0];
-    setMinDate(today);
-  }, []);
-
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    serviceInterest: selectedServiceTitle || "Dining Experience",
     eventDate: "",
     guestsCount: "",
     specialRequests: "",
     honeypot: "",
   });
 
-  // Sync when selectedServiceTitle changes from modal
-  useEffect(() => {
-    if (selectedServiceTitle) {
-      setFormData((prev) => ({ ...prev, serviceInterest: selectedServiceTitle }));
-    }
-  }, [selectedServiceTitle]);
+  const [internalServiceTitle, setInternalServiceTitle] = useState(
+    selectedServiceTitle ?? "Dining Experience"
+  );
+  const serviceInterest = onServiceSelectChange
+    ? selectedServiceTitle ?? internalServiceTitle
+    : internalServiceTitle;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">(
@@ -52,9 +44,11 @@ export function ServicesEnquirySection({
     >
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    if (name === "serviceInterest" && onServiceSelectChange) {
-      onServiceSelectChange(value);
+    if (name === "serviceInterest") {
+      if (!onServiceSelectChange) setInternalServiceTitle(value);
+      onServiceSelectChange?.(value);
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -75,7 +69,7 @@ export function ServicesEnquirySection({
         email: formData.email,
         botcheck: formData.honeypot,
         fields: {
-          "Service Interest": formData.serviceInterest,
+          "Service Interest": serviceInterest,
           "Tentative Event Date": formData.eventDate,
           "Expected Guests": formData.guestsCount,
           "Special Requests": formData.specialRequests,
@@ -89,12 +83,13 @@ export function ServicesEnquirySection({
         name: "",
         phone: "",
         email: "",
-        serviceInterest: "Dining Experience",
         eventDate: "",
         guestsCount: "",
         specialRequests: "",
         honeypot: "",
       });
+      setInternalServiceTitle("Dining Experience");
+      onServiceSelectChange?.("Dining Experience");
     } catch (err: unknown) {
       setSubmitStatus("error");
       setStatusMessage(
@@ -127,7 +122,7 @@ export function ServicesEnquirySection({
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
-          {/* Left Column: Direct Hotline & Celestal Guarantee */}
+          {/* Left Column: Direct Hotline & Celestial Guarantee */}
           <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-8">
             {/* Direct Hotline Box */}
             <div className="bg-white p-6 sm:p-8 rounded-xl border border-stone-200/80 shadow-sm">
@@ -175,14 +170,14 @@ export function ServicesEnquirySection({
               </a>
             </div>
 
-            {/* Celestal Guarantee Banner */}
+            {/* Celestial Guarantee Banner */}
             <div className="bg-[#111827] text-[#FAF7F2] p-6 sm:p-8 rounded-xl shadow-md border border-[#B38728]/30">
               <div className="flex items-center gap-2 text-[#E8D3A2] mb-2">
                 <span className="material-symbols-outlined text-[20px] text-[#B38728]">
                   verified
                 </span>
                 <span className="font-eyebrow-luxury text-[10px] tracking-widest uppercase font-semibold">
-                  The Celestal Guarantee
+                  The Celestial Guarantee
                 </span>
               </div>
               <h4 className="font-headline-sm text-base sm:text-lg text-white font-serif mb-2">
@@ -298,7 +293,7 @@ export function ServicesEnquirySection({
                   <select
                     name="serviceInterest"
                     required
-                    value={formData.serviceInterest}
+                    value={serviceInterest}
                     onChange={handleChange}
                     className="w-full px-3.5 py-2.5 rounded bg-[#FAF7F2] border border-stone-300 text-stone-900 font-body-sm text-sm focus:bg-white focus:border-[#7a5508] focus:outline-none transition-all"
                   >
@@ -323,6 +318,7 @@ export function ServicesEnquirySection({
                   <input
                     type="date"
                     name="eventDate"
+                    onFocus={() => setMinDate(new Date().toISOString().split("T")[0])}
                     min={minDate}
                     value={formData.eventDate}
                     onChange={handleChange}

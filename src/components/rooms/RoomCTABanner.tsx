@@ -65,7 +65,7 @@ export function RoomCTABanner() {
 
               <a
                 className="w-full py-3 px-6 bg-white/10 hover:bg-[#25D366] hover:text-white text-surface-container-lowest font-label-button text-xs font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 border border-white/10"
-                href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability.`}
+                href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestial%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20enquire%20about%20room%20availability.`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

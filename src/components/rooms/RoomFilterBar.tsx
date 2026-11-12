@@ -9,9 +9,9 @@ export interface RoomFilterBarProps {
 
 export function RoomFilterBar({ activeFilter, onFilterChange }: RoomFilterBarProps) {
   const filters: { id: "all" | "executive" | "courtyard"; label: string }[] = [
-    { id: "all", label: "All Rooms (33)" },
-    { id: "executive", label: "Executive Club Rooms (18)" },
-    { id: "courtyard", label: "Deluxe Courtyard Rooms (15)" },
+    { id: "all", label: "All Rooms (60)" },
+    { id: "executive", label: "Executive Club Rooms" },
+    { id: "courtyard", label: "Deluxe Courtyard Rooms" },
   ];
 
   return (

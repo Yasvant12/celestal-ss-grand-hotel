@@ -1,8 +1,8 @@
 import { HOTEL_INFO } from "@/lib/constants";
 
 const highlights = [
-  { icon: "domain", value: HOTEL_INFO.stats.lawnCapacity, label: "Celebration Lawn" },
-  { icon: "celebration", value: HOTEL_INFO.stats.acBanquetCapacity, label: "AC Banquet" },
+  { icon: "domain", value: HOTEL_INFO.stats.celebrationLawns, label: "Celebration Lawns" },
+  { icon: "celebration", value: HOTEL_INFO.stats.banquetSpaces, label: "Banquet Spaces" },
   { icon: "bed", value: HOTEL_INFO.stats.luxuryRooms, label: "Luxury Rooms" },
   { icon: "star", value: HOTEL_INFO.stats.rating, label: "Guest Rating" },
 ];
@@ -27,7 +27,7 @@ export function HomeHighlightsSection() {
               workspace_premium
             </span>
             <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-on-surface-variant">
-              60 Rooms • 4 Banquet Halls • 1 Lawn
+              60 Rooms • 5 Banquets • 2 Lawns
             </span>
           </div>
         </div>

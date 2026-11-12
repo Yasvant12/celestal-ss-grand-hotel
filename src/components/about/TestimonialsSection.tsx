@@ -14,7 +14,7 @@ export function TestimonialsSection() {
     },
     {
       quote:
-        "The rooms are spotlessly clean, quiet, and spacious. Having stayed across multiple hotels in Lucknow, I appreciated the comfort and personal attention from the front desk at Celestal SS Grand Hotel.",
+        "The rooms are spotlessly clean, quiet, and spacious. Having stayed across multiple hotels in Lucknow, I appreciated the comfort and personal attention from the front desk at Celestial SS Grand Hotel.",
       initials: "AK",
       name: "Amitava Kapoor",
       role: "Corporate Executive • New Delhi",
@@ -62,7 +62,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-body-md text-body-md text-on-surface-variant font-light max-w-lg mb-16"
         >
-          Genuine reflections from wedding hosts, visiting families, and business travelers who made Celestal SS Grand Hotel their chosen address in Lucknow.
+          Genuine reflections from wedding hosts, visiting families, and business travellers who made Celestial SS Grand Hotel their chosen address in Lucknow.
         </motion.p>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 text-left">

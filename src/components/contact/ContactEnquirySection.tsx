@@ -138,14 +138,14 @@ export function ContactEnquirySection() {
                     Commitment to Agility
                   </span>
                   <p className="font-body-md text-sm sm:text-base text-on-surface font-bold">
-                    Average Enquiry Response Time
+                    Enquiry Follow-Up
                   </p>
                   <div className="flex items-center gap-2 pt-1">
                     <span className="px-2.5 py-0.5 bg-primary/10 text-primary font-bold text-xs rounded-full">
-                      Under 30 Minutes
+                      Our team will be in touch
                     </span>
                     <span className="font-body-sm text-xs text-on-surface-variant">
-                      during desk hours
+                      after receiving your message
                     </span>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export function ContactEnquirySection() {
             {/* WhatsApp Direct Chat Badge */}
             <a
               className="flex items-center justify-between p-4 sm:p-5 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-md transition-all group border border-stone-200/90 hover:border-[#25D366]/50"
-              href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestal%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry.`}
+              href={`${HOTEL_INFO.whatsappUrl}?text=Hello%20Celestial%20SS%20Grand%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry.`}
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -181,7 +181,7 @@ export function ContactEnquirySection() {
               <div className="relative rounded-xl overflow-hidden group shadow-md aspect-video sm:aspect-4/3">
                 <Image
                   src="/images/hotel-front-entrance-foyer.jpg"
-                  alt="Celestal SS Grand Hotel Grand Lobby Arrival"
+                  alt="Celestial SS Grand Hotel Grand Lobby Arrival"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -196,7 +196,7 @@ export function ContactEnquirySection() {
               <div className="relative rounded-xl overflow-hidden group shadow-md aspect-video sm:aspect-4/3">
                 <Image
                   src="/images/hotel-banquet-ballroom-02.jpg"
-                  alt="Celestal SS Grand Hotel grand banquet hall"
+                  alt="Celestial SS Grand Hotel grand banquet hall"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 25vw"

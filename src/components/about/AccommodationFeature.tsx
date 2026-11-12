@@ -27,7 +27,7 @@ export function AccommodationFeature() {
           <div className="relative w-full aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-surface-container">
             <Image
               src="/images/hotel-room-bedroom-03.jpeg"
-              alt="Single-bed guest room at Celestal SS Grand Hotel"
+              alt="Single-bed guest room at Celestial SS Grand Hotel"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -70,7 +70,7 @@ export function AccommodationFeature() {
           </h2>
 
           <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-6">
-            Every guest room at Celestal SS Grand Hotel is crafted as a peaceful retreat from the vibrant tempo of Lucknow. Impeccably clean, thoughtfully maintained, and tailored to provide restful nights for wedding guests, business leaders, and visiting families.
+            Every guest room at Celestial SS Grand Hotel is crafted as a peaceful retreat from the vibrant tempo of Lucknow. Impeccably clean, thoughtfully maintained, and tailored to provide restful nights for wedding guests, business leaders, and visiting families.
           </p>
 
           <p className="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed mb-8">

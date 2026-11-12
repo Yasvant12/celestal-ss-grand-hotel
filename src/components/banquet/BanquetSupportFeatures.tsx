@@ -13,7 +13,7 @@ import {
 const FEATURES = [
   {
     icon: Palette,
-    title: "Customizable Scenography",
+    title: "Customisable Scenography",
     desc: "Tailored thematic stage designs, custom ceremonial rigs, luxury drapery, and contemporary lighting systems tailored to your signature color aesthetic.",
   },
   {
@@ -50,7 +50,7 @@ export function BanquetSupportFeatures() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto gap-2">
           <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-[0.24em] text-primary">
-            Unrivaled Amenities
+            Unrivalled Amenities
           </span>
           <h2 className="font-headline-lg text-3xl sm:text-4xl lg:text-headline-lg text-on-surface">
             Comprehensive Support for Effortless Celebrations

@@ -23,7 +23,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
               <span className="font-headline-sm text-xl lg:text-2xl uppercase tracking-wider text-surface-ivory font-serif">
-                Celestal SS Grand
+                Celestial SS Grand
               </span>
               <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest text-gold-light mt-1">
                 Hotel &amp; Residences
@@ -31,7 +31,7 @@ export function Footer() {
             </div>
 
             <p className="font-body-sm text-sm text-surface-container-highest max-w-sm leading-relaxed">
-              An international hallmark of serene hospitality, thoughtfully designed rooms, grand celebrations, and elevated gastronomy curated for the discerning global traveler.
+              An international hallmark of serene hospitality, thoughtfully designed rooms, grand celebrations, and elevated gastronomy curated for the discerning global traveller.
             </p>
 
             <div className="pt-1">
@@ -72,9 +72,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/#facilities-section" className="hover:text-gold-light transition-colors">
+                <Link href="/#facilities-section" className="hover:text-gold-light transition-colors">
                   Wellness, Spa &amp; Amenities
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/gallery" prefetch={true} className="hover:text-gold-light transition-colors">
@@ -96,13 +96,13 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5 font-body-sm text-sm text-surface-container-highest">
               <li>
-                <Link href="/banquet#venue-astor" prefetch={true} className="hover:text-gold-light transition-colors">
-                  The Grand Astor Ballroom
+                <Link href="/banquet#venue-sapphire" prefetch={true} className="hover:text-gold-light transition-colors">
+                  Sapphire Hall
                 </Link>
               </li>
               <li>
-                <Link href="/banquet#venue-crystal" prefetch={true} className="hover:text-gold-light transition-colors">
-                  The Celestial Crystal Hall
+                <Link href="/banquet#venue-emerald" prefetch={true} className="hover:text-gold-light transition-colors">
+                  Emerald Hall
                 </Link>
               </li>
               <li>
@@ -111,14 +111,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="/#venues-section" className="hover:text-gold-light transition-colors">
-                  Celestal Bistro &amp; Dining
-                </a>
+                <Link href="/#venues-section" className="hover:text-gold-light transition-colors">
+                  Celestial Bistro &amp; Dining
+                </Link>
               </li>
               <li>
-                <a href="/#venues-section" className="hover:text-gold-light transition-colors">
-                  Starlit Celebration Lawn
-                </a>
+                <Link href="/#venues-section" className="hover:text-gold-light transition-colors">
+                  Celebration Lawns
+                </Link>
               </li>
             </ul>
           </div>
@@ -170,18 +170,18 @@ export function Footer() {
         </div>
 
         {/* Bottom Row */}
-        <div className="mt-12 sm:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-surface-container-highest/70 font-eyebrow-luxury text-eyebrow-luxury tracking-wider text-xs">
+        <div className="mt-12 sm:mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-surface-container-highest/70 font-eyebrow-luxury text-eyebrow-luxury tracking-wider text-[11px] sm:text-xs">
           <p className="text-center md:text-left">
-            © 2025 Celestal SS Grand Hotel. All rights reserved. Contemporary Luxury Redefined.
+            © 2026 Celestial SS Grand Hotel. All rights reserved. Contemporary Luxury Redefined.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/contact" className="hover:text-gold-light transition-colors uppercase">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 md:justify-end">
+            <Link href="/contact" className="whitespace-nowrap hover:text-gold-light transition-colors uppercase">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="hover:text-gold-light transition-colors uppercase">
+            <Link href="/contact" className="whitespace-nowrap hover:text-gold-light transition-colors uppercase">
               Terms of Stay
             </Link>
-            <Link href="/contact" className="hover:text-gold-light transition-colors uppercase">
+            <Link href="/contact" className="whitespace-nowrap hover:text-gold-light transition-colors uppercase">
               Concierge Services
             </Link>
           </div>

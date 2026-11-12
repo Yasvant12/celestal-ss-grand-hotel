@@ -18,7 +18,7 @@ export function ContactInfoCards() {
       eyebrow: "Address & Arrival",
       title: "Our Location",
       description:
-        "Visit us and experience the hospitality of CELESTAL SS GRAND HOTEL in the heart of modern Lucknow.",
+        "Visit us and experience the hospitality of CELESTIAL SS GRAND HOTEL in the heart of modern Lucknow.",
       detailNode: (
         <p className="font-body-sm text-sm font-semibold text-stone-800 mb-6 leading-relaxed">
           {HOTEL_INFO.address}
@@ -34,7 +34,7 @@ export function ContactInfoCards() {
       eyebrow: "Direct Lines",
       title: "Phone & Assistance",
       description:
-        "Our guest relations team is available around the clock to assist you with inquiries and reservations.",
+        "Our guest relations team is available around the clock to assist you with enquiries and reservations.",
       detailNode: (
         <div className="space-y-2 mb-6">
           {contactNumbers.map(({ label, number }) => (
@@ -59,7 +59,7 @@ export function ContactInfoCards() {
       eyebrow: "Written Correspondence",
       title: "Email Us",
       description:
-        "Send us your tailored requirements. Our dedicated desk reviews and responds promptly within 2 hours.",
+        "Send us your tailored requirements and our dedicated team will follow up with you.",
       detailNode: (
         <div className="space-y-2 mb-6">
           <a
@@ -84,7 +84,7 @@ export function ContactInfoCards() {
           </a>
         </div>
       ),
-      actionText: "Compose Inquiry",
+      actionText: "Compose Enquiry",
       actionHref: `mailto:${HOTEL_INFO.email}`,
       actionIcon: ArrowRight,
       isExternal: false,

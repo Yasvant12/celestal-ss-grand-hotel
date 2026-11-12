@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { HOTEL_INFO } from "@/lib/constants";
 
 export function BanquetFeature() {
@@ -78,10 +79,13 @@ export function BanquetFeature() {
             </p>
           </div>
 
-          <div className="w-full aspect-[21/9] rounded-xl overflow-hidden bg-noir-charcoal mb-6">
-            <img
+          <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden bg-noir-charcoal mb-6">
+            <Image
               src={ballroomImage}
-              alt="Grand Ballroom at Celestal SS Grand Hotel"
+              alt="Grand Ballroom at Celestial SS Grand Hotel"
+              fill
+              loading="lazy"
+              sizes="(max-width: 1024px) 100vw, 60vw"
               className="w-full h-full object-cover"
             />
           </div>
@@ -128,22 +132,25 @@ export function BanquetFeature() {
                 Alfresco Starlit
               </span>
               <span className="px-3.5 py-1 rounded-full bg-white/10 text-xs font-semibold text-surface-champagne tracking-wider">
-                800+ Guests
+                Two Lawns
               </span>
             </div>
 
             <h3 className="font-headline-md text-headline-md text-surface-ivory mb-4">
-              Celebration Lawn
+              Celebration Lawns
             </h3>
             <p className="font-body-md text-body-md text-surface-champagne/75 font-light leading-relaxed mb-8">
-              An expansive open-air manicured turf setting surrounded by stately palms. Perfect for grand wedding ceremonies, dramatic fireworks entries, revolving stage setups, and starlit open banqueting under Lucknow skies.
+              Two open-air manicured turf settings surrounded by stately palms. Perfect for wedding ceremonies, receptions, and starlit celebrations under Lucknow skies.
             </p>
           </div>
 
-          <div className="w-full aspect-[16/9] rounded-xl overflow-hidden bg-noir-charcoal mb-6">
-            <img
+          <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-noir-charcoal mb-6">
+            <Image
               src={lawnImage}
-              alt="Celebration Lawn at Celestal SS Grand Hotel"
+              alt="Celebration Lawn at Celestial SS Grand Hotel"
+              fill
+              loading="lazy"
+              sizes="(max-width: 1024px) 100vw, 45vw"
               className="w-full h-full object-cover"
             />
           </div>

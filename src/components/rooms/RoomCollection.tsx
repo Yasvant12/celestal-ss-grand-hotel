@@ -63,7 +63,7 @@ export function RoomCollection({
               Thoughtfully Designed Rooms for a Comfortable Stay
             </h2>
             <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
-              Each space at Celestal SS Grand Hotel is calibrated for sensory serenity, blending understated contemporary aesthetics with ergonomic luxury.
+              Each space at Celestial SS Grand Hotel is calibrated for sensory serenity, blending understated contemporary aesthetics with ergonomic luxury.
             </p>
           </div>
 

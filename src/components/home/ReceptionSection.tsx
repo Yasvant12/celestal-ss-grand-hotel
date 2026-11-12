@@ -37,7 +37,7 @@ export function ReceptionSection() {
           <div className="relative aspect-[16/10] min-h-[260px] w-full overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/images/Namaste_Reception.png"
-              alt="Reception desk at Celestal SS Grand Hotel"
+              alt="Reception desk at Celestial SS Grand Hotel"
               fill
               sizes="(max-width: 1024px) 100vw, 58vw"
               loading="lazy"

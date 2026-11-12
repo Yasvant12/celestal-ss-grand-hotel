@@ -1,4 +1,4 @@
-/** Official Celestal SS Grand Hotel hero image shared by every page. */
+/** Official Celestial SS Grand Hotel hero image shared by every page. */
 export const HERO_BACKGROUND_IMAGE = "/images/celestal-ss-grand-hero.webp";
 
 export function getHeroBackgroundImageForPage(_pageKey: string = "home") {
@@ -12,14 +12,14 @@ export const HOTEL_INFO = {
   address: "Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026, India",
   shortAddress: "Plot 5, Misripur Guramba, Kursi Road, Lucknow",
   landmark: "Misripur Guramba, Kursi Road, Lucknow",
-  mapsQuery: "Hotel SS Grand, Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026, India",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+SS+Grand%2C+Plot+5%2C+Misripur+Guramba%2C+Kursi+Road%2C+Lucknow+226026",
+  mapsQuery: "Celestial SS Grand Hotel, Plot 5, Misripur Guramba, Kursi Road, Lucknow, Uttar Pradesh 226026, India",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Celestial+SS+Grand+Hotel%2C+Plot+5%2C+Misripur+Guramba%2C+Kursi+Road%2C+Lucknow+226026",
   coordinates: {
     lat: 26.7925,
     lng: 80.9028,
   },
   phones: {
-    primary: "+91 9151888637", //banquet booking
+    primary: "+91 9151888637", // Front desk and rooms
     primaryRaw: "91  7054447423",
     weddingDesk: "+91 9151888636",
     lawnsCatering: "+91 9151888638",
@@ -30,14 +30,13 @@ export const HOTEL_INFO = {
   reservationsEmail: "celestialssgrand@gmail.com",
   eventsEmail: "celestialssgrand@gmail.com",
   stats: {
-    lawnCapacity: "1,000+",
-    acBanquetCapacity: "400+",
+    celebrationLawns: "2",
+    banquetSpaces: "5",
     luxuryRooms: "60",
     serviceAvailability: "24 / 7",
     celebrationsHosted: "1,200+",
     rating: "4.2★",
     reviewsCount: "1,240+",
-    parkingCapacity: "50+ Vehicles",
   },
   proximities: [
     {
@@ -63,9 +62,9 @@ export const NAV_LINKS = [
   { label: "About Us", href: "/about", slug: "about" },
   { label: "Rooms & Accommodation", href: "/rooms", slug: "rooms" },
   { label: "Grand Banquet", href: "/banquet", slug: "banquet" },
-  { label: "Celebration Lawn", href: "/banquet/celebration-lawn", slug: "celebration-lawn" },
-  { label: "Dining & Catering", href: "/restaurant", slug: "restaurant" },
-  { label: "Facilities", href: "/about#facilities", slug: "facilities" },
+  { label: "Celebration Lawns", href: "/banquet#venue-connected-lawn", slug: "celebration-lawns" },
+  { label: "Dining & Catering", href: "/#venues-section", slug: "restaurant" },
+  { label: "Facilities", href: "/#facilities-section", slug: "facilities" },
   { label: "Gallery", href: "/gallery", slug: "gallery" },
   { label: "Contact", href: "/contact", slug: "contact" },
 ];

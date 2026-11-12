@@ -19,7 +19,7 @@ export function Header() {
     <>
       <header
         style={{ zIndex: 99999, transform: "translateZ(0)" }}
-        className="fixed top-0 left-0 right-0 w-full z-[99999] bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_25px_-4px_rgba(0,0,0,0.06)] transition-all"
+        className="sticky top-0 left-0 right-0 w-full z-[99999] bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_25px_-4px_rgba(0,0,0,0.06)] transition-all"
       >
         {/* Top utility announcement bar */}
         <HeaderTopBar />
@@ -28,15 +28,15 @@ export function Header() {
         <div className="h-20 md:h-24">
           <div className="site-container h-full flex items-center justify-between gap-2 sm:gap-4 lg:gap-6">
             
-            {/* BRAND LOGO: CELESTAL SS GRAND HOTEL */}
+            {/* BRAND LOGO: CELESTIAL SS GRAND HOTEL */}
             <Link
               href="/"
               className="flex items-center shrink-0 py-1 transition-transform duration-300 hover:scale-[1.02]"
-              aria-label="Celestal SS Grand Hotel Homepage"
+              aria-label="Celestial SS Grand Hotel Homepage"
             >
               <Image
-                src="/images/logo-ss-grand.webp"
-                alt="Celestal SS Grand Hotel"
+                src="/images/celestial-ss-grand-logo.png"
+                alt="Celestial SS Grand Hotel"
                 width={200}
                 height={80}
                 priority
@@ -193,7 +193,7 @@ export function Header() {
                 className="hidden sm:inline-flex items-center justify-center gap-2 px-4 sm:px-5 md:px-6 py-2.5 rounded-full gold-gradient-bg text-[#14110E] font-semibold text-xs md:text-sm tracking-wider uppercase shadow-[0_4px_14px_rgba(184,134,11,0.35)] hover:shadow-[0_6px_20px_rgba(184,134,11,0.5)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Send an Inquiry</span>
+                <span>Send an Enquiry</span>
               </Link>
 
               {/* Mobile Hamburger Toggle Button (Below lg) */}

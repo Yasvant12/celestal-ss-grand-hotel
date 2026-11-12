@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 export interface ImageRevealProps {
@@ -43,9 +44,12 @@ export function ImageReveal({
         }}
         className="w-full h-full"
       >
-        <img
+        <Image
           src={src}
           alt={alt}
+          fill
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 50vw"
           className={`${imageClassName} transition-transform duration-700 ease-out group-hover:scale-105`}
         />
       </motion.div>

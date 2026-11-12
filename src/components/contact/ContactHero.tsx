@@ -13,7 +13,7 @@ export function ContactHero() {
           <span className="italic font-normal text-gold-light">Conversation</span>
         </>
       }
-      subtitle="Have a question, planning a bespoke luxury stay, or organising a prestigious celebration? Our dedicated executive team at Celestal SS Grand Hotel is here to orchestrate every detail with effortless precision."
+      subtitle="Have a question, planning a bespoke luxury stay, or organising a prestigious celebration? Our dedicated executive team at Celestial SS Grand Hotel is here to orchestrate every detail with effortless precision."
       backgroundImage={HERO_BACKGROUND_IMAGE}
       breadcrumb={[
         { label: "Home", href: "/" },

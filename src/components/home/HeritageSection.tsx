@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 export function HeritageSection() {
@@ -20,7 +21,7 @@ export function HeritageSection() {
           >
             <div className="inline-flex items-center gap-2 text-primary font-eyebrow-luxury text-eyebrow-luxury uppercase">
               <span className="w-8 h-[2px] bg-primary" />
-              <span>About Celestal SS Grand Hotel</span>
+              <span>About Celestial SS Grand Hotel</span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-on-surface">
               Banquet Hall &amp; Celebrations on Kursi Road, Lucknow
@@ -30,13 +31,13 @@ export function HeritageSection() {
                 Elevate Your Celebrations with Luxury &amp; Elegance
               </p>
               <p>
-                Looking for a venue for your next event? Celestal SS Grand Hotel on Kursi Road offers banquet spaces for weddings, receptions, corporate gatherings, and other celebrations.
+                Looking for a venue for your next event? Celestial SS Grand Hotel on Kursi Road offers banquet spaces for weddings, receptions, corporate gatherings, and other celebrations.
               </p>
               <p>
                 Our hotel is located at Plot 5, Misripur Guramba, Kursi Road, Lucknow. Our team can help you plan your event, from venue arrangements to catering.
               </p>
               <p>
-                As a premier wedding hotel in Lucknow, we provide an all-in-one venue for your wedding functions, including engagement parties, mehendi ceremonies, receptions, and post-wedding celebrations. Our dedicated team takes care of everything—from customized decorations to gourmet catering—to make your wedding truly unforgettable.
+                As a premier wedding hotel in Lucknow, we provide an all-in-one venue for your wedding functions, including engagement parties, mehendi ceremonies, receptions, and post-wedding celebrations.                 Our dedicated team takes care of everything—from customised decorations to gourmet catering—to make your wedding truly unforgettable.
               </p>
             </div>
             <div className="pt-space-sm flex flex-wrap items-center gap-space-md">
@@ -64,11 +65,14 @@ export function HeritageSection() {
           >
             <div className="grid grid-cols-2 gap-space-md relative">
               {/* Large Image Top Left */}
-              <div className="col-span-2 overflow-hidden rounded-xl shadow-lg relative group">
-                <div
-                  className="w-full h-80 bg-cover bg-center transition-transform 7-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url('${ballroomImg}')` }}
-                  aria-label="Emerald Hall"
+              <div className="relative col-span-2 h-80 overflow-hidden rounded-xl shadow-lg group">
+                <Image
+                  src={ballroomImg}
+                  alt="Emerald Hall"
+                  fill
+                  loading="eager"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute bottom-4 left-4 right-4 p-space-sm rounded-lg bg-noir-charcoal/80 backdrop-blur-md text-surface-ivory flex justify-between items-center shadow-md">
                   <span className="font-label-button text-label-button uppercase tracking-wider text-gold-light">

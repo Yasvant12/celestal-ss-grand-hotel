@@ -100,7 +100,7 @@ export function GalleryLightbox({
             src={plate.src}
             alt={plate.alt}
             fill
-            priority
+            loading="lazy"
             sizes="100vw"
             className="object-contain rounded-lg drop-shadow-2xl"
           />
