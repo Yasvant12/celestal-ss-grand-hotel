@@ -1,8 +1,20 @@
-/** Official Celestial SS Grand Hotel hero image shared by every page. */
+/** Homepage hero image. Other routes use their own image from the page map. */
 export const HERO_BACKGROUND_IMAGE = "/images/celestal-ss-grand-hero.webp";
 
-export function getHeroBackgroundImageForPage(_pageKey: string = "home") {
-  return HERO_BACKGROUND_IMAGE;
+const PAGE_HERO_BACKGROUND_IMAGES = {
+  home: HERO_BACKGROUND_IMAGE,
+  about: "/images/hotel-reception-lobby-01.jpeg",
+  rooms: "/images/hotel-room-bedroom-03.jpeg",
+  banquet: "/images/hotel-banquet-ballroom-04.jpg",
+  gallery: "/images/hotel-exterior-evening-hero.jpeg",
+  contact: "/images/hotel-front-entrance-foyer.jpg",
+  services: "/images/hotel-corridor-01.jpeg",
+} as const;
+
+export type HeroPageKey = keyof typeof PAGE_HERO_BACKGROUND_IMAGES;
+
+export function getHeroBackgroundImageForPage(pageKey: HeroPageKey = "home") {
+  return PAGE_HERO_BACKGROUND_IMAGES[pageKey];
 }
 
 export const HOTEL_INFO = {

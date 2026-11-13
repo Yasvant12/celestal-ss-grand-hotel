@@ -1,7 +1,8 @@
 "use client";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { GALLERY_CATEGORIES, GALLERY_PLATES } from "./galleryData";
+import { GALLERY_CATEGORIES } from "./galleryData";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 
 interface GalleryHeroProps {
   activeCategory: string;
@@ -20,9 +21,10 @@ export function GalleryHero({
           Explore Our <span className="italic font-normal text-gold-light">Gallery</span>
         </>
       }
-      subtitle="Discover the spaces, experiences, and moments that make every stay special. An intimate visual journey through contemporary architecture, grand celebratory sanctuaries, and artisanal culinary art."
+      backgroundImage={getHeroBackgroundImageForPage("gallery")}
+      backgroundImageAlt="Illuminated Celestial SS Grand Hotel exterior at dusk"
+      backgroundImagePosition="center"
       breadcrumb={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
-      badgeText={`Curated Archive (${GALLERY_PLATES.length} Photographs)`}
     >
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         {GALLERY_CATEGORIES.map((cat) => {

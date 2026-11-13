@@ -1,7 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { HERO_BACKGROUND_IMAGE } from "@/lib/constants";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 
 export function ServicesHero() {
   return (
@@ -13,14 +13,13 @@ export function ServicesHero() {
           <span className="italic font-normal text-gold-light">Services</span>
         </>
       }
-      subtitle="Creating memorable experiences with thoughtfully designed hospitality, grand celebratory scenography, and dedicated event coordination."
-      backgroundImage={HERO_BACKGROUND_IMAGE}
+      backgroundImage={getHeroBackgroundImageForPage("services")}
+      backgroundImageAlt="Interior corridor at Celestial SS Grand Hotel"
+      backgroundImagePosition="center"
       breadcrumb={[
         { label: "Home", href: "/" },
         { label: "Services" },
       ]}
-      conciergeBadge={true}
-      badgeText="Bespoke Concierge At Service"
     >
       {/* 8 Signature Disciplines Indicator Ribbon in the standardized bottom slot */}
       <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-[#B38728]/30 text-[#E8D3A2] backdrop-blur-md shadow-sm">

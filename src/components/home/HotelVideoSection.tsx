@@ -5,16 +5,14 @@ import { useRef, useState } from "react";
 export function HotelVideoSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [aspectRatio, setAspectRatio] = useState(3 / 2);
+  const [aspectRatio, setAspectRatio] = useState(9 / 16);
   const [playbackError, setPlaybackError] = useState("");
 
-  const handleVideoLoadedData = () => {
+  const handleVideoLoadedMetadata = () => {
     const video = videoRef.current;
     if (video && video.videoWidth > 0 && video.videoHeight > 0) {
       setAspectRatio(video.videoWidth / video.videoHeight);
     }
-    setHasStarted(true);
   };
 
   const handlePlay = () => {
@@ -34,9 +32,7 @@ export function HotelVideoSection() {
     <section className="w-full bg-surface-container-low py-space-3xl">
       <div className="site-container grid items-center gap-space-2xl md:grid-cols-2">
         <div
-          className={`relative mx-auto overflow-hidden rounded-xl border border-outline-variant/50 bg-surface shadow-xl ${
-            hasStarted ? "w-full max-w-xs" : "w-full"
-          }`}
+          className="relative mx-auto w-full max-w-xs overflow-hidden rounded-xl border border-outline-variant/50 bg-surface shadow-xl"
           style={{ aspectRatio }}
         >
           <video
@@ -44,13 +40,13 @@ export function HotelVideoSection() {
             className="h-full w-full object-contain"
             controls
             playsInline
-            preload="none"
-            poster="/images/celestial-ss-grand-logo.png"
+            preload="metadata"
+            poster="/images/hotel-walkthrough-poster.jpg"
             aria-label="Video tour of Celestial SS Grand Hotel"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onEnded={() => setIsPlaying(false)}
-            onLoadedData={handleVideoLoadedData}
+            onLoadedMetadata={handleVideoLoadedMetadata}
           >
             <source src="/videos/celestial-ss-grand.mp4" type="video/mp4" />
             Your browser does not support the video element.

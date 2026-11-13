@@ -12,23 +12,21 @@ export interface BreadcrumbItem {
 
 export interface PageHeroProps {
   title: React.ReactNode;
-  subtitle: string;
   backgroundImage?: string;
+  backgroundImageAlt?: string;
+  backgroundImagePosition?: string;
   eyebrow?: string;
   breadcrumb?: BreadcrumbItem[];
-  conciergeBadge?: boolean;
-  badgeText?: string;
   children?: React.ReactNode;
 }
 
 export function PageHero({
   title,
-  subtitle,
   backgroundImage,
+  backgroundImageAlt = "Celestial SS Grand Hotel exterior",
+  backgroundImagePosition,
   eyebrow,
   breadcrumb = [{ label: "Home", href: "/" }],
-  conciergeBadge = true,
-  badgeText = "Reservations Desk",
   children,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -39,13 +37,14 @@ export function PageHero({
       <div className="absolute inset-0 z-0">
         <Image
           src={resolvedBackgroundImage}
-          alt="Celestial SS Grand Hotel exterior"
+          alt={backgroundImageAlt}
           fill
           priority
           sizes="100vw"
           className="object-cover object-[65%_46%] sm:object-[60%_40%] md:object-[55%_34%] lg:object-[52%_30%] 2xl:object-[50%_18%]"
+          style={backgroundImagePosition ? { objectPosition: backgroundImagePosition } : undefined}
         />
-        <div className="absolute inset-0 z-[2] bg-noir-charcoal/50" />
+        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-noir-charcoal/85 via-noir-charcoal/45 to-transparent" />
       </div>
 
       <div
@@ -82,7 +81,7 @@ export function PageHero({
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex w-full flex-col gap-3 lg:col-span-8 lg:max-w-[980px]"
+            className="flex w-full flex-col gap-3 lg:col-span-12 lg:max-w-[980px]"
           >
             {eyebrow && (
               <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3.5 py-1 shadow-sm backdrop-blur-md">
@@ -99,26 +98,8 @@ export function PageHero({
               {title}
             </h1>
 
-            <p className="max-w-2xl text-sm leading-relaxed text-stone-300 sm:text-base md:text-lg">
-              {subtitle}
-            </p>
           </motion.div>
 
-          {conciergeBadge && (
-            <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex lg:col-span-4 lg:justify-end"
-            >
-              <div className="flex items-center gap-2.5 rounded-full border border-gold-metallic/30 bg-noir-charcoal/80 px-4 py-2.5 text-surface-container-lowest shadow-lg backdrop-blur-md">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-whatsapp-brand" />
-                <span className="font-eyebrow-luxury text-eyebrow-luxury uppercase tracking-widest">
-                  {badgeText}
-                </span>
-              </div>
-            </motion.div>
-          )}
         </div>
 
         {children && (

@@ -13,9 +13,7 @@ export function HeroSection() {
           Elevate Your Celebrations with Luxury &amp; <span className="italic font-normal text-gold-light">Elegance</span>
         </>
       }
-      subtitle={`${HOTEL_INFO.subheading} ${HOTEL_INFO.shortAddress}`}
       breadcrumb={[{ label: "Home" }]}
-      conciergeBadge={false}
     >
       <div className="flex flex-wrap items-center gap-4">
         <a

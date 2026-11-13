@@ -92,7 +92,7 @@ export function ContactInfoCards() {
   ];
 
   return (
-    <section className="relative z-20 -mt-10 sm:-mt-12 md:-mt-14 w-full">
+    <section className="w-full pt-8 sm:pt-10">
       <div className="site-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((card, idx) => {

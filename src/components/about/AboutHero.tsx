@@ -1,7 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { HERO_BACKGROUND_IMAGE, HOTEL_INFO } from "@/lib/constants";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 
 export function AboutHero() {
   return (
@@ -13,13 +13,13 @@ export function AboutHero() {
           <span className="italic font-normal text-gold-light">Warm Hospitality</span>
         </>
       }
-      subtitle={`${HOTEL_INFO.tagline} ${HOTEL_INFO.shortAddress}`}
-      backgroundImage={HERO_BACKGROUND_IMAGE}
+      backgroundImage={getHeroBackgroundImageForPage("about")}
+      backgroundImageAlt="Warmly lit reception lobby at Celestial SS Grand Hotel"
+      backgroundImagePosition="center"
       breadcrumb={[
         { label: "Home", href: "/" },
         { label: "About Us" },
       ]}
-      badgeText="Reservations Desk"
     />
   );
 }

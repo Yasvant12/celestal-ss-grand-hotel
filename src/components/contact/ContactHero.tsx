@@ -1,7 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { HERO_BACKGROUND_IMAGE } from "@/lib/constants";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 
 export function ContactHero() {
   return (
@@ -13,13 +13,13 @@ export function ContactHero() {
           <span className="italic font-normal text-gold-light">Conversation</span>
         </>
       }
-      subtitle="Have a question, planning a bespoke luxury stay, or organising a prestigious celebration? Our dedicated executive team at Celestial SS Grand Hotel is here to orchestrate every detail with effortless precision."
-      backgroundImage={HERO_BACKGROUND_IMAGE}
+      backgroundImage={getHeroBackgroundImageForPage("contact")}
+      backgroundImageAlt="Welcoming hotel entrance foyer with a floral staircase"
+      backgroundImagePosition="center"
       breadcrumb={[
         { label: "Home", href: "/" },
         { label: "Contact Us" },
       ]}
-      badgeText="Reservations Desk"
     />
   );
 }

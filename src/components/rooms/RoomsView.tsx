@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/shared/PageHero";
-import { HERO_BACKGROUND_IMAGE } from "@/lib/constants";
+import { getHeroBackgroundImageForPage } from "@/lib/constants";
 import { RoomFilterBar } from "@/components/rooms/RoomFilterBar";
 import { RoomCollection } from "@/components/rooms/RoomCollection";
 import { RoomAmenitiesMatrix } from "@/components/rooms/RoomAmenitiesMatrix";
@@ -39,13 +39,13 @@ export function RoomsView() {
                 <span className="italic font-normal text-gold-light">More.</span>
               </>
             }
-            subtitle="Discover thoughtfully sculpted rooms and residences combining contemporary comfort, serene architectural contours, and bespoke hospitality crafted for restful interludes."
-            backgroundImage={HERO_BACKGROUND_IMAGE}
+            backgroundImage={getHeroBackgroundImageForPage("rooms")}
+            backgroundImageAlt="Comfortable guest bedroom with warm lighting"
+            backgroundImagePosition="center"
             breadcrumb={[
               { label: "Home", href: "/" },
               { label: "Rooms & Accommodation" },
             ]}
-            badgeText="Reservations Desk"
           >
             <RoomFilterBar
               activeFilter={activeFilter}

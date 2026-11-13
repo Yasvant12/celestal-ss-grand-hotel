@@ -25,7 +25,7 @@ export default function ContactPage() {
           {/* Section 1: Architectural Contact Hero Banner */}
           <ContactHero />
 
-          {/* Section 2: 3 Refined Overlapping Contact Information Cards */}
+          {/* Section 2: 3 Refined Contact Information Cards */}
           <ContactInfoCards />
 
           {/* Section 3: 2-Column Luxury Enquiry Form & Executive Assistance */}
